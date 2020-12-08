@@ -1,9 +1,9 @@
 import React from "react";
 import PositionParent from "./PositionParent";
 
-import ArrowUp from "../../Icons/Arrow Up.png";
-import ArrowRight from "../../Icons/Arrow Right.png";
-import GrandIcon from "../../Icons/Button White Stop.png";
+import ArrowUp from "../../../Icons/Arrow Up.png";
+import ArrowRight from "../../../Icons/Arrow Right.png";
+import GrandIcon from "../../../Icons/Button White Stop.png";
 
 export default class PositionGrand extends React.Component {
   constructor(props) {

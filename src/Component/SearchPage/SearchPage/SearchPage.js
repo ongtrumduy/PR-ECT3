@@ -1,6 +1,6 @@
 import React from "react";
 import "./SearchPage.css";
-import ReturnInfor from "./ReturnInfor";
+import ReturnInfor from "../ReturnInfor/ReturnInfor";
 
 export default class Search extends React.Component {
   constructor(props) {

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Main.css";
 
-import Search from "../Component/SearchPage/SearchPage";
-import ChangeEmployee from "../Component/WorkPositionList/WorkPositionList";
-import AddPositionWorkForm from "../Component/WorkPositionList/AddPositionWorkForm";
+import Search from "../Component/SearchPage/SearchPage/SearchPage";
+import ChangeEmployee from "../Component/WorkPositionList/WorkPositionList/WorkPositionList";
+import AddPositionWorkForm from "../Component/WorkPositionList/AddPositionWorkForm/AddPositionWorkForm";
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -45,7 +45,7 @@ export default class Main extends React.Component {
           onClick={() => this.handleChangeButton()}
         />
         <div className="main-content"> {this.changeFunction()}</div>
-        <AddPositionWorkForm />
+          <AddPositionWorkForm />
       </div>
     );
   }

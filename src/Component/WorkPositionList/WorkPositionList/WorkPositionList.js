@@ -1,9 +1,9 @@
 import React from "react";
 import "./WorkPositionList.css";
 
-import PositionGrand from "./PositionGrand";
-import CreateEditPage from "./CreateEditPage";
-import AddPositionWorkForm from "./AddPositionWorkForm";
+import PositionGrand from "../PositionList/PositionGrand";
+import CreateEditPage from "../CreateEditPage/CreateEditPage";
+import AddPositionWorkForm from "../AddPositionWorkForm/AddPositionWorkForm";
 
 export default class WorkPositionList extends React.Component {
   constructor(props) {

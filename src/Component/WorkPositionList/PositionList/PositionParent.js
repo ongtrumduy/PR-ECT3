@@ -2,9 +2,9 @@ import React from "react";
 
 import PositionChild from "./PositionChild";
 
-import ArrowUp from "../../Icons/Arrow Up.png";
-import ArrowRight from "../../Icons/Arrow Right.png";
-import ParentIcon from "../../Icons/Button White Remove.png";
+import ArrowUp from "../../../Icons/Arrow Up.png";
+import ArrowRight from "../../../Icons/Arrow Right.png";
+import ParentIcon from "../../../Icons/Button White Remove.png";
 
 export default class PositionParent extends React.Component {
   constructor(props) {

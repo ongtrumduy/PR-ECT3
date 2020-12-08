@@ -1,4 +1,5 @@
 import React from "react";
+import "./AddPositionWorkForm.css";
 
 export default class AddPositionWorkForm extends React.Component {
   constructor(props) {
@@ -7,19 +8,8 @@ export default class AddPositionWorkForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <div
-          style={{
-            borderStyle: "groove",
-            position: "relative",
-            bottom: "500px",
-            zIndex: "100",
-            height: "300px",
-            width: "500px",
-            left: "30%",
-            display: "none"
-          }}
-        >
+      <div className="Add-Position-Work">
+        <div className="Add-Position-Work-Form">
           <p>Thêm vị trí công việc</p>
           <p>Tên (*)</p>
           <input type="text" />

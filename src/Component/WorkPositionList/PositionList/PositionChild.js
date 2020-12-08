@@ -1,8 +1,8 @@
 import React from "react";
 
-import ArrowUp from "../../Icons/Arrow Up.png";
-import ArrowRight from "../../Icons/Arrow Right.png";
-import ChildIcon from "../../Icons/Star On.png";
+import ArrowUp from "../../../Icons/Arrow Up.png";
+import ArrowRight from "../../../Icons/Arrow Right.png";
+import ChildIcon from "../../../Icons/Star On.png";
 
 export default class PositionChild extends React.Component {
   constructor(props) {
