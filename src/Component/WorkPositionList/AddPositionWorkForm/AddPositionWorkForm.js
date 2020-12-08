@@ -10,12 +10,18 @@ export default class AddPositionWorkForm extends React.Component {
     return (
       <div className="Add-Position-Work">
         <div className="Add-Position-Work-Form">
-          <p>Thêm vị trí công việc</p>
-          <p>Tên (*)</p>
+          <p style={{ textAlign: "center" }}>Thêm vị trí công việc</p>
+          <p>
+            Tên <label style={{ color: "red" }}>(*)</label>
+          </p>
           <input type="text" />
-          <p>Chọn thông tin cha (*)</p>
+          <p>
+            Chọn thông tin cha <label style={{ color: "red" }}>(*)</label>
+          </p>
           <input type="text" />
-          <p>Nhãn (*)</p>
+          <p>
+            Nhãn <label style={{ color: "red" }}>(*)</label>
+          </p>
           <input type="text" />
           <div
             style={{
@@ -25,7 +31,7 @@ export default class AddPositionWorkForm extends React.Component {
               margin: "10px 0 10px 0"
             }}
           >
-            <div style={{ width: "70%" }}>
+            <div>
               <input
                 style={{ color: "white", backgroundColor: "red" }}
                 type="button"

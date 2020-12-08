@@ -22,7 +22,11 @@
     background-color: white;
 }
 
+.Add-Position-Work .Add-Position-Work-Form p {
+    margin: 5px 0 5px 20px;
+}
+
 .Add-Position-Work .Add-Position-Work-Form input {
-    width: 80%;
-    margin: 0 0 0 20px;
+    width: 88%;
+    margin: 5px 0 5px 20px;
 }
