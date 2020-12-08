@@ -1,5 +1,5 @@
 import React from "react";
-import "./Search.css";
+import "./SearchPage.css";
 import ReturnInfor from "./ReturnInfor";
 
 export default class Search extends React.Component {

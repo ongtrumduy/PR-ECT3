@@ -1,7 +1,9 @@
 import React from "react";
 import "./Main.css";
+
 import Search from "../Component/SearchPage/SearchPage";
-import ChangeEmployee from "../Component/ChangeEmployee";
+import ChangeEmployee from "../Component/WorkPositionList/WorkPositionList";
+import AddPositionWorkForm from "../Component/WorkPositionList/AddPositionWorkForm";
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -34,13 +36,16 @@ export default class Main extends React.Component {
   render() {
     return (
       <div className="main-page">
-        <p style={{fontWeight:"bold",fontSize:"25px"}}>APP QUẢN LÝ NHÂN SỰ</p>
+        <p style={{ fontWeight: "bold", fontSize: "25px" }}>
+          APP QUẢN LÝ NHÂN SỰ
+        </p>
         <input
           type="button"
           value="Thay đổi"
           onClick={() => this.handleChangeButton()}
         />
         <div className="main-content"> {this.changeFunction()}</div>
+        <AddPositionWorkForm />
       </div>
     );
   }
