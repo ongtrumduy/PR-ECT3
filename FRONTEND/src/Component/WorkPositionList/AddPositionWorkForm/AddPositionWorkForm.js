@@ -30,6 +30,7 @@ export default class AddPositionWorkForm extends React.Component {
           this.state.statusAddForm ? { display: "flex" } : { display: "none" }
         }
       >
+        <img alt="exit" src={ExitButton} onClick={() => this.cancelAddForm()} />
         <div
           className="Add-Position-Work-Form"
           style={
@@ -38,11 +39,6 @@ export default class AddPositionWorkForm extends React.Component {
               : { display: "none" }
           }
         >
-          <img
-            alt="exit"
-            src={ExitButton}
-            onClick={() => this.cancelAddForm()}
-          />
           <p style={{ textAlign: "center" }}>Thêm vị trí công việc</p>
           <p>
             Tên <label style={{ color: "red" }}>(*)</label>

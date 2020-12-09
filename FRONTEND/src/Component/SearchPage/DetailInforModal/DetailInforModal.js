@@ -3,19 +3,49 @@ import React from "react";
 import "./DetailInforModal.css";
 
 import DefaultAvatar from "../../../Icons/a.jpg";
+import ExitButton from "../../../Icons/Stop.png";
 
 export default class DetailInfor extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      statusDetailInfor: true
+    };
   }
+
+  cancelDetailInfor = () => {
+    this.setState({
+      statusDetailInfor: false
+    });
+  };
 
   render() {
     return (
-      <div className="Detail-Infor">
-        <div className="Detail-Infor-Modal">
+      <div
+        className="Detail-Infor"
+        style={
+          this.state.statusDetailInfor
+            ? { display: "flex" }
+            : { display: "none" }
+        }
+      >
+        <div
+          className="Detail-Infor-Modal"
+          style={
+            this.state.statusDetailInfor
+              ? { display: "flex" }
+              : { display: "none" }
+          }
+        >
           <p style={{ textAlign: "center", fontSize: "22px" }}>
             Thông tin nhân viên
           </p>
+          <img
+            className="exit-button"
+            alt="exit"
+            src={ExitButton}
+            onClick={() => this.cancelDetailInfor()}
+          />
           <div className="Detail-Infor-Content">
             <div className="Detail-Infor-Avatar">
               <img
@@ -47,7 +77,7 @@ export default class DetailInfor extends React.Component {
               </div>
               <div>
                 <label>Ngày bắt đầu làm việc &nbsp; &nbsp;</label>
-                <label>Mã nhân viên</label>
+                {/* <label>Mã nhân viên</label> */}
               </div>
               <div>
                 <label>Số CMND/Hộ chiếu &nbsp; &nbsp;</label>
@@ -85,7 +115,7 @@ export default class DetailInfor extends React.Component {
               </div>
               <div>
                 <label>Ngày nghỉ việc &nbsp; &nbsp;</label>
-                <label>Mã nhân viên</label>
+                {/* <label>Mã nhân viên</label> */}
               </div>
               <div>
                 <label>Ngày cấp &nbsp; &nbsp;</label>
@@ -100,6 +130,20 @@ export default class DetailInfor extends React.Component {
                 <label>Việt Nam</label>
               </div>
             </div>
+          </div>
+          <div>
+            <input
+              style={{
+                float: "right",
+                margin: "20px 50px 0 0",
+                width: "60px",
+                backgroundColor: "red",
+                color: "white"
+              }}
+              type="button"
+              value="Đóng"
+              onClick={() => this.cancelDetailInfor()}
+            />
           </div>
         </div>
       </div>

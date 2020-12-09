@@ -6,7 +6,7 @@
     position: relative;
     bottom: 570px;
     opacity: 1;
-    /* display: none; */
+    display: none;
 }
 
 .Detail-Infor .Detail-Infor-Modal {
@@ -21,6 +21,14 @@
     opacity: 1;
     text-align: left;
     background-color: white;
+    display: none;
+    flex-direction: column;
+}
+
+.Detail-Infor .Detail-Infor-Modal .exit-button {
+    position: absolute;
+    left: 900px;
+    bottom: 400px;
 }
 
 .Detail-Infor .Detail-Infor-Modal p {
