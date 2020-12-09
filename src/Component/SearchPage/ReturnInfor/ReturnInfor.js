@@ -1,6 +1,8 @@
 import React from "react";
 import "./ReturnInfor.css";
 
+import DetailInfor from "../../../Icons/Contacts.png";
+
 export default class ReturnInfor extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +30,9 @@ export default class ReturnInfor extends React.Component {
             <td>25-10-2020</td>
             <td>Phụ thuộc</td>
             <td style={{ color: "green" }}>Đang làm việc</td>
-            <td>Hủy</td>
+            <td>
+              <img alt="detail-infor" src={DetailInfor} />
+            </td>
           </tr>
           <tr>
             <td>MS2015124</td>
@@ -38,7 +42,9 @@ export default class ReturnInfor extends React.Component {
             <td>25-10-2020</td>
             <td>Phụ thuộc</td>
             <td style={{ color: "green" }}>Đang làm việc</td>
-            <td>Hủy</td>
+            <td>
+              <img alt="detail-infor" src={DetailInfor} />
+            </td>
           </tr>
           <tr>
             <td>MS2015122</td>
@@ -48,7 +54,9 @@ export default class ReturnInfor extends React.Component {
             <td>25-10-2020</td>
             <td>Phụ thuộc</td>
             <td style={{ color: "green" }}>Đang làm việc</td>
-            <td>Hủy</td>
+            <td>
+              <img alt="detail-infor" src={DetailInfor} />
+            </td>
           </tr>
         </table>
       </div>

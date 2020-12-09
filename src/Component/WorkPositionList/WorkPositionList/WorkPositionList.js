@@ -25,7 +25,7 @@ export default class WorkPositionList extends React.Component {
               <PositionGrand />
             </div>
             <div className="Create-Edit-Pane">
-              <CreateEditPage />
+              <CreateEditPage setStatusAddForm={this.props.setStatusAddForm} />
             </div>
           </div>
         </div>

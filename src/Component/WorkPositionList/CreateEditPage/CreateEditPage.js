@@ -5,14 +5,23 @@ export default class CreateEditPage extends React.Component {
     super(props);
   }
 
+  setStatusAddForm = () => {
+    this.props.setStatusAddForm(true);
+  };
+
   render() {
     return (
       <div>
         <div style={{ margin: "20px 0 20px 0" }}>
           <input
-            style={{ color: "white", backgroundColor: "green" }}
+            style={{
+              color: "white",
+              backgroundColor: "green",
+              margin: "0 0 0 250px"
+            }}
             type="button"
             value="Thêm"
+            onClick={() => this.setStatusAddForm()}
           />
         </div>
         <div>
@@ -29,7 +38,7 @@ export default class CreateEditPage extends React.Component {
           style={{
             display: "flex",
             justifyContent: "flex-start",
-            alignItems: "center", 
+            alignItems: "center",
             margin: "10px 0 10px 0"
           }}
         >

@@ -5,7 +5,8 @@
     border-style: groove;
     position: relative;
     bottom: 570px;
-    opacity: 0.7;
+    opacity: 0.85;
+    display: none;
 }
 
 .Add-Position-Work .Add-Position-Work-Form {
@@ -20,10 +21,17 @@
     font-weight: bold;
     text-align: left;
     background-color: white;
+    display: none;
 }
 
 .Add-Position-Work .Add-Position-Work-Form p {
     margin: 5px 0 5px 20px;
+}
+
+.Add-Position-Work .Add-Position-Work-Form img {
+    position: absolute;
+    left:480px;
+    bottom:300px;
 }
 
 .Add-Position-Work .Add-Position-Work-Form input {

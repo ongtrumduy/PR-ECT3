@@ -2,34 +2,43 @@ import React from "react";
 import "./Main.css";
 
 import Search from "../Component/SearchPage/SearchPage/SearchPage";
-import ChangeEmployee from "../Component/WorkPositionList/WorkPositionList/WorkPositionList";
+import WorkPositionList from "../Component/WorkPositionList/WorkPositionList/WorkPositionList";
 import AddPositionWorkForm from "../Component/WorkPositionList/AddPositionWorkForm/AddPositionWorkForm";
 
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      changeButton: false
+      changeButton: false,
+      statusAddForm: true
     };
   }
 
   handleChangeButton = () => {
     if (this.state.changeButton) {
       this.setState({
-        changeButton: false
+        changeButton: false,
+        statusAddForm: false
       });
     } else {
       this.setState({
-        changeButton: true
+        changeButton: true,
+        statusAddForm: false
       });
     }
+  };
+
+  setStatusAddForm = status => {
+    this.setState({
+      statusAddForm: status
+    });
   };
 
   changeFunction = () => {
     if (this.state.changeButton) {
       return <Search />;
     } else {
-      return <ChangeEmployee />;
+      return <WorkPositionList setStatusAddForm={this.setStatusAddForm} />;
     }
   };
 
@@ -45,7 +54,7 @@ export default class Main extends React.Component {
           onClick={() => this.handleChangeButton()}
         />
         <div className="main-content"> {this.changeFunction()}</div>
-          <AddPositionWorkForm />
+        <AddPositionWorkForm statusAddForm={this.state.statusAddForm} />
       </div>
     );
   }
