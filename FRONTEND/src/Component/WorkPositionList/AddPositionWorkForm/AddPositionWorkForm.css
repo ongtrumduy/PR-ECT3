@@ -28,9 +28,9 @@
     margin: 5px 0 5px 20px;
 }
 
-.Add-Position-Work .Add-Position-Work-Form img {
+.Add-Position-Work .Add-Position-Work-Form .exit-button {
     position: absolute;
-    left: 480px;
+    left: 485px;
     bottom: 300px;
 }
 
