@@ -13,7 +13,7 @@ export default class DetailInfor extends React.Component {
     return (
       <div className="Detail-Infor">
         <div className="Detail-Infor-Modal">
-          <p style={{ textAlign: "center" }}>Thông tin nhân viên</p>
+          <p style={{ textAlign: "center" , fontSize:"22px"}}>Thông tin nhân viên</p>
           <div className="Detail-Infor-Content">
             <div className="Detail-Infor-Avatar">
               <img
