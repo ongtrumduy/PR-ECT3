@@ -1,0 +1,37 @@
+.Detail-Infor {
+    height: 100%;
+    width: 99.8%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-style: groove;
+    position: relative;
+    bottom: 570px;
+    opacity: 1;
+    /* display: none; */
+}
+
+.Detail-Infor .Detail-Infor-Modal {
+    border-style: groove;
+    position: absolute;
+    bottom: 280px;
+    z-index: 1;
+    border-radius: 10px;
+    height: 420px;
+    width: 840px;
+    left: 19%;
+    opacity: 1;
+    font-weight: bold;
+    text-align: left;
+    background-color: white;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content .Detail-Infor-Avatar {
+    width: 30%;
+    text-align: center;
+}

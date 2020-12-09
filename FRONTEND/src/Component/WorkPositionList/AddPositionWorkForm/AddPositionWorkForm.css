@@ -1,0 +1,40 @@
+.Add-Position-Work {
+    height: 100%;
+    width: 99.8%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-style: groove;
+    position: relative;
+    bottom: 570px;
+    opacity: 1;
+    display: none;
+}
+
+.Add-Position-Work .Add-Position-Work-Form {
+    border-style: groove;
+    position: absolute;
+    bottom: 300px;
+    z-index: 100;
+    border-radius: 10px;
+    height: 320px;
+    width: 500px;
+    left: 30%;
+    font-weight: bold;
+    text-align: left;
+    background-color: white;
+    display: none;
+}
+
+.Add-Position-Work .Add-Position-Work-Form p {
+    margin: 5px 0 5px 20px;
+}
+
+.Add-Position-Work .Add-Position-Work-Form img {
+    position: absolute;
+    left: 480px;
+    bottom: 300px;
+}
+
+.Add-Position-Work .Add-Position-Work-Form input {
+    width: 88%;
+    margin: 5px 0 5px 20px;
+}
