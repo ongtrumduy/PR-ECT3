@@ -19,9 +19,12 @@
     width: 920px;
     left: 15%;
     opacity: 1;
-    font-weight: bold;
     text-align: left;
     background-color: white;
+}
+
+.Detail-Infor .Detail-Infor-Modal p {
+    font-weight: bold;
 }
 
 .Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content {
@@ -29,6 +32,10 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content label:first-child {
+    font-weight: bold;
 }
 
 .Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content .Detail-Infor-Avatar {
