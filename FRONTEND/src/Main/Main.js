@@ -1,10 +1,11 @@
 import React from "react";
 import "./Main.css";
 
-import Search from "../Component/SearchPage/SearchPage/SearchPage";
-import WorkPositionList from "../Component/WorkPositionList/WorkPositionList/WorkPositionList";
+import DashBoard from "../Component/DashBoard/DashBoard";
 
-import AddPositionWorkForm from "../Component/WorkPositionList/AddPositionWorkForm/AddPositionWorkForm";
+import AddJobFieldForm from "../Component/JobList/AddJobFieldForm/AddJobFieldForm";
+import AddJobChildForm from "../Component/JobList/AddJobChildForm/AddJobChildForm";
+
 import DetailInforModal from "../Component/SearchPage/DetailInforModal/DetailInforModal";
 
 export default class Main extends React.Component {
@@ -12,7 +13,8 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       changeButton: false,
-      statusAddForm: true
+      statusAddJobFieldForm: true,
+      statusAddJobChildForm: true
     };
   }
 
@@ -20,28 +22,28 @@ export default class Main extends React.Component {
     if (this.state.changeButton) {
       this.setState({
         changeButton: false,
-        statusAddForm: false
+        statusAddJobFieldForm: false,
+        statusAddJobChildForm: false
       });
     } else {
       this.setState({
         changeButton: true,
-        statusAddForm: false
+        statusAddJobFieldForm: false,
+        statusAddJobChildForm: false
       });
     }
   };
 
-  setStatusAddForm = status => {
+  setStatusAddJobFieldForm = status => {
     this.setState({
-      statusAddForm: status
+      statusAddJobFieldForm: status
     });
   };
 
-  changeFunction = () => {
-    if (this.state.changeButton) {
-      return <Search />;
-    } else {
-      return <WorkPositionList setStatusAddForm={this.setStatusAddForm} />;
-    }
+  setStatusAddJobChildForm = status => {
+    this.setState({
+      statusAddJobChildForm: status
+    });
   };
 
   render() {
@@ -50,13 +52,18 @@ export default class Main extends React.Component {
         <p style={{ fontWeight: "bold", fontSize: "25px" }}>
           APP QUẢN LÝ NHÂN SỰ
         </p>
-        <input
-          type="button"
-          value="Thay đổi"
-          onClick={() => this.handleChangeButton()}
+        <DashBoard
+          setStatusAddJobFieldForm={this.setStatusAddJobFieldForm}
+          setStatusAddJobChildForm={this.setStatusAddJobChildForm}
         />
-        <div className="main-content"> {this.changeFunction()}</div>
-        <AddPositionWorkForm statusAddForm={this.state.statusAddForm} />
+        <AddJobChildForm
+          statusAddJobChildForm={this.state.statusAddJobChildForm}
+          setStatusAddJobChildForm={this.setStatusAddJobChildForm}
+        />
+        <AddJobFieldForm
+          statusAddJobFieldForm={this.state.statusAddJobFieldForm}
+          setStatusAddJobFieldForm={this.setStatusAddJobFieldForm}
+        />
         <DetailInforModal />
       </div>
     );

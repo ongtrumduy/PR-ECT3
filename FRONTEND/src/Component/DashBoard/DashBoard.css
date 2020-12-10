@@ -1,0 +1,11 @@
+.Render-Dashboard {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.Render-Interface {
+    margin: 10px 0 0 0;
+    border-style: groove;
+}
