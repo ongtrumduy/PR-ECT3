@@ -3,40 +3,27 @@ import React from "react";
 import "./DashBoard.css";
 
 import SearchPage from "../SearchPage/SearchPage/SearchPage";
-import JobActivity from "../JobList/JobActivity/JobActivity";
-import JobPosition from "../JobList/JobPosition/JobPosition";
-import JobType from "../JobList/JobType/JobType";
+import Job from "../JobList/Job/Job";
 
 export default class DashBoard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chooseInterface: "1"
+      chooseInterface: "none"
     };
   }
 
   selectInterfaceRender = () => {
-    switch (this.state.chooseInterface) {
-      case "1":
-        return (
-          <JobType
-            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
-          />
-        );
-      case "2":
-        return (
-          <JobPosition
-            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
-          />
-        );
-      case "3":
-        return (
-          <JobActivity
-            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
-          />
-        );
-      case "4":
-        return <SearchPage />;
+    if (this.state.chooseInterface === "none") {
+      return <SearchPage />;
+    } else {
+      return (
+        <Job
+          setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+          setModalOptionJob={this.props.setModalOptionJob}
+          setOptionJob={this.state.chooseInterface}
+        />
+      );
     }
   };
 
@@ -53,28 +40,28 @@ export default class DashBoard extends React.Component {
           <input
             type="button"
             value="Lĩnh vực công việc"
-            onClick={() => this.handleSelectInterfaceRender("1")}
+            onClick={() => this.handleSelectInterfaceRender("lĩnh vực")}
           />
         </div>
         <div>
           <input
             type="button"
             value="Vị trí công việc"
-            onClick={() => this.handleSelectInterfaceRender("2")}
+            onClick={() => this.handleSelectInterfaceRender("vị trí")}
           />
         </div>
         <div>
           <input
             type="button"
             value="Hoạt động công việc"
-            onClick={() => this.handleSelectInterfaceRender("3")}
+            onClick={() => this.handleSelectInterfaceRender("hoạt động")}
           />
         </div>
         <div>
           <input
             type="button"
             value="Tìm kiếm nhân sự giới thiệu"
-            onClick={() => this.handleSelectInterfaceRender("4")}
+            onClick={() => this.handleSelectInterfaceRender("none")}
           />
         </div>
       </div>

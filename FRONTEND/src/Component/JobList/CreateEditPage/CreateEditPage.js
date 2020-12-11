@@ -7,6 +7,7 @@ export default class CreateEditPage extends React.Component {
 
   setStatusRenderModalForm = add_model => {
     this.props.setStatusRenderModalForm(add_model);
+    this.props.setModalOptionJob(this.props.setOptionJob);
   };
 
   render() {

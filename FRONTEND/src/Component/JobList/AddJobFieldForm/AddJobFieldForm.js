@@ -41,7 +41,7 @@ export default class AddJobFieldForm extends React.Component {
             onClick={() => this.cancelAddJobFieldForm()}
           />
           <p style={{ textAlign: "center", margin: "10px 0 0 0" }}>
-            Thêm nhãn lĩnh vực công việc
+            Thêm nhãn {this.props.setOptionJob} công việc
           </p>
           <p>
             Tên <label style={{ color: "red" }}>(*)</label>

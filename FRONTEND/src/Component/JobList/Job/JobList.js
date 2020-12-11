@@ -1,9 +1,9 @@
 import React from "react";
 
-import JobTypeField from "./JobTypeField";
+import JobField from "./JobField";
 import CreateEditPage from "../CreateEditPage/CreateEditPage";
 
-export default class JobTypeList extends React.Component {
+export default class JobList extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -19,15 +19,17 @@ export default class JobTypeList extends React.Component {
               textAlign: "left"
             }}
           >
-            Danh sách lĩnh vực công việc
+            Danh sách {this.props.setOptionJob} công việc
           </p>
-          <div className="Job-Type-List">
-            <div className="Job-Type-Branch-List">
-              <JobTypeField />
+          <div className="Job-List">
+            <div className="Job-Branch-List">
+              <JobField />
             </div>
             <div className="Create-Edit-Pane">
               <CreateEditPage
                 setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+                setModalOptionJob={this.props.setModalOptionJob}
+                setOptionJob={this.props.setOptionJob}
               />
             </div>
           </div>

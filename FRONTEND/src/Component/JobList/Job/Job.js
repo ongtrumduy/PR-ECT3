@@ -1,7 +1,8 @@
 import React from "react";
-import "./JobType.css";
 
-import JobTypeList from "./JobTypeList";
+import "./Job.css";
+
+import JobList from "./JobList";
 
 export default class JobActivity extends React.Component {
   constructor(props) {
@@ -11,8 +12,10 @@ export default class JobActivity extends React.Component {
   render() {
     return (
       <div>
-        <JobTypeList
+        <JobList
           setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+          setModalOptionJob={this.props.setModalOptionJob}
+          setOptionJob={this.props.setOptionJob}
         />
       </div>
     );

@@ -41,7 +41,7 @@ export default class AddJobChildForm extends React.Component {
             onClick={() => this.cancelAddJobChildForm()}
           />
           <p style={{ textAlign: "center", margin: "10px 0 0 0" }}>
-            Thêm con lĩnh vực công việc
+            Thêm con {this.props.setOptionJob} công việc
           </p>
           <p>
             Tên <label style={{ color: "red" }}>(*)</label>

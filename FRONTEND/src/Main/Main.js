@@ -9,7 +9,8 @@ export default class Main extends React.Component {
     super(props);
     this.state = {
       changeButton: false,
-      statusRenderModalForm: "none"
+      statusRenderModalForm: "none",
+      setOptionJob: "none"
     };
   }
 
@@ -19,18 +20,28 @@ export default class Main extends React.Component {
     });
   };
 
+  setModalOptionJob = set_option_job => {
+    this.setState({
+      setOptionJob: set_option_job
+    });
+  };
+
   render() {
     return (
       <div className="main-page">
         <p style={{ fontWeight: "bold", fontSize: "25px" }}>
           APP QUẢN LÝ NHÂN SỰ
         </p>
-        <DashBoard setStatusRenderModalForm={this.setStatusRenderModalForm} />
+        <DashBoard
+          setStatusRenderModalForm={this.setStatusRenderModalForm}
+          setModalOptionJob={this.setModalOptionJob}
+        />
         <RenderAllModal
           statusRenderModalForm={this.state.statusRenderModalForm}
           setStatusRenderModalForm={this.setStatusRenderModalForm}
+          setOptionJob={this.state.setOptionJob}
+          setModalOptionJob={this.setModalOptionJob}
         />
-        {/* <DetailInforModal /> */}
       </div>
     );
   }

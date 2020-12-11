@@ -7,30 +7,26 @@ import AddJobChildForm from "../JobList/AddJobChildForm/AddJobChildForm";
 
 export default class RenderAllModal extends React.Component {
   constructor(props) {
-    super(props); 
+    super(props);
   }
 
-  chooseModalToRender = modal_name => {
+  chooseModalToRender = (modal_name, option_job_name) => {
     switch (modal_name) {
       case "addjobfieldform":
-    return (
-      <AddJobFieldForm
-        statusRenderModalForm={this.props.statusRenderModalForm}
-        setStatusRenderModalForm={this.props.setStatusRenderModalForm}
-      />
-    );
-    case "addjobchildform":
-    return (
-      <AddJobChildForm
-        statusRenderModalForm={this.props.statusRenderModalForm}
-        setStatusRenderModalForm={this.props.setStatusRenderModalForm}
-      />
-    );
+        return (
+          <AddJobFieldForm
+            statusRenderModalForm={this.props.statusRenderModalForm}
+            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+            setOptionJob={option_job_name}
+          />
+        );
       case "addjobchildform":
         return (
-          <div>
-            <AddJobFieldForm />
-          </div>
+          <AddJobChildForm
+            statusRenderModalForm={this.props.statusRenderModalForm}
+            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+            setOptionJob={option_job_name}
+          />
         );
     }
   };
@@ -45,7 +41,10 @@ export default class RenderAllModal extends React.Component {
             : { display: "none" }
         }
       >
-        {this.chooseModalToRender(this.props.statusRenderModalForm)}
+        {this.chooseModalToRender(
+          this.props.statusRenderModalForm,
+          this.props.setOptionJob
+        )}
       </div>
     );
   }
