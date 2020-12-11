@@ -3,46 +3,19 @@ import "./Main.css";
 
 import DashBoard from "../Component/DashBoard/DashBoard";
 
-import AddJobFieldForm from "../Component/JobList/AddJobFieldForm/AddJobFieldForm";
-import AddJobChildForm from "../Component/JobList/AddJobChildForm/AddJobChildForm";
-
-import DetailInforModal from "../Component/SearchPage/DetailInforModal/DetailInforModal";
-
+import RenderAllModal from "../Component/RenderAllModal/RenderAllModal";
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       changeButton: false,
-      statusAddJobFieldForm: true,
-      statusAddJobChildForm: true
+      statusRenderModalForm: "none"
     };
   }
 
-  handleChangeButton = () => {
-    if (this.state.changeButton) {
-      this.setState({
-        changeButton: false,
-        statusAddJobFieldForm: false,
-        statusAddJobChildForm: false
-      });
-    } else {
-      this.setState({
-        changeButton: true,
-        statusAddJobFieldForm: false,
-        statusAddJobChildForm: false
-      });
-    }
-  };
-
-  setStatusAddJobFieldForm = status => {
+  setStatusRenderModalForm = status => {
     this.setState({
-      statusAddJobFieldForm: status
-    });
-  };
-
-  setStatusAddJobChildForm = status => {
-    this.setState({
-      statusAddJobChildForm: status
+      statusRenderModalForm: status
     });
   };
 
@@ -52,19 +25,14 @@ export default class Main extends React.Component {
         <p style={{ fontWeight: "bold", fontSize: "25px" }}>
           APP QUẢN LÝ NHÂN SỰ
         </p>
-        <DashBoard
-          setStatusAddJobFieldForm={this.setStatusAddJobFieldForm}
-          setStatusAddJobChildForm={this.setStatusAddJobChildForm}
-        />
-        <AddJobChildForm
-          statusAddJobChildForm={this.state.statusAddJobChildForm}
-          setStatusAddJobChildForm={this.setStatusAddJobChildForm}
-        />
-        <AddJobFieldForm
-          statusAddJobFieldForm={this.state.statusAddJobFieldForm}
-          setStatusAddJobFieldForm={this.setStatusAddJobFieldForm}
-        />
-        <DetailInforModal />
+        <DashBoard setStatusRenderModalForm={this.setStatusRenderModalForm} />
+        <div>
+          <RenderAllModal
+            statusRenderModalForm={this.state.statusRenderModalForm}
+            setStatusRenderModalForm={this.setStatusRenderModalForm}
+          />
+        </div>
+        {/* <DetailInforModal /> */}
       </div>
     );
   }

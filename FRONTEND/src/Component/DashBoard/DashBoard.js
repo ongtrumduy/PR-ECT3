@@ -20,22 +20,19 @@ export default class DashBoard extends React.Component {
       case "1":
         return (
           <JobType
-            setStatusAddJobFieldForm={this.props.setStatusAddJobFieldForm}
-            setStatusAddJobChildForm={this.props.setStatusAddJobChildForm}
+            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
           />
         );
       case "2":
         return (
           <JobPosition
-            setStatusAddJobFieldForm={this.props.setStatusAddJobFieldForm}
-            setStatusAddJobChildForm={this.props.setStatusAddJobChildForm}
+            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
           />
         );
       case "3":
         return (
           <JobActivity
-            setStatusAddJobFieldForm={this.props.setStatusAddJobFieldForm}
-            setStatusAddJobChildForm={this.props.setStatusAddJobChildForm}
+            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
           />
         );
       case "4":

@@ -27,8 +27,7 @@ export default class JobTypeList extends React.Component {
             </div>
             <div className="Create-Edit-Pane">
               <CreateEditPage
-                setStatusAddJobFieldForm={this.props.setStatusAddJobFieldForm}
-                setStatusAddJobChildForm={this.props.setStatusAddJobChildForm}
+                setStatusRenderModalForm={this.props.setStatusRenderModalForm}
               />
             </div>
           </div>

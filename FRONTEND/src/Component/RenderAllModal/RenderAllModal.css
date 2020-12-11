@@ -1,0 +1,10 @@
+.render-all-modal {
+    position: absolute;
+    bottom: 0;
+    left: -5px;
+    height: 100%;
+    width: 99.6%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-style: groove;
+    display: flex;
+}

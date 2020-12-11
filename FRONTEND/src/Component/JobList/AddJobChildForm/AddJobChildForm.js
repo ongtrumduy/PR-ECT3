@@ -6,37 +6,30 @@ export default class AddJobChildForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      statusAddJobChildForm: false
+      statusRenderModalForm: "addjobchildform"
     };
   }
 
   componentWillReceiveProps = nextProps => {
     this.setState({
-      statusAddJobChildForm: nextProps.statusAddJobChildForm
+      statusRenderModalForm: nextProps.statusRenderModalForm
     });
   };
 
   cancelAddJobChildForm = () => {
     this.setState({
-      statusAddJobChildForm: false
+      statusAddJobChildForm: "none"
     });
-    this.props.setStatusAddJobChildForm(false);
+    this.props.setStatusRenderModalForm("none");
   };
 
   render() {
     return (
-      <div
-        className="Add-Job-Child"
-        style={
-          this.state.statusAddJobChildForm
-            ? { display: "flex" }
-            : { display: "none" }
-        }
-      >
+      <div className="Add-Job-Child">
         <div
           className="Add-Job-Child-Form"
           style={
-            this.state.statusAddJobChildForm
+            this.state.statusRenderModalForm === "addjobchildform"
               ? { display: "flex", flexDirection: "column" }
               : { display: "none" }
           }

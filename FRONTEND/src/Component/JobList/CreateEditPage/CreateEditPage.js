@@ -5,12 +5,8 @@ export default class CreateEditPage extends React.Component {
     super(props);
   }
 
-  setStatusAddJobFieldForm = () => {
-    this.props.setStatusAddJobFieldForm(true);
-  };
-
-  setStatusAddJobChildForm = () => {
-    this.props.setStatusAddJobChildForm(true);
+  setStatusRenderModalForm = add_model => {
+    this.props.setStatusRenderModalForm(add_model);
   };
 
   render() {
@@ -21,21 +17,23 @@ export default class CreateEditPage extends React.Component {
             style={{
               color: "white",
               backgroundColor: "green",
-              margin: "0 0 0 250px"
+              margin: "5px 0 0 240px",
+              width: "80px"
             }}
             type="button"
             value="Thêm nhãn"
-            onClick={() => this.setStatusAddJobChildForm()}
+            onClick={() => this.setStatusRenderModalForm("addjobfieldform")}
           />
           <input
             style={{
               color: "white",
               backgroundColor: "green",
-              margin: "0 0 0 250px"
+              margin: "5px 0 0 240px",
+              width: "80px"
             }}
             type="button"
             value="Thêm con"
-            onClick={() => this.setStatusAddJobChildForm()}
+            onClick={() => this.setStatusRenderModalForm("addjobchildform")}
           />
         </div>
         <div>

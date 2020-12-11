@@ -1,27 +1,16 @@
-.Add-Job-Child {
-    height: 100%;
-    width: 99.8%;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-style: groove;
-    position: relative;
-    bottom: 570px;
-    opacity: 1;
-    display: none;
-}
-
 .Add-Job-Child .Add-Job-Child-Form {
     border-style: groove;
     position: absolute;
-    bottom: 300px;
+    bottom: 240px;
     z-index: 100;
     border-radius: 10px;
-    height: 320px;
+    height: 250px;
     width: 500px;
-    left: 10%;
+    left: 30%;
     font-weight: bold;
     text-align: left;
     background-color: white;
-    display: none;
+    display: flex;
 }
 
 .Add-Job-Child .Add-Job-Child-Form p {
@@ -31,7 +20,7 @@
 .Add-Job-Child .Add-Job-Child-Form .exit-button {
     position: absolute;
     left: 485px;
-    bottom: 300px;
+    bottom: 230px;
 }
 
 .Add-Job-Child .Add-Job-Child-Form input {

@@ -12,8 +12,7 @@ export default class JobActivity extends React.Component {
     return (
       <div>
         <JobTypeList
-          setStatusAddJobFieldForm={this.props.setStatusAddJobFieldForm}
-          setStatusAddJobChildForm={this.props.setStatusAddJobChildForm}
+          setStatusRenderModalForm={this.props.setStatusRenderModalForm}
         />
       </div>
     );

@@ -1,21 +1,10 @@
-.Add-Position-Work {
-    height: 100%;
-    width: 99.8%;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-style: groove;
-    position: relative;
-    bottom: 570px;
-    opacity: 1;
-    display: none;
-}
-
-.Add-Position-Work .Add-Position-Work-Form {
+.Add-Job-Field .Add-Job-Field-Form {
     border-style: groove;
     position: absolute;
-    bottom: 300px;
+    bottom: 240px;
     z-index: 100;
     border-radius: 10px;
-    height: 320px;
+    height: 250px;
     width: 500px;
     left: 30%;
     font-weight: bold;
@@ -24,26 +13,26 @@
     display: none;
 }
 
-.Add-Position-Work .Add-Position-Work-Form p {
+.Add-Job-Field .Add-Job-Field-Form p {
     margin: 5px 0 5px 20px;
 }
 
-.Add-Position-Work .Add-Position-Work-Form .exit-button {
+.Add-Job-Field .Add-Job-Field-Form .exit-button {
     position: absolute;
     left: 485px;
-    bottom: 300px;
+    bottom: 230px;
 }
 
-.Add-Position-Work .Add-Position-Work-Form input {
+.Add-Job-Field .Add-Job-Field-Form input {
     width: 88%;
     margin: 5px 0 5px 20px;
 }
 
-.Add-Position-Work .Add-Position-Work-Form .select-add-job-field {
+.Add-Job-Field .Add-Job-Field-Form .select-add-job-field {
     margin: 5px 0 5px 20px;
 }
 
-.Add-Position-Work .Add-Position-Work-Form .select-add-job-field select {
+.Add-Job-Field .Add-Job-Field-Form .select-add-job-field select {
     width: 93.5%;
     height: 21px;
 }

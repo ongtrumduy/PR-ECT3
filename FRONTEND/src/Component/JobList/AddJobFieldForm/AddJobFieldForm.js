@@ -6,37 +6,30 @@ export default class AddJobFieldForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      statusAddJobFieldForm: false
+      statusRenderModalForm: "addjobfieldform"
     };
   }
 
   componentWillReceiveProps = nextProps => {
     this.setState({
-      statusAddJobFieldForm: nextProps.statusAddJobFieldForm
+      statusRenderModalForm: nextProps.statusRenderModalForm
     });
   };
 
   cancelAddJobFieldForm = () => {
     this.setState({
-      statusAddJobFieldForm: false
+      statusRenderModalForm: "none"
     });
-    this.props.setStatusAddJobFieldForm(false);
+    this.props.setStatusRenderModalForm("none");
   };
 
   render() {
     return (
-      <div
-        className="Add-Position-Work"
-        style={
-          this.state.statusAddJobFieldForm
-            ? { display: "flex" }
-            : { display: "none" }
-        }
-      >
+      <div className="Add-Job-Field">
         <div
-          className="Add-Position-Work-Form"
+          className="Add-Job-Field-Form"
           style={
-            this.state.statusAddJobFieldForm
+            this.state.statusRenderModalForm === "addjobfieldform"
               ? { display: "flex", flexDirection: "column" }
               : { display: "none" }
           }
