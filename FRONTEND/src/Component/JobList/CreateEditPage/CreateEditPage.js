@@ -17,7 +17,7 @@ export default class CreateEditPage extends React.Component {
             style={{
               color: "white",
               backgroundColor: "green",
-              margin: "5px 0 0 240px",
+              margin: "5px 0 0 0",
               width: "80px"
             }}
             type="button"
@@ -28,7 +28,7 @@ export default class CreateEditPage extends React.Component {
             style={{
               color: "white",
               backgroundColor: "green",
-              margin: "5px 0 0 240px",
+              margin: "5px 0 0 0",
               width: "80px"
             }}
             type="button"

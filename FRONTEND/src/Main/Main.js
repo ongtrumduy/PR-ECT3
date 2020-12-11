@@ -26,12 +26,10 @@ export default class Main extends React.Component {
           APP QUẢN LÝ NHÂN SỰ
         </p>
         <DashBoard setStatusRenderModalForm={this.setStatusRenderModalForm} />
-        <div>
-          <RenderAllModal
-            statusRenderModalForm={this.state.statusRenderModalForm}
-            setStatusRenderModalForm={this.setStatusRenderModalForm}
-          />
-        </div>
+        <RenderAllModal
+          statusRenderModalForm={this.state.statusRenderModalForm}
+          setStatusRenderModalForm={this.setStatusRenderModalForm}
+        />
         {/* <DetailInforModal /> */}
       </div>
     );
