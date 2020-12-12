@@ -12,6 +12,7 @@
 
 .search-page .search-div {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     justify-content: flex-end;
     flex-direction: column;
@@ -21,6 +22,7 @@
 .search-page .search-div-1 {
     width: 41%;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     justify-content: flex-end;
     flex-direction: column;
@@ -29,6 +31,7 @@
 .search-page .search-div-2 {
     width: 31%;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     justify-content: flex-end;
     flex-direction: column;

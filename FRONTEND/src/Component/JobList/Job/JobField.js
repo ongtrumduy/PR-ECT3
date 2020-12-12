@@ -3,7 +3,9 @@ import JobChild from "./JobChild";
 
 import ArrowUp from "../../../Icons/Arrow Up.png";
 import ArrowRight from "../../../Icons/Arrow Right.png";
-import JobIcon from "../../../Icons/Button White Stop.png";
+import JobFieldIcon from "../../../Icons/Button White Stop.png";
+import CheckEmpty from "../../../Icons/Checkbox Empty.png";
+import CheckFull from "../../../Icons/Checkbox Full.png";
 
 export default class JobField extends React.Component {
   constructor(props) {
@@ -29,10 +31,7 @@ export default class JobField extends React.Component {
   };
 
   renderJobChild = JobId => {
-    if (
-      this.state.changeIconJob&&
-      this.state.changeIdJob === JobId
-    ) {
+    if (this.state.changeIconJob && this.state.changeIdJob === JobId) {
       return <JobChild JobId={JobId} />;
     }
   };
@@ -49,7 +48,8 @@ export default class JobField extends React.Component {
                 : ArrowUp
             }
           />
-          <img alt="" src={JobIcon} />
+          <img alt="" src={CheckEmpty} />
+          <img alt="" src={JobFieldIcon} />
           <label onClick={() => this.checkChangeIconJob(0)}>
             Công nghệ kỹ thuật
           </label>
@@ -64,7 +64,8 @@ export default class JobField extends React.Component {
                 : ArrowUp
             }
           />
-          <img alt="" src={JobIcon} />
+          <img alt="" src={CheckEmpty} />
+          <img alt="" src={JobFieldIcon} />
           <label onClick={() => this.checkChangeIconJob(1)}>Giáo dục</label>
           {this.renderJobChild(1)}
         </div>
@@ -73,8 +74,6 @@ export default class JobField extends React.Component {
   };
 
   render() {
-    return (
-      <div className="Job--Field-List">{this.positionListJob()}</div>
-    );
+    return <div className="Job-Field-List">{this.positionListJob()}</div>;
   }
 }
