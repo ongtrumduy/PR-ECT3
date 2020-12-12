@@ -11,7 +11,7 @@ export default class PositionChild extends React.Component {
     this.state = {
       changeIconChild: false,
       changeIdChild: -1,
-      checkRemoveJob: false
+      checkRemoveJob: true
     };
   }
 
@@ -24,6 +24,18 @@ export default class PositionChild extends React.Component {
       this.setState({
         changeIconChild: true,
         changeIdChild: ChildId
+      });
+    }
+  };
+
+  checkCheckRemoveJob = () => {
+    if (this.state.checkRemoveJob) {
+      this.setState({
+        checkRemoveJob: false
+      });
+    } else {
+      this.setState({
+        checkRemoveJob: true
       });
     }
   };
@@ -45,7 +57,8 @@ export default class PositionChild extends React.Component {
               <img
                 alt=""
                 src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
-              />{" "}
+                onClick={() => this.checkCheckRemoveJob()}
+              />
               <img alt="" src={ChildIcon} />
               <label onClick={() => this.checkChangeIconChild(0)}>
                 Giám sát kỹ thuật an toàn thông tin
@@ -63,6 +76,7 @@ export default class PositionChild extends React.Component {
               <img
                 alt=""
                 src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
+                onClick={() => this.checkCheckRemoveJob()}
               />
               <img alt="" src={ChildIcon} />
               <label onClick={() => this.checkChangeIconChild(1)}>
@@ -78,7 +92,11 @@ export default class PositionChild extends React.Component {
                     : ArrowUp
                 }
               />
-              <img alt="" src={CheckEmpty} />
+              <img
+                alt=""
+                src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
+                onClick={() => this.checkCheckRemoveJob()}
+              />
               <img alt="" src={ChildIcon} />
               <label onClick={() => this.checkChangeIconChild(2)}>
                 Quản lý hệ thống an toàn thông tin
@@ -99,7 +117,11 @@ export default class PositionChild extends React.Component {
                     : ArrowUp
                 }
               />
-              <img alt="" src={CheckEmpty} />
+              <img
+                alt=""
+                src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
+                onClick={() => this.checkCheckRemoveJob()}
+              />
               <img alt="" src={ChildIcon} />
               <label onClick={() => this.checkChangeIconChild(0)}>
                 Giảng dạy
@@ -114,7 +136,11 @@ export default class PositionChild extends React.Component {
                     : ArrowUp
                 }
               />
-              <img alt="" src={CheckEmpty} />
+              <img
+                alt=""
+                src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
+                onClick={() => this.checkCheckRemoveJob()}
+              />
               <img alt="" src={ChildIcon} />
               <label onClick={() => this.checkChangeIconChild(1)}>
                 Nghiên cứu phát triển ứng dụng công nghệ thông tin

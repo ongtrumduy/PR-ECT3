@@ -3,7 +3,7 @@ import "./Main.css";
 
 import DashBoard from "../Component/DashBoard/DashBoard";
 
-import RenderAllModal from "../Component/RenderAllModal/RenderAllModal";
+import RenderAllModal from "../Component/RenderAllModal/RenderAllModal/RenderAllModal";
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +33,9 @@ export default class Main extends React.Component {
           APP QUẢN LÝ NHÂN SỰ
         </p>
         <DashBoard
+          statusRenderModalForm={this.state.statusRenderModalForm}
           setStatusRenderModalForm={this.setStatusRenderModalForm}
+          setOptionJob={this.state.setOptionJob}
           setModalOptionJob={this.setModalOptionJob}
         />
         <RenderAllModal

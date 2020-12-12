@@ -2,8 +2,9 @@ import React from "react";
 
 import "./RenderAllModal.css";
 
-import AddJobFieldForm from "../JobList/AddJobFieldForm/AddJobFieldForm";
-import AddJobChildForm from "../JobList/AddJobChildForm/AddJobChildForm";
+import AddJobFieldForm from "../AddJobFieldForm/AddJobFieldForm";
+import AddJobChildForm from "../AddJobChildForm/AddJobChildForm";
+import RemoveItemJobForm from "../RemoveItemJobForm/RemoveItemJobForm";
 
 export default class RenderAllModal extends React.Component {
   constructor(props) {
@@ -23,6 +24,14 @@ export default class RenderAllModal extends React.Component {
       case "addjobchildform":
         return (
           <AddJobChildForm
+            statusRenderModalForm={this.props.statusRenderModalForm}
+            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+            setOptionJob={option_job_name}
+          />
+        );
+      case "removeitemjobform":
+        return (
+          <RemoveItemJobForm
             statusRenderModalForm={this.props.statusRenderModalForm}
             setStatusRenderModalForm={this.props.setStatusRenderModalForm}
             setOptionJob={option_job_name}

@@ -23,10 +23,16 @@ export default class JobList extends React.Component {
           </p>
           <div className="Job-List">
             <div className="Job-Branch-List">
-              <JobField />
+              <JobField
+                statusRenderModalForm={this.props.statusRenderModalForm}
+                setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+                setModalOptionJob={this.props.setModalOptionJob}
+                setOptionJob={this.props.setOptionJob}
+              />
             </div>
             <div className="Create-Edit-Pane">
               <CreateEditPage
+                statusRenderModalForm={this.props.statusRenderModalForm}
                 setStatusRenderModalForm={this.props.setStatusRenderModalForm}
                 setModalOptionJob={this.props.setModalOptionJob}
                 setOptionJob={this.props.setOptionJob}

@@ -12,14 +12,22 @@ export default class JobField extends React.Component {
     super(props);
     this.state = {
       changeIconJob: false,
-      changeIdJob: -1
+      changeIdJob: -1,
+      checkRemoveJob: true
     };
   }
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.statusRenderModalForm === "none") {
+      this.setState({
+        checkRemoveJob: true
+      });
+    }
+  };
 
   checkChangeIconJob = JobId => {
     if (this.state.changeIconJob) {
       this.setState({
-        changeIconJob: false,
+        changeIconJob: true,
         changeIdJob: JobId
       });
     } else {
@@ -28,6 +36,16 @@ export default class JobField extends React.Component {
         changeIdJob: JobId
       });
     }
+  };
+
+  checkCheckRemoveJob = () => {
+    if (this.state.checkRemoveJob) {
+      this.setState({
+        checkRemoveJob: false
+      });
+    }
+    this.props.setStatusRenderModalForm("removeitemjobform");
+    this.props.setModalOptionJob(this.props.setOptionJob);
   };
 
   renderJobChild = JobId => {
@@ -48,7 +66,11 @@ export default class JobField extends React.Component {
                 : ArrowUp
             }
           />
-          <img alt="" src={CheckEmpty} />
+          <img
+            alt=""
+            src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
+            onClick={() => this.checkCheckRemoveJob()}
+          />
           <img alt="" src={JobFieldIcon} />
           <label onClick={() => this.checkChangeIconJob(0)}>
             Công nghệ kỹ thuật
@@ -64,7 +86,11 @@ export default class JobField extends React.Component {
                 : ArrowUp
             }
           />
-          <img alt="" src={CheckEmpty} />
+          <img
+            alt=""
+            src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
+            onClick={() => this.checkCheckRemoveJob()}
+          />
           <img alt="" src={JobFieldIcon} />
           <label onClick={() => this.checkChangeIconJob(1)}>Giáo dục</label>
           {this.renderJobChild(1)}
@@ -74,6 +100,8 @@ export default class JobField extends React.Component {
   };
 
   render() {
+    console.log(this.props.statusRenderModalForm);
+
     return <div className="Job-Field-List">{this.positionListJob()}</div>;
   }
 }
