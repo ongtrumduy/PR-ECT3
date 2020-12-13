@@ -15,6 +15,14 @@ export default class PositionChild extends React.Component {
     };
   }
 
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.statusRenderModalForm === "none") {
+      this.setState({
+        checkRemoveJob: true
+      });
+    }
+  };
+
   checkChangeIconChild = ChildId => {
     if (this.state.changeIconChild) {
       this.setState({
@@ -33,11 +41,9 @@ export default class PositionChild extends React.Component {
       this.setState({
         checkRemoveJob: false
       });
-    } else {
-      this.setState({
-        checkRemoveJob: true
-      });
     }
+    this.props.setStatusRenderModalForm("removeitemjobform");
+    this.props.setModalOptionJob(this.props.setOptionJob);
   };
 
   positionListChild = JobId => {
