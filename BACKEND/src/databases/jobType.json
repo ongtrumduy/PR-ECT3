@@ -1,0 +1,34 @@
+[
+  {
+    "jobTypeId": "0",
+    "jobTypeFieldName": "Lĩnh vực test",
+    "jobTypeChild": [
+      {
+        "jobTypeChildId": "0-0",
+        "jobTypeChildName": "Vị trí Test"
+      }
+    ]
+  },
+  {
+    "jobTypeId": "1",
+    "jobTypeFieldName": "IT Phần cứng/mạng",
+    "jobTypeChild": [
+      {
+        "jobTypeChildId": "1-0",
+        "jobTypeChildName": "Chuyên viên IT Mạng"
+      },
+      {
+        "jobTypeChildId": "1-1",
+        "jobTypeChildName": "Chuyên Viên Bảo Mật Ứng dụng"
+      },
+      {
+        "jobTypeChildId": "1-2",
+        "jobTypeChildName": "Chuyên Viên Phân Tích Sự Kiện Bảo Mật"
+      },
+      {
+        "jobTypeChildId": "1-3",
+        "jobTypeChildName": "Kỹ Sư Bảo Mật"
+      }
+    ]
+  }
+]
