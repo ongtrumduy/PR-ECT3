@@ -61,6 +61,18 @@ class JobActivity {
     return jobActivityFieldList;
   }
 
+  readJobField() {
+    let jobFieldList = [];
+    this.JobActivity.forEach(item => {
+      let jobField = {
+        jobFieldId: item.jobActivityFieldId,
+        jobFieldName: item.jobActivityFieldName
+      };
+      jobFieldList.push(jobField);
+    });
+    return jobFieldList;
+  }
+
   readJobActivityChild(data) {
     let index = data.jobActivityChildId;
     return this.JobActivity[index].jobActivityChild;

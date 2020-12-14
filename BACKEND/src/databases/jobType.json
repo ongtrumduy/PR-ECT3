@@ -1,6 +1,6 @@
 [
   {
-    "jobTypeId": "0",
+    "jobTypeFieldId": "0",
     "jobTypeFieldName": "Lĩnh vực test",
     "jobTypeChild": [
       {
@@ -10,7 +10,7 @@
     ]
   },
   {
-    "jobTypeId": "1",
+    "jobTypeFieldId": "1",
     "jobTypeFieldName": "IT Phần cứng/mạng",
     "jobTypeChild": [
       {

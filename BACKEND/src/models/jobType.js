@@ -58,6 +58,18 @@ class JobType {
     return jobTypeFieldList;
   }
 
+  readJobField() {
+    let jobFieldList = [];
+    this.JobType.forEach(item => {
+      let jobField = {
+        jobFieldId: item.jobTypeFieldId,
+        jobFieldName: item.jobTypeFieldName
+      };
+      jobFieldList.push(jobField);
+    });
+    return jobFieldList;
+  }
+
   readJobTypeChild(data) {
     let index = data.jobTypeChildId;
     return this.JobType[index].jobTypeChild;
