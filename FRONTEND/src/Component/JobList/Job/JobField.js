@@ -59,6 +59,12 @@ export default class JobField extends React.Component {
         checkRemoveJob: true
       });
     }
+    if (this.state.setOptionJob !== nextProps.setOptionJob) {
+      this.receiveJobFieldDataList(
+        nextProps.setOptionJob,
+        this.receiveJobFieldList
+      );
+    }
   };
 
   receiveJobFieldList = _jobtypefieldlist => {
@@ -70,7 +76,7 @@ export default class JobField extends React.Component {
   checkChangeIconJob = JobId => {
     if (this.state.changeIconJob) {
       this.setState({
-        changeIconJob: true,
+        changeIconJob: false,
         changeIdJob: JobId
       });
     } else {

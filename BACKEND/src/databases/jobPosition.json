@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "jobActivityFieldId": "0",
+    "jobActivityFieldName": "Lĩnh vực test",
+    "jobPositionFieldId": "0",
+    "jobActivityChild": [
+      {
+        "jobActivityChildId": "0-0",
+        "jobActivityChildName": "Vị trí Test"
+      }
+    ]
+  },
+  {
+    "jobActivityFieldId": "1",
+    "jobActivityFieldName": "IT Phần cứng/mạng",
+    "jobPositionFieldId": "1",
+    "jobActivityChild": [
+      {
+        "jobActivityChildId": "1-0",
+        "jobActivityChildName": "Chuyên viên IT Mạng"
+      },
+      {
+        "jobActivityChildId": "1-1",
+        "jobActivityChildName": "Chuyên Viên Bảo Mật Ứng dụng"
+      },
+      {
+        "jobActivityChildId": "1-2",
+        "jobActivityChildName": "Chuyên Viên Phân Tích Sự Kiện Bảo Mật"
+      },
+      {
+        "jobActivityChildId": "1-3",
+        "jobActivityChildName": "Kỹ Sư Bảo Mật"
+      }
+    ]
+  }
+]
