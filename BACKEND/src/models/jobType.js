@@ -70,6 +70,21 @@ class JobType {
     return jobFieldList;
   }
 
+  readJobChild(data) {
+    let jobChildList = [];
+    let indexChild = this.JobType.findIndex(item => {
+      return (data.jobFieldId = item.jobTypeFieldId);
+    });
+    this.JobType[indexChild].jobTypeChild.forEach(item => {
+      let jobChild = {
+        jobChildId: item.jobTypeChildId,
+        jobChildName: item.jobTypeChildName
+      };
+      jobChildList.push(jobChild);
+    });
+    return jobChildList;
+  }
+
   readJobTypeChild(data) {
     let index = data.jobTypeChildId;
     return this.JobType[index].jobTypeChild;

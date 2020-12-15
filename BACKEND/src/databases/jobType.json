@@ -1,17 +1,25 @@
 [
   {
     "jobTypeFieldId": "0",
-    "jobTypeFieldName": "afffffghghghghghghghghghghgh",
+    "jobTypeFieldName": "Giáo dục",
     "jobTypeChild": [
       {
         "jobTypeChildId": "0-0",
-        "jobTypeChildName": "Vị trí Test"
+        "jobTypeChildName": "Giảng viên"
+      },
+      {
+        "jobTypeChildId": "0-1",
+        "jobTypeChildName": "Trợ giảng"
+      },
+      {
+        "jobTypeChildId": "0-2",
+        "jobTypeChildName": "IT Teacher"
       }
     ]
   },
   {
     "jobTypeFieldId": "1",
-    "jobTypeFieldName": "assssssssssss",
+    "jobTypeFieldName": "IT phần cứng/mạng",
     "jobTypeChild": [
       {
         "jobTypeChildId": "1-0",
@@ -19,15 +27,75 @@
       },
       {
         "jobTypeChildId": "1-1",
-        "jobTypeChildName": "Chuyên Viên Bảo Mật Ứng dụng"
+        "jobTypeChildName": "Chuyên viên Bảo Mật Ứng dụng"
       },
       {
         "jobTypeChildId": "1-2",
-        "jobTypeChildName": "Chuyên Viên Phân Tích Sự Kiện Bảo Mật"
+        "jobTypeChildName": "Chuyên viên Phân Tích Sự Kiện Bảo Mật"
       },
       {
         "jobTypeChildId": "1-3",
         "jobTypeChildName": "Kỹ Sư Bảo Mật"
+      }
+    ]
+  },
+  {
+    "jobTypeFieldId": "2",
+    "jobTypeFieldName": "Lĩnh vực test",
+    "jobTypeChild": [
+      {
+        "jobTypeChildId": "2-0",
+        "jobTypeChildName": "Vị trí test"
+      }
+    ]
+  },
+  {
+    "jobTypeFieldId": "3",
+    "jobTypeFieldName": "IT phần mềm",
+    "jobTypeChild": [
+      {
+        "jobTypeChildId": "3-0",
+        "jobTypeChildName": "Chuyên viên hỗ trợ khách hàng"
+      },
+      {
+        "jobTypeChildId": "3-1",
+        "jobTypeChildName": "Chuyên viên Quản trị và Bảo Trì Ứng Dụng"
+      },
+      {
+        "jobTypeChildId": "3-2",
+        "jobTypeChildName": "Kỹ thuật viên"
+      },
+      {
+        "jobTypeChildId": "3-3",
+        "jobTypeChildName": "Data Analyst"
+      },
+      {
+        "jobTypeChildId": "3-4",
+        "jobTypeChildName": "UX Designer"
+      },
+      {
+        "jobTypeChildId": "3-5",
+        "jobTypeChildName": "Business Analyst"
+      },
+      {
+        "jobTypeChildId": "3-6",
+        "jobTypeChildName": "Android Engineer"
+      },
+      {
+        "jobTypeChildId": "3-7",
+        "jobTypeChildName": "iOS Engineer"
+      },
+      {
+        "jobTypeChildId": "3-8",
+        "jobTypeChildName": "Front-End Engineer"
+      },
+      {
+        "jobTypeChildId": "3-9",
+        "jobTypeChildName": "Back-End Engineer"
+      },
+      {
+        "jobTypeChildId": "3-10",
+        "jobTypeChildName": "Software Engineer"
       }
     ]
   }

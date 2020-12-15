@@ -7,15 +7,15 @@ let receiveJobField = (req, res, next) => {
   switch (req.body.jobFieldOptionName) {
     case "lĩnh vực":
       let jobTypeField = jobType.readJobField();
-      console.log(jobTypeField);
+      // console.log(jobTypeField);
       return res.send(jobTypeField);
     case "vị trí":
       let jobPositionField = jobPosition.readJobField();
-      console.log(jobPositionField);
+      // console.log(jobPositionField);
       return res.send(jobPositionField);
     case "hoạt động":
       let jobActivityField = jobActivity.readJobField();
-      console.log(jobActivityField);
+      // console.log(jobActivityField);
       return res.send(jobActivityField);
   }
 };

@@ -73,6 +73,21 @@ class JobPosition {
     return jobFieldList;
   }
 
+  readJobChild(data) {
+    let jobChildList = [];
+    let indexChild = this.JobPosition.findIndex(item => {
+      return (data.jobFieldId = item.jobPositionFieldId);
+    });
+    this.JobPosition[indexChild].jobPositionChild.forEach(item => {
+      let jobChild = {
+        jobChildId: item.jobPositionChildId,
+        jobChildName: item.jobPositionChildName
+      };
+      jobChildList.push(jobChild);
+    });
+    return jobChildList;
+  }
+
   readJobPositionChild(data) {
     let index = data.jobPositionChildId;
     return this.JobPosition[index].jobPositionChild;

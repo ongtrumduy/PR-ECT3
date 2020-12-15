@@ -13,10 +13,10 @@ export default class JobField extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      changeIconJob: false,
-      changeIdJob: -1,
-      checkRemoveJob: true,
-      jobtypefieldlist: []
+      changeIconField: false,
+      checkRemoveField: true,
+      jobFieldId: "",
+      jobfieldlist: []
     };
   }
 
@@ -40,7 +40,7 @@ export default class JobField extends React.Component {
     };
     request(options, (error, response, body) => {
       if (error) throw new Error(error);
-      console.log(body);
+      // console.log(body);
       let receiveJobField = JSON.parse(body);
       callbackJobField(receiveJobField);
     });
@@ -56,7 +56,7 @@ export default class JobField extends React.Component {
   componentWillReceiveProps = nextProps => {
     if (nextProps.statusRenderModalForm === "none") {
       this.setState({
-        checkRemoveJob: true
+        checkRemoveField: true
       });
     }
     if (this.state.setOptionJob !== nextProps.setOptionJob) {
@@ -64,44 +64,47 @@ export default class JobField extends React.Component {
         nextProps.setOptionJob,
         this.receiveJobFieldList
       );
+      this.setState({
+        changeIconField: false
+      });
     }
   };
 
-  receiveJobFieldList = _jobtypefieldlist => {
+  receiveJobFieldList = _jobfieldlist => {
     this.setState({
-      jobtypefieldlist: _jobtypefieldlist
+      jobfieldlist: _jobfieldlist
     });
   };
 
-  checkChangeIconJob = JobId => {
-    if (this.state.changeIconJob) {
+  checkChangeIconField = _jobFieldId => {
+    if (this.state.changeIconField && this.state.jobFieldId === _jobFieldId) {
       this.setState({
-        changeIconJob: false,
-        changeIdJob: JobId
+        changeIconField: false,
+        jobFieldId: _jobFieldId
       });
     } else {
       this.setState({
-        changeIconJob: true,
-        changeIdJob: JobId
+        changeIconField: true,
+        jobFieldId: _jobFieldId
       });
     }
   };
 
-  checkCheckRemoveJob = () => {
-    if (this.state.checkRemoveJob) {
+  checkCheckRemoveField = () => {
+    if (this.state.checkRemoveField) {
       this.setState({
-        checkRemoveJob: false
+        checkRemoveField: false
       });
     }
     this.props.setStatusRenderModalForm("removeitemjobform");
     this.props.setModalOptionJob(this.props.setOptionJob);
   };
 
-  renderJobChild = JobId => {
-    if (this.state.changeIconJob && this.state.changeIdJob === JobId) {
+  renderJobChild = jobFieldId => {
+    if (this.state.changeIconField && this.state.jobFieldId === jobFieldId) {
       return (
         <JobChild
-          JobId={JobId}
+          jobFieldId={jobFieldId}
           statusRenderModalForm={this.props.statusRenderModalForm}
           setStatusRenderModalForm={this.props.setStatusRenderModalForm}
           setModalOptionJob={this.props.setModalOptionJob}
@@ -111,27 +114,28 @@ export default class JobField extends React.Component {
     }
   };
 
-  positionListJob = () => {
+  positionListField = () => {
     return (
       <div>
-        {this.state.jobtypefieldlist.map((item, index) => (
+        {this.state.jobfieldlist.map((item, index) => (
           <div key={index}>
             <div>
               <img
-                alt="icon-job-"
+                alt="icon-job-field"
                 src={
-                  this.state.changeIconJob && this.state.changeIdJob === 1
+                  this.state.changeIconField &&
+                  this.state.jobFieldId === item.jobFieldId
                     ? ArrowRight
                     : ArrowUp
                 }
               />
               <img
                 alt=""
-                src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
-                onClick={() => this.checkCheckRemoveJob()}
+                src={this.state.checkRemoveField ? CheckEmpty : CheckFull}
+                onClick={() => this.checkCheckRemoveField()}
               />
               <img alt="" src={JobFieldIcon} />
-              <label onClick={() => this.checkChangeIconJob(1)}>
+              <label onClick={() => this.checkChangeIconField(item.jobFieldId)}>
                 {item.jobFieldName}
               </label>
               {this.renderJobChild(item.jobFieldId)}
@@ -143,8 +147,6 @@ export default class JobField extends React.Component {
   };
 
   render() {
-    console.log(this.state.jobtypefieldlist);
-
-    return <div className="Job-Field-List">{this.positionListJob()}</div>;
+    return <div className="Job-Field-List">{this.positionListField()}</div>;
   }
 }
