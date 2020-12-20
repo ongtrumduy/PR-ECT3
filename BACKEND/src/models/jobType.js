@@ -73,7 +73,7 @@ class JobType {
   readJobChild(data) {
     let jobChildList = [];
     let indexChild = this.JobType.findIndex(item => {
-      return (data.jobFieldId = item.jobTypeFieldId);
+      return data.jobFieldId === item.jobTypeFieldId;
     });
     this.JobType[indexChild].jobTypeChild.forEach(item => {
       let jobChild = {
@@ -90,6 +90,16 @@ class JobType {
     return this.JobType[index].jobTypeChild;
   }
 
+  readGrandJobTypeField() {
+    let grandList = [];
+    let grand = {
+      jobGrandId: -9999,
+      jobGrandName: "Không có nhãn cha cho lĩnh vực"
+    };
+    grandList.push(grand);
+    return grandList;
+  }
+
   updateJobTypeField() {
     this.JobType.forEach(item => {
       if ((data.jobTypeFieldId = item.jobTypeFieldId)) {
@@ -100,7 +110,7 @@ class JobType {
 
   updateJobTypeChild(data) {
     let indexField = this.JobType.findIndex(item => {
-      return (data.jobTypeFieldId = item.jobTypeFieldId);
+      return data.jobTypeFieldId === item.jobTypeFieldId;
     });
     this.JobType[indexField].jobTypeChild.forEach(item => {
       if ((data.jobTypeChildId = item.jobTypeChildId)) {
@@ -111,7 +121,7 @@ class JobType {
 
   deleteJobTypeField() {
     let indexField = this.JobType.findIndex(item => {
-      return (data.jobTypeFieldId = item.jobTypeFieldId);
+      return data.jobTypeFieldId === item.jobTypeFieldId;
     });
     this.JobType.splice(indexField, 1);
     this.saveJobTypeDataJson();
@@ -119,10 +129,10 @@ class JobType {
 
   deleteJobTypeChild(data) {
     let indexField = this.JobType.findIndex(item => {
-      return (data.jobTypeFieldId = item.jobTypeFieldId);
+      return data.jobTypeFieldId === item.jobTypeFieldId;
     });
     let indexChild = this.JobType[indexField].jobTypeChild.findIndex(item => {
-      return (data.jobTypeChildId = item.jobTypeChildId);
+      return data.jobTypeChildId === item.jobTypeChildId;
     });
     this.JobType[indexField].jobTypeChild.splice(indexChild, 1);
     this.saveJobTypeDataJson();

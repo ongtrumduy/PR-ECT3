@@ -16,10 +16,11 @@ export default class JobField extends React.Component {
       changeIconField: false,
       checkRemoveField: true,
       jobFieldId: "",
-      jobfieldlist: []
+      jobFieldList: []
     };
   }
 
+  //-----------------------------------------------------------------------
   receiveJobFieldDataList = (_jobFieldOptionName, callbackJobField) => {
     var options = {
       method: "POST",
@@ -45,6 +46,7 @@ export default class JobField extends React.Component {
       callbackJobField(receiveJobField);
     });
   };
+  //-----------------------------------------------------------------------
 
   componentWillMount = () => {
     this.receiveJobFieldDataList(
@@ -70,9 +72,9 @@ export default class JobField extends React.Component {
     }
   };
 
-  receiveJobFieldList = _jobfieldlist => {
+  receiveJobFieldList = _jobFieldList => {
     this.setState({
-      jobfieldlist: _jobfieldlist
+      jobFieldList: _jobFieldList
     });
   };
 
@@ -117,7 +119,7 @@ export default class JobField extends React.Component {
   positionListField = () => {
     return (
       <div>
-        {this.state.jobfieldlist.map((item, index) => (
+        {this.state.jobFieldList.map((item, index) => (
           <div key={index}>
             <div>
               <img

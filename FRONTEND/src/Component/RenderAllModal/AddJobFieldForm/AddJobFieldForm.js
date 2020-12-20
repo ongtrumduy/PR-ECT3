@@ -1,4 +1,6 @@
 import React from "react";
+import request from "request";
+
 import "./AddJobFieldForm.css";
 import ExitButton from "../../../Icons/Stop.png";
 
@@ -6,13 +8,58 @@ export default class AddJobFieldForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      statusRenderModalForm: "addjobfieldform"
+      statusRenderModalForm: "addjobfieldform",
+      jobFieldName: "",
+      jobFieldFormList: []
     };
   }
+
+  receiveJobFieldForm = (_jobFieldOptionName, callbackJobFieldForm) => {
+    var options = {
+      method: "POST",
+      url: "http://localhost:8081/receiveJobFieldForm",
+      headers: {
+        "cache-control": "no-cache",
+        Connection: "keep-alive",
+        "Content-Length": "0",
+        "Accept-Encoding": "gzip, deflate",
+        Host: "localhost:8081",
+        "Cache-Control": "no-cache",
+        Accept: "*/*",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        jobFieldOptionName: _jobFieldOptionName
+      })
+    };
+    request(options, (error, response, body) => {
+      if (error) throw new Error(error);
+      console.log(body);
+      let receiveJobFormForm = JSON.parse(body);
+      callbackJobFieldForm(receiveJobFormForm);
+    });
+  };
+
+  componentWillMount = () => {
+    this.receiveJobFieldForm(
+      this.props.setOptionJob,
+      this.receiveJobFieldFormList
+    );
+  };
 
   componentWillReceiveProps = nextProps => {
     this.setState({
       statusRenderModalForm: nextProps.statusRenderModalForm
+    });
+    this.receiveJobFieldForm(
+      this.props.setOptionJob,
+      this.receiveJobFieldFormList
+    );
+  };
+
+  receiveJobFieldFormList = _jobFieldFormList => {
+    this.setState({
+      jobFieldFormList: _jobFieldFormList
     });
   };
 
@@ -52,8 +99,9 @@ export default class AddJobFieldForm extends React.Component {
           </p>
           <div className="select-add-job-field">
             <select>
-              <option>Công nghệ kĩ thuật</option>
-              <option>Giáo dục</option>
+              {this.state.jobFieldFormList.map((item, index) => {
+                return <option key={index}>{item.jobGrandName}</option>;
+              })}
             </select>
           </div>
           <div
@@ -66,14 +114,20 @@ export default class AddJobFieldForm extends React.Component {
           >
             <div>
               <input
-                style={{ color: "white", backgroundColor: "green" }}
+                style={{
+                  color: "white",
+                  backgroundColor: "green"
+                }}
                 type="button"
                 value="Lưu"
               />
             </div>
             <div>
               <input
-                style={{ color: "white", backgroundColor: "red" }}
+                style={{
+                  color: "white",
+                  backgroundColor: "red"
+                }}
                 type="button"
                 value="Đóng"
                 onClick={() => this.cancelAddJobFieldForm()}

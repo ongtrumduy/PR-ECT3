@@ -19,6 +19,7 @@ export default class RenderAllModal extends React.Component {
             statusRenderModalForm={this.props.statusRenderModalForm}
             setStatusRenderModalForm={this.props.setStatusRenderModalForm}
             setOptionJob={option_job_name}
+            socket={this.props.socket}
           />
         );
       case "addjobchildform":
@@ -27,6 +28,7 @@ export default class RenderAllModal extends React.Component {
             statusRenderModalForm={this.props.statusRenderModalForm}
             setStatusRenderModalForm={this.props.setStatusRenderModalForm}
             setOptionJob={option_job_name}
+            socket={this.props.socket}
           />
         );
       case "removeitemjobform":
@@ -35,6 +37,7 @@ export default class RenderAllModal extends React.Component {
             statusRenderModalForm={this.props.statusRenderModalForm}
             setStatusRenderModalForm={this.props.setStatusRenderModalForm}
             setOptionJob={option_job_name}
+            socket={this.props.socket}
           />
         );
     }

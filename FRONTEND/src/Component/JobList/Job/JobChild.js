@@ -12,8 +12,8 @@ export default class PositionChild extends React.Component {
     this.state = {
       changeIconChild: false,
       jobChildId: "",
-      checkRemoveChild: false,
-      jobchildlist: []
+      checkRemoveChild: true,
+      jobChildList: []
     };
   }
 
@@ -71,9 +71,9 @@ export default class PositionChild extends React.Component {
     }
   };
 
-  receiveJobChildList = _jobchildlist => {
+  receiveJobChildList = _jobChildList => {
     this.setState({
-      jobchildlist: _jobchildlist
+      jobChildList: _jobChildList
     });
   };
 
@@ -103,7 +103,7 @@ export default class PositionChild extends React.Component {
   positionListChild = () => {
     return (
       <div>
-        {this.state.jobchildlist.map((item, index) => (
+        {this.state.jobChildList.map((item, index) => (
           <div key={index}>
             <div>
               <img
@@ -130,57 +130,6 @@ export default class PositionChild extends React.Component {
       </div>
     );
   };
-
-  //   case 1:
-  //     return (
-  //       <div>
-  //         <div>
-  //           <img
-  //             alt="icon-Child "
-  //             src={
-  //               this.state.changeIconChild && this.state.changeIdChild === 0
-  //                 ? ArrowRight
-  //                 : ArrowUp
-  //             }
-  //           />
-  //           <img
-  //             alt=""
-  //             src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
-  //             onClick={() => this.checkCheckRemoveJob()}
-  //           />
-  //           <img alt="" src={ChildIcon} />
-  //           <label onClick={() => this.checkChangeIconChild(0)}>
-  //             Giảng dạy
-  //           </label>
-  //         </div>
-  //         <div>
-  //           <img
-  //             alt="icon-Child "
-  //             src={
-  //               this.state.changeIconChild && this.state.changeIdChild === 1
-  //                 ? ArrowRight
-  //                 : ArrowUp
-  //             }
-  //           />
-  //           <img
-  //             alt=""
-  //             src={this.state.checkRemoveJob ? CheckEmpty : CheckFull}
-  //             onClick={() => this.checkCheckRemoveJob()}
-  //           />
-  //           <img alt="" src={ChildIcon} />
-  //           <label onClick={() => this.checkChangeIconChild(1)}>
-  //             Nghiên cứu phát triển ứng dụng công nghệ thông tin
-  //           </label>
-  //         </div>
-  //       </div>
-  //     );
-  // }
-  //   return (
-  //     <div>
-  //       <p>agaijgsiajigajijgaaj</p>
-  //     </div>
-  //   );
-  // };
 
   render() {
     return (

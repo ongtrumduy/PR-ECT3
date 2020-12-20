@@ -1,4 +1,6 @@
 import React from "react";
+import request from "request";
+
 import "./AddJobChildForm.css";
 import ExitButton from "../../../Icons/Stop.png";
 
@@ -6,13 +8,58 @@ export default class AddJobChildForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      statusRenderModalForm: "addjobchildform"
+      statusRenderModalForm: "addjobchildform",
+      jobChildName: "",
+      jobChildFormList: []
     };
   }
+
+  receiveJobChildForm = (_jobFieldOptionName, callbackJobChildForm) => {
+    var options = {
+      method: "POST",
+      url: "http://localhost:8081/receiveJobChildForm",
+      headers: {
+        "cache-control": "no-cache",
+        Connection: "keep-alive",
+        "Content-Length": "0",
+        "Accept-Encoding": "gzip, deflate",
+        Host: "localhost:8081",
+        "Cache-Control": "no-cache",
+        Accept: "*/*",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        jobFieldOptionName: _jobFieldOptionName
+      })
+    };
+    request(options, (error, response, body) => {
+      if (error) throw new Error(error);
+      console.log(body);
+      let receiveJobChildForm = JSON.parse(body);
+      callbackJobChildForm(receiveJobChildForm);
+    });
+  };
+
+  componentWillMount = () => {
+    this.receiveJobChildForm(
+      this.props.setOptionJob,
+      this.receiveJobChildFormList
+    );
+  };
 
   componentWillReceiveProps = nextProps => {
     this.setState({
       statusRenderModalForm: nextProps.statusRenderModalForm
+    });
+    this.receiveJobChildForm(
+      this.props.setOptionJob,
+      this.receiveJobChildFormList
+    );
+  };
+
+  receiveJobChildFormList = _jobChildFormList => {
+    this.setState({
+      jobChildFormList: _jobChildFormList
     });
   };
 
@@ -21,6 +68,21 @@ export default class AddJobChildForm extends React.Component {
       statusAddJobChildForm: "none"
     });
     this.props.setStatusRenderModalForm("none");
+  };
+
+  handleJobPositionChildName = event => {
+    this.setState({
+      jobPositionChildName: event.target.value
+    });
+  };
+
+  createNewJobChildForm = () => {
+    let data = {
+      jobChildOptionName: this.props.setOptionJob,
+      jobPositionChildName: this.state.jobPositionChildName,
+      jobPositionFieldId: this.state.jobPositionFieldId
+    };
+    this.props.socket.emit("create-new-job-child", data);
   };
 
   render() {
@@ -52,8 +114,9 @@ export default class AddJobChildForm extends React.Component {
           </p>
           <div className="select-add-job-child">
             <select>
-              <option>Công nghệ kĩ thuật</option>
-              <option>Giáo dục</option>
+              {this.state.jobChildFormList.map((item, index) => {
+                return <option key={index}>{item.jobFieldName}</option>;
+              })}
             </select>
           </div>
           <div
@@ -66,14 +129,20 @@ export default class AddJobChildForm extends React.Component {
           >
             <div>
               <input
-                style={{ color: "white", backgroundColor: "green" }}
+                style={{
+                  color: "white",
+                  backgroundColor: "green"
+                }}
                 type="button"
                 value="Lưu"
               />
             </div>
             <div>
               <input
-                style={{ color: "white", backgroundColor: "red" }}
+                style={{
+                  color: "white",
+                  backgroundColor: "red"
+                }}
                 type="button"
                 value="Đóng"
                 onClick={() => this.cancelAddJobChildForm()}

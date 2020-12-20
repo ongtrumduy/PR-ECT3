@@ -56,11 +56,11 @@ export default class CreateEditPage extends React.Component {
           }}
         >
           <div style={{ width: "70%" }}>
-            <input
+            {/* <input
               style={{ color: "white", backgroundColor: "red" }}
               type="button"
               value="Đóng"
-            />
+            /> */}
           </div>
           <div>
             <input

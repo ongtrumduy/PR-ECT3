@@ -1,4 +1,6 @@
 import React from "react";
+import ioclient from "socket.io-client";
+
 import "./Main.css";
 
 import DashBoard from "../Component/DashBoard/DashBoard";
@@ -13,6 +15,10 @@ export default class Main extends React.Component {
       setOptionJob: "none"
     };
   }
+
+  componentWillMount = () => {
+    this.socket = ioclient("http://localhost:8081");
+  };
 
   setStatusRenderModalForm = status => {
     this.setState({
@@ -37,12 +43,14 @@ export default class Main extends React.Component {
           setStatusRenderModalForm={this.setStatusRenderModalForm}
           setOptionJob={this.state.setOptionJob}
           setModalOptionJob={this.setModalOptionJob}
+          socket={this.socket}
         />
         <RenderAllModal
           statusRenderModalForm={this.state.statusRenderModalForm}
           setStatusRenderModalForm={this.setStatusRenderModalForm}
           setOptionJob={this.state.setOptionJob}
           setModalOptionJob={this.setModalOptionJob}
+          socket={this.socket}
         />
       </div>
     );

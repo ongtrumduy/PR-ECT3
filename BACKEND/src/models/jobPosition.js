@@ -1,4 +1,5 @@
 import fs from "fs";
+import jobType from "./jobType";
 
 class JobPosition {
   constructor() {
@@ -76,7 +77,7 @@ class JobPosition {
   readJobChild(data) {
     let jobChildList = [];
     let indexChild = this.JobPosition.findIndex(item => {
-      return (data.jobFieldId = item.jobPositionFieldId);
+      return data.jobFieldId === item.jobPositionFieldId;
     });
     this.JobPosition[indexChild].jobPositionChild.forEach(item => {
       let jobChild = {
@@ -93,6 +94,19 @@ class JobPosition {
     return this.JobPosition[index].jobPositionChild;
   }
 
+  readGrandJobPositionField() {
+    let grandTypeList = [];
+    let jobTypeList = jobType.readJobTypeField();
+    jobTypeList.forEach(item => {
+      let grandType = {
+        jobGrandId: item.jobTypeFieldId,
+        jobGrandName: item.jobTypeFieldName
+      };
+      grandTypeList.push(grandType);
+    });
+    return grandTypeList;
+  }
+
   updateJobPositionField() {
     this.JobPosition.forEach(item => {
       if ((data.jobPositionFieldId = item.jobPositionFieldId)) {
@@ -103,7 +117,7 @@ class JobPosition {
 
   updateJobPositionChild(data) {
     let indexField = this.JobPosition.findIndex(item => {
-      return (data.jobPositionFieldId = item.jobPositionFieldId);
+      return data.jobPositionFieldId === item.jobPositionFieldId;
     });
     this.JobPosition[indexField].jobPositionChild.forEach(item => {
       if ((data.jobPositionChildId = item.jobPositionChildId)) {
@@ -114,7 +128,7 @@ class JobPosition {
 
   deleteJobPositionField() {
     let indexField = this.JobPosition.findIndex(item => {
-      return (data.jobPositionFieldId = item.jobPositionFieldId);
+      return data.jobPositionFieldId === item.jobPositionFieldId;
     });
     this.JobPosition.splice(indexField, 1);
     this.saveJobPositionDataJson();
@@ -122,11 +136,11 @@ class JobPosition {
 
   deleteJobPositionChild(data) {
     let indexField = this.JobPosition.findIndex(item => {
-      return (data.jobPositionFieldId = item.jobPositionFieldId);
+      return data.jobPositionFieldId === item.jobPositionFieldId;
     });
     let indexChild = this.JobPosition[indexField].jobPositionChild.findIndex(
       item => {
-        return (data.jobPositionChildId = item.jobPositionChildId);
+        return data.jobPositionChildId === item.jobPositionChildId;
       }
     );
     this.JobPosition[indexField].jobPositionChild.splice(indexChild, 1);

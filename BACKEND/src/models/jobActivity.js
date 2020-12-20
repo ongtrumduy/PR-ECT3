@@ -1,4 +1,5 @@
 import fs from "fs";
+import jobPosition from "./jobPosition";
 
 class JobActivity {
   constructor() {
@@ -76,7 +77,7 @@ class JobActivity {
   readJobChild(data) {
     let jobChildList = [];
     let indexChild = this.JobActivity.findIndex(item => {
-      return (data.jobFieldId = item.jobActivityFieldId);
+      return data.jobFieldId === item.jobActivityFieldId;
     });
     this.JobActivity[indexChild].jobActivityChild.forEach(item => {
       let jobChild = {
@@ -93,6 +94,19 @@ class JobActivity {
     return this.JobActivity[index].jobActivityChild;
   }
 
+  readGrandJobActivityField() {
+    let grandPositionList = [];
+    let jobPositionList = jobPosition.readJobPositionField();
+    jobPositionList.forEach(item => {
+      let grandPosition = {
+        jobGrandId: item.jobPositionFieldId,
+        jobGrandName: item.jobPositionFieldName
+      };
+      grandPositionList.push(grandPosition);
+    });
+    return grandPositionList;
+  }
+
   updateJobActivityField() {
     this.JobActivity.forEach(item => {
       if ((data.jobActivityFieldId = item.jobActivityFieldId)) {
@@ -103,7 +117,7 @@ class JobActivity {
 
   updateJobActivityChild(data) {
     let indexField = this.JobActivity.findIndex(item => {
-      return (data.jobActivityFieldId = item.jobActivityFieldId);
+      return data.jobActivityFieldId === item.jobActivityFieldId;
     });
     this.JobActivity[indexField].jobActivityChild.forEach(item => {
       if ((data.jobActivityChildId = item.jobActivityChildId)) {
@@ -114,7 +128,7 @@ class JobActivity {
 
   deleteJobActivityField() {
     let indexField = this.JobActivity.findIndex(item => {
-      return (data.jobActivityFieldId = item.jobActivityFieldId);
+      return data.jobActivityFieldId === item.jobActivityFieldId;
     });
     this.JobActivity.splice(indexField, 1);
     this.saveJobActivityDataJson();
@@ -122,11 +136,11 @@ class JobActivity {
 
   deleteJobActivityChild(data) {
     let indexField = this.JobActivity.findIndex(item => {
-      return (data.jobActivityFieldId = item.jobActivityFieldId);
+      return data.jobActivityFieldId === item.jobActivityFieldId;
     });
     let indexChild = this.JobActivity[indexField].jobActivityChild.findIndex(
       item => {
-        return (data.jobActivityChildId = item.jobActivityChildId);
+        return data.jobActivityChildId === item.jobActivityChildId;
       }
     );
     this.JobActivity[indexField].jobActivityChild.splice(indexChild, 1);

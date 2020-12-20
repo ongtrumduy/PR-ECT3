@@ -5,8 +5,7 @@ import http from "http";
 import socketio from "socket.io";
 import events from "events";
 
-import receiveJobFieldRoutes from "../BackEnd/src/routes/receiveJobField";
-import receiveJobChildRoutes from "../BackEnd/src/routes/receiveJobChild";
+import allRoutes from "../BackEnd/src/routes/allRoutes";
 
 // import allSockets from "../BackEnd/src/io-sockets/allsockets";
 
@@ -31,9 +30,7 @@ events.EventEmitter.defaultMaxListeners = 69696969696969696969696969696969696969
 
 //========================Routes=========================================
 
-receiveJobFieldRoutes(app, corsOptions);
-
-receiveJobChildRoutes(app, corsOptions);
+allRoutes(app, corsOptions);
 
 //=========================================================================
 
