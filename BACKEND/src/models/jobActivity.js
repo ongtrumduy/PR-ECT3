@@ -27,9 +27,9 @@ class JobActivity {
   createNewJobActivityField(data) {
     let countJobActivityField = this.JobActivity.length;
     let newJobActivityField = {
-      jobActivityFieldId: countJobActivityField,
-      jobActivityFieldName: data.jobActivityFieldName,
-      jobPositionFieldId: data.jobPositionFieldId,
+      jobActivityFieldId: "" + countJobActivityField,
+      jobActivityFieldName: data.jobFieldName,
+      jobPositionFieldId: data.jobGrandId,
       jobActivityChild: []
     };
     this.JobActivity.push(newJobActivityField);
@@ -38,13 +38,14 @@ class JobActivity {
 
   createNewJobActivityChild(data) {
     let index = this.JobActivity.findIndex(item => {
-      return data.jobActivityFieldId === item.jobActivityFieldId;
+      return data.jobFieldId === item.jobActivityFieldId;
     });
-    let countJobActivityField = this.JobActivity[index].jobActivityChild.length;
+    // console.log(index);
+    let countJobActivityChild = this.JobActivity[index].jobActivityChild.length;
 
     let newJobActivityChild = {
-      jobActivityChildId: index + "-" + countJobActivityField,
-      jobActivityChildName: data.jobActivityChildName
+      jobActivityChildId: index + "-" + countJobActivityChild,
+      jobActivityChildName: data.jobChildName
     };
     this.JobActivity[index].jobActivityChild.push(newJobActivityChild);
     this.saveJobActivityDataJson();

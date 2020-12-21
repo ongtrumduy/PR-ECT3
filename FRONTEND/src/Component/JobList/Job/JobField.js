@@ -53,6 +53,11 @@ export default class JobField extends React.Component {
       this.props.setOptionJob,
       this.receiveJobFieldList
     );
+    this.props.socket.on("return-create-new-job-field", data => {
+      this.setState({
+        jobFieldList: data
+      });
+    });
   };
 
   componentWillReceiveProps = nextProps => {
@@ -70,6 +75,11 @@ export default class JobField extends React.Component {
         changeIconField: false
       });
     }
+    this.props.socket.on("return-create-new-job-field", data => {
+      this.setState({
+        jobFieldList: data
+      });
+    });
   };
 
   receiveJobFieldList = _jobFieldList => {
@@ -111,6 +121,7 @@ export default class JobField extends React.Component {
           setStatusRenderModalForm={this.props.setStatusRenderModalForm}
           setModalOptionJob={this.props.setModalOptionJob}
           setOptionJob={this.props.setOptionJob}
+          socket={this.props.socket}
         />
       );
     }

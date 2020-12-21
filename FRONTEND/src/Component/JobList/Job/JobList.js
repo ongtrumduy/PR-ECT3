@@ -28,6 +28,7 @@ export default class JobList extends React.Component {
                 setStatusRenderModalForm={this.props.setStatusRenderModalForm}
                 setModalOptionJob={this.props.setModalOptionJob}
                 setOptionJob={this.props.setOptionJob}
+                socket={this.props.socket}
               />
             </div>
             <div className="Create-Edit-Pane">
@@ -36,6 +37,7 @@ export default class JobList extends React.Component {
                 setStatusRenderModalForm={this.props.setStatusRenderModalForm}
                 setModalOptionJob={this.props.setModalOptionJob}
                 setOptionJob={this.props.setOptionJob}
+                socket={this.props.socket}
               />
             </div>
           </div>

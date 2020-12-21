@@ -5,9 +5,9 @@ import http from "http";
 import socketio from "socket.io";
 import events from "events";
 
-import allRoutes from "../BackEnd/src/routes/allRoutes";
+import allRoutes from "../BackEnd/src/routes/allroutes";
 
-// import allSockets from "../BackEnd/src/io-sockets/allsockets";
+import allSockets from "../BackEnd/src/io-sockets/allsockets";
 
 import portRoutes from "../BackEnd/src/routes/port";
 
@@ -21,7 +21,8 @@ app.use(cors());
 let corsOptions = {
   body: "*",
   origin: "*",
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  methods: "GET,PUT,POST,DELETE"
 };
 
 app.use(bodyParser.json());
@@ -36,12 +37,10 @@ allRoutes(app, corsOptions);
 
 //============================Socket======================================
 
-// allSockets(io);
+allSockets(io);
 
 //=========================================================================
 
 //============================Port======================================
-
 portRoutes(server, port);
-
 //=========================================================================

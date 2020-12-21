@@ -4,18 +4,9 @@
     "jobActivityFieldName": "Giảng dạy",
     "jobPositionFieldId": "0",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "0-0",
-        "jobActivityChildName": "Giảng dạy"
-      },
-      {
-        "jobActivityChildId": "0-1",
-        "jobActivityChildName": "Nghiên cứu"
-      },
-      {
-        "jobActivityChildId": "0-1",
-        "jobActivityChildName": "Đào tạo"
-      }
+      { "jobActivityChildId": "0-0", "jobActivityChildName": "Giảng dạy" },
+      { "jobActivityChildId": "0-1", "jobActivityChildName": "Nghiên cứu" },
+      { "jobActivityChildId": "0-1", "jobActivityChildName": "Đào tạo" }
     ]
   },
   {
@@ -27,10 +18,8 @@
         "jobActivityChildId": "1-0",
         "jobActivityChildName": "Quản lý, soạn thảo"
       },
-      {
-        "jobActivityChildId": "1-1",
-        "jobActivityChildName": "Chấm bài"
-      }
+      { "jobActivityChildId": "1-1", "jobActivityChildName": "Chấm bài" },
+      { "jobActivityChildId": "1-2", "jobActivityChildName": "Dạy thêm" }
     ]
   },
   {
@@ -38,18 +27,9 @@
     "jobActivityFieldName": "Kiểm tra, đánh giá, giám sát an toàn thông tin mạng",
     "jobPositionFieldId": "3",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "2-0",
-        "jobActivityChildName": "Kiểm tra"
-      },
-      {
-        "jobActivityChildId": "2-1",
-        "jobActivityChildName": "Đánh giá"
-      },
-      {
-        "jobActivityChildId": "2-2",
-        "jobActivityChildName": "Giám sát"
-      }
+      { "jobActivityChildId": "2-0", "jobActivityChildName": "Kiểm tra" },
+      { "jobActivityChildId": "2-1", "jobActivityChildName": "Đánh giá" },
+      { "jobActivityChildId": "2-2", "jobActivityChildName": "Giám sát" }
     ]
   },
   {
@@ -57,18 +37,9 @@
     "jobActivityFieldName": "Quản trị, bảo hành, bảo trì hoạt động của phần mềm và hệ thống thông tin",
     "jobPositionFieldId": "3",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "3-0",
-        "jobActivityChildName": "Quản trị"
-      },
-      {
-        "jobActivityChildId": "3-1",
-        "jobActivityChildName": "Bảo hành"
-      },
-      {
-        "jobActivityChildId": "3-2",
-        "jobActivityChildName": "Bảo trì"
-      }
+      { "jobActivityChildId": "3-0", "jobActivityChildName": "Quản trị" },
+      { "jobActivityChildId": "3-1", "jobActivityChildName": "Bảo hành" },
+      { "jobActivityChildId": "3-2", "jobActivityChildName": "Bảo trì" }
     ]
   },
   {
@@ -76,9 +47,10 @@
     "jobActivityFieldName": "Vận hành các hệ thống giám sát an ninh mạng",
     "jobPositionFieldId": "4",
     "jobActivityChild": [
+      { "jobActivityChildId": "4-0", "jobActivityChildName": "Vận hành" },
       {
-        "jobActivityChildId": "4-0",
-        "jobActivityChildName": "Vận hành"
+        "jobActivityChildId": "4-1",
+        "jobActivityChildName": "Vận hành hệ thống"
       }
     ]
   },
@@ -87,18 +59,9 @@
     "jobActivityFieldName": "Tư vấn, đánh giá, thẩm định chất lượng phần mềm",
     "jobPositionFieldId": "6",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "5-0",
-        "jobActivityChildName": "Tư vấn"
-      },
-      {
-        "jobActivityChildId": "5-1",
-        "jobActivityChildName": "Đánh giá"
-      },
-      {
-        "jobActivityChildId": "5-2",
-        "jobActivityChildName": "Thẩm định"
-      }
+      { "jobActivityChildId": "5-0", "jobActivityChildName": "Tư vấn" },
+      { "jobActivityChildId": "5-1", "jobActivityChildName": "Đánh giá" },
+      { "jobActivityChildId": "5-2", "jobActivityChildName": "Thẩm định" }
     ]
   },
   {
@@ -106,10 +69,7 @@
     "jobActivityFieldName": "Tham gia triển khai các dự án của công ty",
     "jobPositionFieldId": "6",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "6-0",
-        "jobActivityChildName": "Triển khai"
-      }
+      { "jobActivityChildId": "6-0", "jobActivityChildName": "Triển khai" }
     ]
   },
   {
@@ -117,9 +77,10 @@
     "jobActivityFieldName": "Kiểm thử phần mềm",
     "jobPositionFieldId": "6",
     "jobActivityChild": [
+      { "jobActivityChildId": "7-0", "jobActivityChildName": "Kiểm thử" },
       {
-        "jobActivityChildId": "7-0",
-        "jobActivityChildName": "Kiểm thử"
+        "jobActivityChildId": "7-1",
+        "jobActivityChildName": "Kiểm thử hộp đen"
       }
     ]
   },
@@ -128,14 +89,8 @@
     "jobActivityFieldName": "Phối hợp, giám sát, đôn đốc các đơn vị chức năng trong xử lý các yêu cầu hỗ trợ CNTT đảm bảo các SLA đã cam kết",
     "jobPositionFieldId": "8",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "8-0",
-        "jobActivityChildName": "Phối hợp"
-      },
-      {
-        "jobActivityChildId": "8-1",
-        "jobActivityChildName": "Giám sát"
-      }
+      { "jobActivityChildId": "8-0", "jobActivityChildName": "Phối hợp" },
+      { "jobActivityChildId": "8-1", "jobActivityChildName": "Giám sát" }
     ]
   },
   {
@@ -143,14 +98,8 @@
     "jobActivityFieldName": "Thực hiện xử lý các yêu cầu hỗ trợ CNTT theo quy trình, hướng dẫn",
     "jobPositionFieldId": "8",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "9-0",
-        "jobActivityChildName": "Xử lý"
-      },
-      {
-        "jobActivityChildId": "9-1",
-        "jobActivityChildName": "Hỗ trợ"
-      }
+      { "jobActivityChildId": "9-0", "jobActivityChildName": "Xử lý" },
+      { "jobActivityChildId": "9-1", "jobActivityChildName": "Hỗ trợ" }
     ]
   },
   {
@@ -158,14 +107,8 @@
     "jobActivityFieldName": "Nghiên cứu, áp dụng các công nghệ mới",
     "jobPositionFieldId": "14",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "10-0",
-        "jobActivityChildName": "Nghiên cứu"
-      },
-      {
-        "jobActivityChildId": "10-1",
-        "jobActivityChildName": "Báo cáo"
-      }
+      { "jobActivityChildId": "10-0", "jobActivityChildName": "Nghiên cứu" },
+      { "jobActivityChildId": "10-1", "jobActivityChildName": "Báo cáo" }
     ]
   },
   {
@@ -173,10 +116,7 @@
     "jobActivityFieldName": "Thu thập dữ liệu sử dụng thiết kế ứng dụng phần mềm",
     "jobPositionFieldId": "12",
     "jobActivityChild": [
-      {
-        "jobActivityChildId": "11-0",
-        "jobActivityChildName": "Thu thập"
-      }
+      { "jobActivityChildId": "11-0", "jobActivityChildName": "Thu thập" }
     ]
   }
 ]

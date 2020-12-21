@@ -54,6 +54,11 @@ export default class PositionChild extends React.Component {
       this.props.jobFieldId,
       this.receiveJobChildList
     );
+     this.props.socket.on("return-create-new-job-child", data => {
+       this.setState({
+         jobChildList: data
+       });
+     });
   };
 
   componentWillReceiveProps = nextProps => {
@@ -69,6 +74,11 @@ export default class PositionChild extends React.Component {
         this.receiveJobChildList
       );
     }
+     this.props.socket.on("return-create-new-job-child", data => {
+       this.setState({
+         jobChildList: data
+       });
+     });
   };
 
   receiveJobChildList = _jobChildList => {

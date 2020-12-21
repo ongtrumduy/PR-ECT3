@@ -10,6 +10,7 @@ export default class AddJobChildForm extends React.Component {
     this.state = {
       statusRenderModalForm: "addjobchildform",
       jobChildName: "",
+      jobFieldId: "0",
       jobChildFormList: []
     };
   }
@@ -70,19 +71,26 @@ export default class AddJobChildForm extends React.Component {
     this.props.setStatusRenderModalForm("none");
   };
 
-  handleJobPositionChildName = event => {
+  handleChangeJobChildName = event => {
     this.setState({
-      jobPositionChildName: event.target.value
+      jobChildName: event.target.value
+    });
+  };
+
+  handleChangeJobFieldId = event => {
+    this.setState({
+      jobFieldId: event.target.value
     });
   };
 
   createNewJobChildForm = () => {
     let data = {
       jobChildOptionName: this.props.setOptionJob,
-      jobPositionChildName: this.state.jobPositionChildName,
-      jobPositionFieldId: this.state.jobPositionFieldId
+      jobChildName: this.state.jobChildName,
+      jobFieldId: this.state.jobFieldId
     };
     this.props.socket.emit("create-new-job-child", data);
+    this.cancelAddJobChildForm();
   };
 
   render() {
@@ -108,14 +116,21 @@ export default class AddJobChildForm extends React.Component {
           <p>
             Tên <label style={{ color: "red" }}>(*)</label>
           </p>
-          <input type="text" />
+          <input type="text" onChange={this.handleChangeJobChildName} />
           <p>
             Chọn thông tin nhãn <label style={{ color: "red" }}>(*)</label>
           </p>
           <div className="select-add-job-child">
-            <select>
+            <select
+              jobFieldId={this.state.jobFieldId}
+              onChange={this.handleChangeJobFieldId}
+            >
               {this.state.jobChildFormList.map((item, index) => {
-                return <option key={index}>{item.jobFieldName}</option>;
+                return (
+                  <option key={index} value={item.jobFieldId}>
+                    {item.jobFieldName}
+                  </option>
+                );
               })}
             </select>
           </div>
@@ -134,7 +149,8 @@ export default class AddJobChildForm extends React.Component {
                   backgroundColor: "green"
                 }}
                 type="button"
-                value="Lưu"
+                value="Thêm"
+                onClick={() => this.createNewJobChildForm()}
               />
             </div>
             <div>

@@ -24,8 +24,8 @@ class JobType {
   createNewJobTypeField(data) {
     let countJobTypeField = this.JobType.length;
     let newJobTypeField = {
-      jobTypeFieldId: countJobTypeField,
-      jobTypeFieldName: data.jobTypeFieldName,
+      jobTypeFieldId: "" + countJobTypeField,
+      jobTypeFieldName: data.jobFieldName,
       jobTypeChild: []
     };
     this.JobType.push(newJobTypeField);
@@ -33,14 +33,17 @@ class JobType {
   }
 
   createNewJobTypeChild(data) {
+    // console.log(data);
     let index = this.JobType.findIndex(item => {
-      return data.jobTypeFieldId === item.jobTypeFieldId;
+      // console.log(data.jobFieldId);
+      // console.log(item.jobTypeFieldId);
+      return data.jobFieldId === item.jobTypeFieldId;
     });
-    let countJobTypeField = this.JobType[index].jobTypeChild.length;
-
+    // console.log(index);
+    let countJobTypeChild = this.JobType[index].jobTypeChild.length;
     let newJobTypeChild = {
-      jobTypeChildId: index + "-" + countJobTypeField,
-      jobTypeChildName: data.jobTypeChildName
+      jobTypeChildId: index + "-" + countJobTypeChild,
+      jobTypeChildName: data.jobChildName
     };
     this.JobType[index].jobTypeChild.push(newJobTypeChild);
     this.saveJobTypeDataJson();

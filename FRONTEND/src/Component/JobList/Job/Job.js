@@ -17,6 +17,7 @@ export default class JobActivity extends React.Component {
           setStatusRenderModalForm={this.props.setStatusRenderModalForm}
           setModalOptionJob={this.props.setModalOptionJob}
           setOptionJob={this.props.setOptionJob}
+          socket={this.props.socket}
         />
       </div>
     );

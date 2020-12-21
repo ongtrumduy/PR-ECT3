@@ -4,10 +4,7 @@
     "jobPositionFieldName": "Giảng viên",
     "jobTypeFieldId": "0",
     "jobPositionChild": [
-      {
-        "jobPositionChildId": "0-0",
-        "jobPositionChildName": "Giảng dạy"
-      },
+      { "jobPositionChildId": "0-0", "jobPositionChildName": "Giảng dạy" },
       {
         "jobPositionChildId": "0-1",
         "jobPositionChildName": "Quản lý, soạn giáo án, chấm bài"
@@ -19,10 +16,7 @@
     "jobPositionFieldName": "Trợ giảng",
     "jobTypeFieldId": "0",
     "jobPositionChild": [
-      {
-        "jobPositionChildId": "1-0",
-        "jobPositionChildName": "Giảng dạy"
-      },
+      { "jobPositionChildId": "1-0", "jobPositionChildName": "Giảng dạy" },
       {
         "jobPositionChildId": "1-1",
         "jobPositionChildName": "Quản lý, soạn giáo án, chấm bài"
@@ -34,10 +28,7 @@
     "jobPositionFieldName": "IT Teacher",
     "jobTypeFieldId": "0",
     "jobPositionChild": [
-      {
-        "jobPositionChildId": "2-0",
-        "jobPositionChildName": "Giảng dạy"
-      },
+      { "jobPositionChildId": "2-0", "jobPositionChildName": "Giảng dạy" },
       {
         "jobPositionChildId": "2-1",
         "jobPositionChildName": "Quản lý, soạn giáo án, chấm bài"
@@ -116,7 +107,8 @@
       {
         "jobPositionChildId": "7-0",
         "jobPositionChildName": "Kiểm thử phần mềm"
-      }
+      },
+      { "jobPositionChildId": "7-1", "jobPositionChildName": "Test hộp Đen" }
     ]
   },
   {

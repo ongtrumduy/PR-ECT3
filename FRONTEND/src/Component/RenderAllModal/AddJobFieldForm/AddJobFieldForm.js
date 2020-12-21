@@ -10,6 +10,7 @@ export default class AddJobFieldForm extends React.Component {
     this.state = {
       statusRenderModalForm: "addjobfieldform",
       jobFieldName: "",
+      jobGrandId: "0",
       jobFieldFormList: []
     };
   }
@@ -70,6 +71,28 @@ export default class AddJobFieldForm extends React.Component {
     this.props.setStatusRenderModalForm("none");
   };
 
+  handleChangeJobFieldName = event => {
+    this.setState({
+      jobFieldName: event.target.value
+    });
+  };
+
+  handleChangeJobGrandId = event => {
+    this.setState({
+      jobGrandId: event.target.value
+    });
+  };
+
+  createNewJobFieldForm = () => {
+    let data = {
+      jobFieldOptionName: this.props.setOptionJob,
+      jobFieldName: this.state.jobFieldName,
+      jobGrandId: this.state.jobGrandId
+    };
+    this.props.socket.emit("create-new-job-field", data);
+    this.cancelAddJobFieldForm();
+  };
+
   render() {
     return (
       <div className="Add-Job-Field">
@@ -93,14 +116,21 @@ export default class AddJobFieldForm extends React.Component {
           <p>
             Tên <label style={{ color: "red" }}>(*)</label>
           </p>
-          <input type="text" />
+          <input type="text" onChange={this.handleChangeJobFieldName} />
           <p>
             Chọn thông tin cha <label style={{ color: "red" }}>(*)</label>
           </p>
           <div className="select-add-job-field">
-            <select>
+            <select
+              jobGrandId={this.state.jobGrandId}
+              onChange={this.handleChangeJobGrandId}
+            >
               {this.state.jobFieldFormList.map((item, index) => {
-                return <option key={index}>{item.jobGrandName}</option>;
+                return (
+                  <option key={index} value={item.jobGrandId}>
+                    {item.jobGrandName}
+                  </option>
+                );
               })}
             </select>
           </div>
@@ -119,7 +149,8 @@ export default class AddJobFieldForm extends React.Component {
                   backgroundColor: "green"
                 }}
                 type="button"
-                value="Lưu"
+                value="Thêm"
+                onClick={() => this.createNewJobFieldForm()}
               />
             </div>
             <div>

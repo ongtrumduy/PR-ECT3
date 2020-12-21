@@ -23,6 +23,7 @@ export default class DashBoard extends React.Component {
           setStatusRenderModalForm={this.props.setStatusRenderModalForm}
           setModalOptionJob={this.props.setModalOptionJob}
           setOptionJob={this.state.chooseInterface}
+          socket={this.props.socket}
         />
       );
     }
