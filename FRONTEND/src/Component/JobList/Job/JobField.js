@@ -102,8 +102,8 @@ export default class JobField extends React.Component {
     }
   };
 
-  checkCheckRemoveField = () => {
-    if (this.state.checkRemoveField) {
+  checkCheckRemoveField = (_jobFieldId) => {
+    if (this.state.checkRemoveField && this.state.jobFieldId === _jobFieldId) {
       this.setState({
         checkRemoveField: false
       });
@@ -112,11 +112,11 @@ export default class JobField extends React.Component {
     this.props.setModalOptionJob(this.props.setOptionJob);
   };
 
-  renderJobChild = jobFieldId => {
-    if (this.state.changeIconField && this.state.jobFieldId === jobFieldId) {
+  renderJobChild = _jobFieldId => {
+    if (this.state.changeIconField && this.state.jobFieldId === _jobFieldId) {
       return (
         <JobChild
-          jobFieldId={jobFieldId}
+          jobFieldId={_jobFieldId}
           statusRenderModalForm={this.props.statusRenderModalForm}
           setStatusRenderModalForm={this.props.setStatusRenderModalForm}
           setModalOptionJob={this.props.setModalOptionJob}
@@ -145,7 +145,7 @@ export default class JobField extends React.Component {
               <img
                 alt=""
                 src={this.state.checkRemoveField ? CheckEmpty : CheckFull}
-                onClick={() => this.checkCheckRemoveField()}
+                onClick={() => this.checkCheckRemoveField(item.jobFieldId)}
               />
               <img alt="" src={JobFieldIcon} />
               <label onClick={() => this.checkChangeIconField(item.jobFieldId)}>
