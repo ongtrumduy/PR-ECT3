@@ -100,8 +100,8 @@ export default class PositionChild extends React.Component {
     }
   };
 
-  checkCheckRemoveChild = () => {
-    if (this.state.checkRemoveChild) {
+  checkCheckRemoveChild = (_jobChildId) => {
+    if (this.state.checkRemoveChild && this.state.jobChildId === _jobChildId) {
       this.setState({
         checkRemoveChild: false
       });
@@ -128,7 +128,7 @@ export default class PositionChild extends React.Component {
               <img
                 alt=""
                 src={this.state.checkRemoveChild ? CheckEmpty : CheckFull}
-                onClick={() => this.checkCheckRemoveChild()}
+                onClick={() => this.checkCheckRemoveChild(item.jobFieldId)}
               />
               <img alt="" src={JobChildIcon} />
               <label onClick={() => this.checkChangeIconChild(item.jobFieldId)}>
