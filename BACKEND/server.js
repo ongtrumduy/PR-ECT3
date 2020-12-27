@@ -5,16 +5,23 @@ import http from "http";
 import socketio from "socket.io";
 import events from "events";
 
-import allRoutes from "../BackEnd/src/routes/allroutes";
+import allRoutes from "./src/routes/allroutes";
 
-import allSockets from "../BackEnd/src/io-sockets/allsockets";
+import allSockets from "./src/io-sockets/allsockets";
 
-import portRoutes from "../BackEnd/src/routes/port";
+import portRoutes from "./src/routes/port";
 
 let app = express();
 let server = http.Server(app);
 let port = 8081;
-let io = socketio(server);
+let io = socketio(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true
+  }
+});
 
 app.use(cors());
 

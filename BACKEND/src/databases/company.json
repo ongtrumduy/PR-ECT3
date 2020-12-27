@@ -1,0 +1,38 @@
+[
+  {
+    "companyId": "0",
+    "companyName": "Đại Duy Company",
+    "companyEmail": "DaiDuyCo@gmail.com",
+    "companyAddress": ""
+  },
+  {
+    "companyId": "1",
+    "companyName": "Tân Duy Company",
+    "companyEmail": "TanDuyCo@gmail.com",
+    "companyAddress": ""
+  },
+  {
+    "companyId": "2",
+    "companyName": "Hồng Hoa Company",
+    "companyEmail": "HongHoaCo@gmail.com",
+    "companyAddress": ""
+  },
+  {
+    "companyId": "3",
+    "companyName": "Minh Duong Company",
+    "companyEmail": "MìnhDuongo@gmail.com",
+    "companyAddress": ""
+  },
+  {
+    "companyId": "4",
+    "companyName": "Quang Hoa Company",
+    "companyEmail": "QuangHoaCo@gmail.com",
+    "companyAddress": ""
+  },
+  {
+    "companyId": "5",
+    "companyName": "Hồng Phát Company",
+    "companyEmail": "HongPhatCo@gmail.com",
+    "companyAddress": ""
+  }
+]

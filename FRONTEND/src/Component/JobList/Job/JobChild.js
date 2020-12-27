@@ -42,7 +42,7 @@ export default class PositionChild extends React.Component {
     };
     request(options, (error, response, body) => {
       if (error) throw new Error(error);
-      console.log(body);
+      // console.log(body);
       let receiveJobChild = JSON.parse(body);
       callbackJobChild(receiveJobChild);
     });

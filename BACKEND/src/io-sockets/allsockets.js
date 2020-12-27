@@ -1,13 +1,15 @@
 import createNewJobFieldSockets from "./createNewJobField";
 import createNewJobChildSockets from "./createNewJobChild";
+import updateJobSockets from "./updateJob";
 
 let AllSockets = io => {
   //============================Socket======================================
 
-
   createNewJobFieldSockets(io);
 
   createNewJobChildSockets(io);
+
+  updateJobSockets(io);
   //   // --------------------------AddFriend--------------------------------------
   //   addfriendSocket(io);
   //   //--------------------------------------------------------------------------

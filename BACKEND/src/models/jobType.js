@@ -1,4 +1,5 @@
 import fs from "fs";
+import uuid from "uuid";
 
 class JobType {
   constructor() {
@@ -103,7 +104,24 @@ class JobType {
     return grandList;
   }
 
-  updateJobTypeField() {
+  readJobTypeFieldToEditPage(data) {
+    let indexField = this.JobType.findIndex(item => {
+      return data.jobFieldId === item.jobTypeFieldId;
+    });
+    // console.log(indexField);
+    let jobGrandList = this.readGrandJobTypeField();
+    let returnJobField = {
+      jobFieldId: this.JobType[indexField].jobTypeFieldId,
+      jobFieldName: this.JobType[indexField].jobTypeFieldName,
+      jobGrandId: -9999,
+      jobGrandName: "Không có nhãn cha cho lĩnh vực",
+      jobGrandList: jobGrandList,
+      jobKind: "field"
+    };
+    return returnJobField;
+  }
+
+  updateJobTypeField(data) {
     this.JobType.forEach(item => {
       if ((data.jobTypeFieldId = item.jobTypeFieldId)) {
         item.jobTypeFieldName = data.jobTypeFieldName;

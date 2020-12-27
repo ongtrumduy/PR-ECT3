@@ -11,23 +11,17 @@ let createNewJobField = io => {
           jobType.createNewJobTypeField(data);
           let newJobTypeField = jobType.readJobField();
           // console.log(newJobTypeField);
-          return socket.emit("return-create-new-job-field", newJobTypeField);
+          return socket.emit("return-list-job-field", newJobTypeField);
         case "vị trí":
           jobPosition.createNewJobPositionField(data);
           let newJobPositionField = jobPosition.readJobField();
           // console.log(newJobPositionField);
-          return socket.emit(
-            "return-create-new-job-field",
-            newJobPositionField
-          );
+          return socket.emit("return-list-job-field", newJobPositionField);
         case "hoạt động":
           jobActivity.createNewJobActivityField(data);
           let newJobActivityField = jobActivity.readJobField();
           // console.log(newJobActivityField);
-          return socket.emit(
-            "return-create-new-job-field",
-            newJobActivityField
-          );
+          return socket.emit("return-list-job-field", newJobActivityField);
       }
     });
   });

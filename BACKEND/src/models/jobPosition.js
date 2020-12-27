@@ -1,4 +1,5 @@
 import fs from "fs";
+import uuid from "uuid";
 import jobType from "./jobType";
 
 class JobPosition {
@@ -107,7 +108,50 @@ class JobPosition {
     return grandTypeList;
   }
 
-  updateJobPositionField() {
+  readGrandJobPositionFieldForEditPage(data) {
+    let grandTypeList = [];
+    let jobTypeGrandList = this.readGrandJobPositionField();
+    let jobTypeList = jobType.readJobTypeField();
+    let indexField = jobTypeList.findIndex(item => {
+      return data === item.jobTypeFieldId;
+    });
+    let grandPosition = {
+      jobGrandId: jobTypeList[indexField].jobTypeFieldId,
+      jobGrandName: jobTypeList[indexField].jobTypeFieldName
+    };
+    grandTypeList = jobTypeGrandList;
+    grandTypeList.splice(indexField, 1);
+    // console.log(grandTypeList);
+    grandTypeList.unshift(grandPosition);
+    // console.log(grandTypeList);
+    return grandTypeList;
+  }
+
+  readJobPositionFieldToEditPage(data) {
+    let indexField = this.JobPosition.findIndex(item => {
+      return data.jobFieldId === item.jobPositionFieldId;
+    });
+    let jobTypeList = jobType.readJobTypeField();
+    let indexGrandField = jobTypeList.findIndex(item => {
+      return (
+        this.JobPosition[indexField].jobTypeFieldId === item.jobTypeFieldId
+      );
+    });
+    let jobGrandId = this.JobPosition[indexField].jobTypeFieldId;
+    let jobGrandList = this.readGrandJobPositionFieldForEditPage(jobGrandId);
+    // console.log(jobGrandList);
+    let returnJobField = {
+      jobFieldId: this.JobPosition[indexField].jobPositionFieldId,
+      jobFieldName: this.JobPosition[indexField].jobPositionFieldName,
+      jobGrandId: jobGrandId,
+      jobGrandName: jobTypeList[indexGrandField].jobTypeFieldName,
+      jobGrandList: jobGrandList,
+      jobKind: "field"
+    };
+    return returnJobField;
+  }
+
+  updateJobPositionField(data) {
     this.JobPosition.forEach(item => {
       if ((data.jobPositionFieldId = item.jobPositionFieldId)) {
         item.jobPositionFieldName = data.jobPositionFieldName;

@@ -17,7 +17,12 @@ export default class Main extends React.Component {
   }
 
   componentWillMount = () => {
-    this.socket = ioclient("http://localhost:8081");
+    this.socket = ioclient("http://localhost:8081", {
+      withCredentials: true,
+      extraHeaders: {
+        "my-custom-header": "abcd"
+      }
+    });
   };
 
   setStatusRenderModalForm = status => {

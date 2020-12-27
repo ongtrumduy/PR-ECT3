@@ -10,7 +10,7 @@ export default class JobList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ height: "480px" }}>
         <div>
           <p
             style={{

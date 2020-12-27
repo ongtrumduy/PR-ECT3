@@ -62,7 +62,7 @@ export default class DashBoard extends React.Component {
         <div>
           <input
             type="button"
-            value="Tìm kiếm nhân sự giới thiệu"
+            value="Tìm kiếm nhân sự gói thầu"
             onClick={() => this.handleSelectInterfaceRender("none")}
           />
         </div>

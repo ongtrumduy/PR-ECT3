@@ -1,84 +1,202 @@
 import React from "react";
+import request from "request";
 import "./SearchPage.css";
-import ReturnInfor from "../ReturnInfor/ReturnInfor";
+import ReturnInfor from "../ReturnInforEmployee/ReturnInforEmployee";
 
 export default class Search extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      jobPossitionList: [],
+      jobPositionId: "",
+      experienceYear: "",
+      experienceYearEqual: "",
+      certificateName: "",
+      degreeIdentification: "",
+      degreeSpeciality: "",
+      certificateDate: ""
+    };
   }
+
+  //-----------------------------------------------------------------------
+
+  receivejobPositionDataList = callbackJobPosition => {
+    var options = {
+      method: "POST",
+      url: "http://localhost:8081/receiveJobPositionList",
+      headers: {
+        "cache-control": "no-cache",
+        Connection: "keep-alive",
+        "Content-Length": "0",
+        "Accept-Encoding": "gzip, deflate",
+        Host: "localhost:8081",
+        "Cache-Control": "no-cache",
+        Accept: "*/*",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        jobPosition: "1"
+      })
+    };
+    request(options, (error, response, body) => {
+      if (error) throw new Error(error);
+      console.log(body);
+      let receiveJobPosition = JSON.parse(body);
+      callbackJobPosition(receiveJobPosition);
+    });
+  };
+  //-----------------------------------------------------------------------
+
+  componentWillMount = () => {
+    this.receivejobPositionDataList(this.receiveJobPositionList);
+  };
+
+  receiveJobPositionList = _jobPossitionList => {
+    this.setState({
+      jobPossitionList: _jobPossitionList
+    });
+  };
+
+  handleExperienceYear = event => {
+    this.setState({
+      experienceYear: event.target.value
+    });
+  };
+
+  handleExperienceYearEqual = event => {
+    this.setState({
+      experienceYearEqual: event.target.value
+    });
+  };
+
+  handleChangeJobPositionId = event => {
+    this.setState({
+      jobPositionId: event.target.value
+    });
+  };
+
+  handleDegreeSpeciality = event => {
+    this.setState({
+      degreeSpeciality: event.target.value
+    });
+  };
+
+  handleCertificateDate = event => {
+    this.setState({
+      certificateDate: event.target.value
+    });
+  };
+
+  handleCertificateName = event => {
+    this.setState({
+      certificateName: event.target.value
+    });
+  };
+
+  handleDegreeIdentification = event => {
+    this.setState({
+      degreeIdentification: event.target.value
+    });
+  };
 
   searchPagePane = () => {
     return (
       <div className="search-page">
         <div className="search-div">
           <div>
-            <label>Đơn vị </label>
-            <input type="text" />
+            <label>Số năm KN tương đương </label>
+            <input
+              type="text"
+              placeholder="0, 1, 2, 3,..."
+              onChange={this.handleExperienceYearEqual}
+            />
           </div>
           <div>
-            <label>Trình độ chuyên môn </label>
-            <input type="text" />
+            <label>Vị trí công việc </label>
+            <select
+              style={{ height: "21px", width: "177px" }}
+              jobPositionId={this.state.jobPositionId}
+              onChange={this.handleChangeJobPositionId}
+            >
+              <option key="-1" value="">
+                Chọn vị trí công việc
+              </option>
+              {this.state.jobPossitionList.map((item, index) => {
+                return (
+                  <option key={index} value={item.jobFieldName}>
+                    {item.jobFieldName}
+                  </option>
+                );
+              })}
+            </select>
           </div>
+          {/* <div>                          
+            <label>Loại chứng chỉ </label>   
+            <input type="text" />            
+          </div> */}
           <div>
-            <label>Chuyên ngành </label>
-            <input type="text" />
+            <label>Số năm Kinh nghiệm </label>
+            <input
+              type="text"
+              placeholder="0, 1, 2, 3,..."
+              onChange={this.handleExperienceYear}
+            />
           </div>
         </div>
         <div className="search-div-1">
           <div>
-            <label>Vị trí công việc </label>
-            <input type="textf" />
+            <label>Trình độ chuyên môn </label>
+            <input
+              type="text"
+              placeholder="Cử nhân, Kỹ sư, Thạc sĩ, Tiến sĩ,..."
+              onChange={this.handleDegreeIdentification}
+            />
           </div>
           <div>
-            <label>Số năm KH </label>
-            <input type="text" />
-          </div>
-          <div>
-            <label>Số năm KN công việc tương đương </label>
-            <input type="text" />
+            <label>Tên chứng chỉ </label>
+            <input
+              type="text"
+              placeholder="Oracle Database Certifications"
+              onChange={this.handleCertificateName}
+            />
           </div>
         </div>
         <div className="search-div-2">
           <div>
-            <label>Loại chứng chỉ </label>
-            <input type="text" />
-          </div>
-          <div>
-            <label>Tên chứng chỉ </label>
-            <input type="text" />
+            <label>Chuyên ngành </label>
+            <input
+              type="text"
+              placeholder="Khoa học máy tính"
+              onChange={this.handleDegreeSpeciality}
+            />
           </div>
           <div>
             <label>Hiệu lực chứng chỉ </label>
-            <input id="input-date" type="date" />
+            <input
+              id="input-date"
+              type="date"
+              placeholder="26/12/2020"
+              onChange={this.handleCertificateDate}
+            />
           </div>
         </div>
-      </div>
-    );
-  };
-
-  searchButtonPane = () => {
-    return (
-      <div>
-        <input
-          style={{
-            fontWeight: "bold",
-            color: "white",
-            backgroundColor: "green",
-            margin: "30px"
-          }}
-          type="button"
-          value="Tìm kiếm"
-        />
       </div>
     );
   };
 
   render() {
     return (
-      <div>
+      <div style={{ height: "494px" }}>
         {this.searchPagePane()}
-        {this.searchButtonPane()}
-        <ReturnInfor/>
+        <ReturnInfor
+          jobPositionId={this.state.jobPositionId}
+          experienceYear={this.state.experienceYear}
+          experienceYearEqual={this.state.experienceYearEqual}
+          certificateName={this.state.certificateName}
+          degreeIdentification={this.state.degreeIdentification}
+          degreeSpeciality={this.state.degreeSpeciality}
+          certificateDate={this.state.certificateDate}
+        />
       </div>
     );
   }

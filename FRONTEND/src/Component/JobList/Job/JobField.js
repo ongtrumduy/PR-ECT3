@@ -53,7 +53,7 @@ export default class JobField extends React.Component {
       this.props.setOptionJob,
       this.receiveJobFieldList
     );
-    this.props.socket.on("return-create-new-job-field", data => {
+    this.props.socket.on("return-list-job-field", data => {
       this.setState({
         jobFieldList: data
       });
@@ -75,7 +75,7 @@ export default class JobField extends React.Component {
         changeIconField: false
       });
     }
-    this.props.socket.on("return-create-new-job-field", data => {
+    this.props.socket.on("return-list-job-field", data => {
       this.setState({
         jobFieldList: data
       });
@@ -86,6 +86,15 @@ export default class JobField extends React.Component {
     this.setState({
       jobFieldList: _jobFieldList
     });
+  };
+
+  sentToUpdateField = _jobFieldId => {
+    let dataSentToUpdateField = {
+      jobFieldId: _jobFieldId,
+      jobFieldOptionName: this.props.setOptionJob
+    };
+    this.props.socket.emit("sent-to-edit-field", dataSentToUpdateField);
+    this.checkChangeIconField(_jobFieldId);
   };
 
   checkChangeIconField = _jobFieldId => {
@@ -102,10 +111,11 @@ export default class JobField extends React.Component {
     }
   };
 
-  checkCheckRemoveField = () => {
+  checkCheckRemoveField = _jobFieldId => {
     if (this.state.checkRemoveField) {
       this.setState({
-        checkRemoveField: false
+        checkRemoveField: false,
+        jobFieldId: _jobFieldId
       });
     }
     this.props.setStatusRenderModalForm("removeitemjobform");
@@ -144,11 +154,16 @@ export default class JobField extends React.Component {
               />
               <img
                 alt=""
-                src={this.state.checkRemoveField ? CheckEmpty : CheckFull}
-                onClick={() => this.checkCheckRemoveField()}
+                src={
+                  !this.state.checkRemoveField &&
+                  this.state.jobFieldId === item.jobFieldId
+                    ? CheckFull
+                    : CheckEmpty
+                }
+                onClick={() => this.checkCheckRemoveField(item.jobFieldId)}
               />
               <img alt="" src={JobFieldIcon} />
-              <label onClick={() => this.checkChangeIconField(item.jobFieldId)}>
+              <label onClick={() => this.sentToUpdateField(item.jobFieldId)}>
                 {item.jobFieldName}
               </label>
               {this.renderJobChild(item.jobFieldId)}

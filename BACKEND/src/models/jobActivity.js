@@ -1,4 +1,5 @@
 import fs from "fs";
+import uuid from "uuid";
 import jobPosition from "./jobPosition";
 
 class JobActivity {
@@ -108,7 +109,48 @@ class JobActivity {
     return grandPositionList;
   }
 
-  updateJobActivityField() {
+  readGrandJobActivityFieldForEditPage(data) {
+    let grandPositionList = [];
+    let jobPositionGrandList = this.readGrandJobActivityField();
+    let jobPositionList = jobPosition.readJobPositionField();
+    let indexField = jobPositionList.findIndex(item => {
+      return data === item.jobPositionFieldId;
+    });
+    let grandPosition = {
+      jobGrandId: jobPositionList[indexField].jobPositionFieldId,
+      jobGrandName: jobPositionList[indexField].jobPositionFieldName
+    };
+    grandPositionList = jobPositionGrandList;
+    grandPositionList.splice(indexField, 1);
+    // console.log(grandPositionList);
+    grandPositionList.unshift(grandPosition);
+    // console.log(grandPositionList);
+    return grandPositionList;
+  }
+
+  readJobActivityFieldToEditPage(data) {
+    let indexField = this.JobActivity.findIndex(item => {
+      return data.jobFieldId === item.jobActivityFieldId;
+    });
+    let jobPositionList = jobPosition.readJobPositionField();
+    let jobGrandId = this.JobActivity[indexField].jobPositionFieldId;
+    let indexGrandField = jobPositionList.findIndex(item => {
+      return jobGrandId === item.jobPositionFieldId;
+    });
+    let jobGrandList = this.readGrandJobActivityFieldForEditPage(jobGrandId);
+    // console.log(jobGrandList);
+    let returnJobField = {
+      jobFieldId: this.JobActivity[indexField].jobActivityFieldId,
+      jobFieldName: this.JobActivity[indexField].jobActivityFieldName,
+      jobGrandId: jobGrandId,
+      jobGrandName: jobPositionList[indexGrandField].jobPositionFieldName,
+      jobGrandList: jobGrandList,
+      jobKind: "field"
+    };
+    return returnJobField;
+  }
+
+  updateJobActivityField(data) {
     this.JobActivity.forEach(item => {
       if ((data.jobActivityFieldId = item.jobActivityFieldId)) {
         item.jobActivityFieldName = data.jobActivityFieldName;

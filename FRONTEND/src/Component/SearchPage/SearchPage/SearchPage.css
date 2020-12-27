@@ -1,9 +1,15 @@
 .search-page {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
+    margin: 10px 0 5px 0;
+    /* height: 400px; */
+}
+
+.search-page div {
+    margin: 5px 0 5px 0;
 }
 
 .search-page label {
@@ -16,25 +22,32 @@
     align-items: flex-end;
     justify-content: flex-end;
     flex-direction: column;
-    width: 28%;
+    width: 34%;
+    margin: 10px 0 10px 0;
 }
 
 .search-page .search-div-1 {
-    width: 41%;
+    width: 33%;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: flex-end;
     flex-direction: column;
+    margin: 10px 0 10px 0;
 }
 
 .search-page .search-div-2 {
-    width: 31%;
+    width: 33%;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
+    margin: 10px 0 10px 0;
+}
+
+.search-page .search-div-2 label {
+    width: 40%
 }
 
 .search-page .search-div-2 #input-date {

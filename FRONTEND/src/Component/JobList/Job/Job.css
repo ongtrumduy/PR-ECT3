@@ -4,7 +4,6 @@
     align-items: stretch;
     height: 400px;
     flex-direction: row;
-    overflow: auto;
 }
 
 .Job-List label {
@@ -19,6 +18,7 @@
     width: 70%;
     font-weight: bold;
     text-align: left;
+    overflow: auto;
 }
 
 .Job-List .Job-Field-List {
