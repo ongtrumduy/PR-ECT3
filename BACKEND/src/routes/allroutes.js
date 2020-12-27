@@ -3,6 +3,7 @@ import receiveJobChildRoutes from "./receiveJobChild";
 import receiveJobFieldFormRoutes from "./receiveJobFieldForm";
 import receiveJobChildFormRoutes from "./receiveJobChildForm";
 import receiveJobPositionListRoutes from "./receiveJobPositionList";
+import receiveInforEmployeeRoutes from "./receiveInforEmployee";
 
 let AllRoutes = (app, corsOptions) => {
   //========================Routes=========================================
@@ -16,6 +17,8 @@ let AllRoutes = (app, corsOptions) => {
   receiveJobChildFormRoutes(app, corsOptions);
 
   receiveJobPositionListRoutes(app, corsOptions);
+
+  receiveInforEmployeeRoutes(app, corsOptions);
   //   // -----------------------Register---------------------------------------
   //   registerRoutes(app, corsOptions);
   //   //-----------------------------------------------------------------------

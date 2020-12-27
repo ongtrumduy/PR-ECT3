@@ -17,4 +17,4 @@ let receiveInforEmployeeList = (app, corsOptions) => {
   return app.use("/", router);
 };
 
-module.exports = receiveInforEmploy
+module.exports = receiveInforEmployeeList;

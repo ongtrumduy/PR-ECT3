@@ -98,7 +98,7 @@ export default class ReturnInforEployee extends React.Component {
     return (
       <div>
         <table style={{ borderStyle: "groove", width: "100%" }}>
-          {/* <tr>
+          <tr>
             <th>Mã nhân viên</th>
             <th>Họ và tên</th>
             <th>Giới tính</th>
@@ -143,7 +143,7 @@ export default class ReturnInforEployee extends React.Component {
             <td>
               <img alt="detail-infor" src={DetailInfor} />
             </td> 
-           </tr> */}
+           </tr>
         </table>
       </div>
     );
