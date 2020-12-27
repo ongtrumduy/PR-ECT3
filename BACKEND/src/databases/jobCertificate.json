@@ -5,13 +5,14 @@
     "certificatePeriod": [
       {
         "certificatePeriodId": "0",
-        "profileId": "0"
+        "profileId": "0",
         "certificateStartDate": "22-12-2020",
         "certificateEndDate": "22-12-2024",
         "certificateFile": ""
       },
       {
         "certificatePeriodId": "1",
+        "profileId": "0",
         "certificateStartDate": "22-12-2018",
         "certificateEndDate": "22-12-2021",
         "certificateFile": ""
