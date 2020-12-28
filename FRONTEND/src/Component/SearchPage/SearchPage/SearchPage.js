@@ -8,9 +8,8 @@ export default class Search extends React.Component {
     super(props);
     this.state = {
       jobPossitionList: [],
-      jobPositionId: "",
+      jobPositionFieldId: "",
       experienceYear: "",
-      experienceYearEqual: "",
       certificateName: "",
       degreeIdentification: "",
       degreeSpeciality: "",
@@ -63,15 +62,9 @@ export default class Search extends React.Component {
     });
   };
 
-  handleExperienceYearEqual = event => {
+  handleChangeJobPositionFieldId = event => {
     this.setState({
-      experienceYearEqual: event.target.value
-    });
-  };
-
-  handleChangeJobPositionId = event => {
-    this.setState({
-      jobPositionId: event.target.value
+      jobPositionFieldId: event.target.value
     });
   };
 
@@ -104,36 +97,25 @@ export default class Search extends React.Component {
       <div className="search-page">
         <div className="search-div">
           <div>
-            <label>Số năm KN tương đương </label>
-            <input
-              type="text"
-              placeholder="0, 1, 2, 3,..."
-              onChange={this.handleExperienceYearEqual}
-            />
-          </div>
-          <div>
             <label>Vị trí công việc </label>
             <select
               style={{ height: "21px", width: "177px" }}
-              jobPositionId={this.state.jobPositionId}
-              onChange={this.handleChangeJobPositionId}
+              jobPositionId={this.state.jobPositionFieldId}
+              onChange={this.handleChangeJobPositionFieldId}
             >
               <option key="-1" value="">
                 Chọn vị trí công việc
               </option>
               {this.state.jobPossitionList.map((item, index) => {
                 return (
-                  <option key={index} value={item.jobFieldName}>
+                  <option key={index} value={item.jobFieldId}>
                     {item.jobFieldName}
                   </option>
                 );
               })}
             </select>
           </div>
-          {/* <div>                          
-            <label>Loại chứng chỉ </label>   
-            <input type="text" />            
-          </div> */}
+
           <div>
             <label>Số năm Kinh nghiệm </label>
             <input
@@ -189,9 +171,8 @@ export default class Search extends React.Component {
       <div style={{ height: "494px" }}>
         {this.searchPagePane()}
         <ReturnInfor
-          jobPositionId={this.state.jobPositionId}
+          jobPositionFieldId={this.state.jobPositionFieldId}
           experienceYear={this.state.experienceYear}
-          experienceYearEqual={this.state.experienceYearEqual}
           certificateName={this.state.certificateName}
           degreeIdentification={this.state.degreeIdentification}
           degreeSpeciality={this.state.degreeSpeciality}

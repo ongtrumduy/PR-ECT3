@@ -1,120 +1,125 @@
 [
   {
     "contractId": "0",
+    "contractType": "Chính thức",
     "jobPositionFieldId": "0",
     "contractPositionList": [
       {
-        "jobPositionChildId": "0",
-        "contractPositionChildList": [
+        "profileId": "0",
+        "profileContract": [
           {
-            "contractPositionId": "0",
-            "profileId": "0",
-            "contractStartDate": "17-05-2017",
-            "contractEndDate": "17-06-2021"
+            "jobPositionChildId": "0-0",
+            "contractPositionChildList": [
+              {
+                "contractPositionId": "0",
+                "contractStartDate": "17-05-2011",
+                "contractEndDate": "17-06-2016"
+              },
+              {
+                "contractPositionId": "1",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              }
+            ]
           },
           {
-            "contractPositionId": "0",
-            "profileId": "0",
-            "contractStartDate": "17-05-2017",
-            "contractEndDate": "17-06-2021"
-          },
+            "jobPositionChildId": "0-1",
+            "contractPositionChildList": [
+              {
+                "contractPositionId": "0",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              },
+              {
+                "contractPositionId": "1",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "profileId": "3",
+        "profileContract": [
           {
-            "contractPositionId": "0",
-            "profileId": "0",
-            "contractStartDate": "17-05-2017",
-            "contractEndDate": "17-06-2021"
-          },
-          {
-            "contractPositionId": "0",
-            "profileId": "0",
-            "contractStartDate": "17-05-2017",
-            "contractEndDate": "17-06-2021"
-          },
-          {
-            "contractPositionId": "0",
-            "profileId": "0",
-            "contractStartDate": "17-05-2017",
-            "contractEndDate": "17-06-2021"
+            "jobPositionChildId": "0-1",
+            "contractPositionChildList": [
+              {
+                "contractPositionId": "0",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              },
+              {
+                "contractPositionId": "1",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              }
+            ]
           }
         ]
       }
     ]
   },
   {
-    "contractId": "1",
+    "contractId": "0",
+    "contractType": "Chính thức",
     "jobPositionFieldId": "1",
-    "contractPosition": [
+    "contractPositionList": [
       {
-        "contractPositionId": "0",
         "profileId": "0",
-        "jobPositionChildId": "0",
-        "contractStartDate": "17-05-2017",
-        "contractEndDate": "17-06-2021"
-      }
-    ]
-  },
-  {
-    "contractId": "2",
-    "jobPositionFieldId": "2",
-    "contractPosition": [
+        "profileContract": [
+          {
+            "jobPositionChildId": "0-0",
+            "contractPositionChildList": [
+              {
+                "contractPositionId": "0",
+                "contractStartDate": "17-05-2011",
+                "contractEndDate": "17-06-2016"
+              },
+              {
+                "contractPositionId": "1",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              }
+            ]
+          },
+          {
+            "jobPositionChildId": "0-1",
+            "contractPositionChildList": [
+              {
+                "contractPositionId": "0",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              },
+              {
+                "contractPositionId": "1",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              }
+            ]
+          }
+        ]
+      },
       {
-        "contractPositionId": "0",
-        "profileId": "0",
-        "jobPositionChildId": "0",
-        "contractStartDate": "17-05-2017",
-        "contractEndDate": "17-06-2021"
-      }
-    ]
-  },
-  {
-    "contractId": "3",
-    "jobPositionFieldId": "3",
-    "contractPosition": [
-      {
-        "contractPositionId": "0",
-        "profileId": "0",
-        "jobPositionChildId": "0",
-        "contractStartDate": "17-05-2017",
-        "contractEndDate": "17-06-2021"
-      }
-    ]
-  },
-  {
-    "contractId": "4",
-    "jobPositionFieldId": "4",
-    "contractPosition": [
-      {
-        "contractPositionId": "0",
-        "profileId": "0",
-        "jobPositionChildId": "0",
-        "contractStartDate": "17-05-2017",
-        "contractEndDate": "17-06-2021"
-      }
-    ]
-  },
-  {
-    "contractId": "5",
-    "jobPositionFieldId": "5",
-    "contractPosition": [
-      {
-        "contractPositionId": "0",
-        "profileId": "0",
-        "jobPositionChildId": "0",
-        "contractStartDate": "17-05-2017",
-        "contractEndDate": "17-06-2021"
-      }
-    ]
-  },
-  {
-    "contractId": "6",
-    "jobPositionFieldId": "6",
-    "contractPosition": [
-      {
-        "contractPositionId": "0",
-        "profileId": "0",
-        "jobPositionChildId": "0",
-        "contractStartDate": "17-05-2017",
-        "contractEndDate": "17-06-2021"
+        "profileId": "3",
+        "profileContract": [
+          {
+            "jobPositionChildId": "0-1",
+            "contractPositionChildList": [
+              {
+                "contractPositionId": "0",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              },
+              {
+                "contractPositionId": "1",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              }
+            ]
+          }
+        ]
       }
     ]
   }

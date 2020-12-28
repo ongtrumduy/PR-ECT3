@@ -21,6 +21,22 @@ class JobDegree {
       }
     );
   }
+
+  returnProfileIdList(data) {
+    let index = this.JobDegree.findIndex(item => {
+      return (
+        item.degreeIdentification.toUpperCase() ===
+          data.degreeIdentification.toUpperCase() &&
+        item.degreeSpeciality.toUpperCase() ===
+          data.degreeSpeciality.toUpperCase()
+      );
+    });
+    let profileidlist = [];
+    this.JobDegree[index].degreeConfirm.forEach(item => {
+      profileidlist.push(item.profileId);
+    });
+    return profileidlist;
+  }
 }
 
 let jobDegree = new JobDegree();

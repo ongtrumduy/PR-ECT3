@@ -23,6 +23,23 @@ class JobProfile {
       }
     );
   }
+
+  returnProfileInfor(data) {
+    let index = this.JobProfile.findIndex(item => {
+      return data.profileId === item.profileId;
+    });
+    let profileinfor = [];
+    profileinfor.push(this.JobProfile[index]);
+    return profileinfor;
+  }
+
+  returnProfileList() {
+    let profileidlist = [];
+    this.JobProfile.forEach(item => {
+      profileidlist.push(item.profileId);
+    });
+    return profileidlist;
+  }
 }
 
 let jobProfile = new JobProfile();

@@ -1,22 +1,25 @@
 [
   {
     "degreeId": "0",
-    "degreeNane": "Khoa học máy tính",
+    "degreeName": "Khoa học máy tính",
     "degreeIdentification": "Kỹ sư",
     "degreeSpeciality ": "Công nghệ phần mềm",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
+        "profileId": "0",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
+        "profileId": "1",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
+        "profileId": "5",
         "degreeYear": "2022",
         "degreeFile": ""
       }
@@ -24,22 +27,25 @@
   },
   {
     "degreeId": "1",
-    "degreeNane": "Khoa học máy tính",
+    "degreeName": "Khoa học máy tính",
     "degreeIdentification": "Kỹ sư",
     "degreeSpeciality ": "Hệ thống thông tin",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
+        "profileId": "9",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
+        "profileId": "8",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
+        "profileId": "7",
         "degreeYear": "2022",
         "degreeFile": ""
       }
@@ -47,22 +53,25 @@
   },
   {
     "degreeId": "2",
-    "degreeNane": "Kỹ thuật máy tính",
+    "degreeName": "Kỹ thuật máy tính",
     "degreeIdentification": "Kỹ sư",
     "degreeSpeciality ": "Trí tuệ nhân tạo",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
+        "profileId": "2",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
+        "profileId": "11",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
+        "profileId": "14",
         "degreeYear": "2022",
         "degreeFile": ""
       }
@@ -70,22 +79,25 @@
   },
   {
     "degreeId": "3",
-    "degreeNane": "Kỹ thuật máy tính",
+    "degreeName": "Kỹ thuật máy tính",
     "degreeIdentification": "Kỹ sư",
     "degreeSpeciality ": "IOT và Hệ thống nhúng",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
+        "profileId": "15",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
+        "profileId": "16",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
+        "profileId": "17",
         "degreeYear": "2022",
         "degreeFile": ""
       }
@@ -93,22 +105,25 @@
   },
   {
     "degreeId": "4",
-    "degreeNane": "Công nghệ thông tin",
+    "degreeName": "Công nghệ thông tin",
     "degreeIdentification": "Cử nhân",
     "degreeSpeciality ": "Công nghệ thông tin",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
+        "profileId": "18",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
+        "profileId": "19",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
+        "profileId": "20",
         "degreeYear": "2022",
         "degreeFile": ""
       }

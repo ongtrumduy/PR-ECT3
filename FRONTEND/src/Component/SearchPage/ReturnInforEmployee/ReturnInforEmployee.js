@@ -15,9 +15,8 @@ export default class ReturnInforEployee extends React.Component {
 
   returnInforEmployee = (
     callbackInforEmployee,
-    _jobPositionId,
+    _jobPositionFieldId,
     _experienceYear,
-    _experienceYearEqual,
     _certificateName,
     _degreeIdentification,
     _degreeSpeciality,
@@ -37,9 +36,8 @@ export default class ReturnInforEployee extends React.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        jobPositionId: _jobPositionId,
+        jobPositionFieldId: _jobPositionFieldId,
         experienceYear: _experienceYear,
-        experienceYearEqual: _experienceYearEqual,
         certificateName: _certificateName,
         degreeIdentification: _degreeIdentification,
         degreeSpeciality: _degreeSpeciality,
@@ -66,9 +64,8 @@ export default class ReturnInforEployee extends React.Component {
     });
     this.returnInforEmployee(
       this.inforemployeelist,
-      this.props.jobPositionId,
+      this.props.jobPositionFieldId,
       this.props.experienceYear,
-      this.props.experienceYearEqual,
       this.props.certificateName,
       this.props.degreeIdentification,
       this.props.degreeSpeciality,
@@ -142,8 +139,8 @@ export default class ReturnInforEployee extends React.Component {
             <td style={{ color: "green" }}>Đang làm việc</td>
             <td>
               <img alt="detail-infor" src={DetailInfor} />
-            </td> 
-           </tr>
+            </td>
+          </tr>
         </table>
       </div>
     );
@@ -152,7 +149,7 @@ export default class ReturnInforEployee extends React.Component {
   validateCheck = () => {
     if (
       this.state.checkvalidate &&
-      (this.props.jobPositionId === "" ||
+      (this.props.jobPositionFieldId === "" ||
         this.props.experienceYear === "" ||
         this.props.experienceYearEqual === "" ||
         this.props.certificateName === "" ||
