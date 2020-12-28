@@ -1,0 +1,76 @@
+.Detail-Infor {
+    height: 100%;
+    width: 99.8%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-style: groove;
+    position: relative;
+    bottom: 570px;
+    opacity: 1;
+    display: none;
+}
+
+.Detail-Infor .Detail-Infor-Modal {
+    border-style: groove;
+    position: absolute;
+    bottom: 280px;
+    z-index: 1;
+    border-radius: 10px;
+    height: 420px;
+    width: 920px;
+    left: 15%;
+    opacity: 1;
+    text-align: left;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+}
+
+.Detail-Infor .Detail-Infor-Modal .exit-button {
+    position: absolute;
+    left: 900px;
+    bottom: 400px;
+}
+
+.Detail-Infor .Detail-Infor-Modal p {
+    font-weight: bold;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content label:first-child {
+    font-weight: bold;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content .Detail-Infor-Avatar {
+    width: 20%;
+    text-align: center;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content .Detail-Infor-Atribute-0 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content .Detail-Infor-Atribute-0 div {
+    margin: 5px 0 5px 0;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content .Detail-Infor-Atribute-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 40%;
+}
+
+.Detail-Infor .Detail-Infor-Modal .Detail-Infor-Content .Detail-Infor-Atribute-1 div {
+    margin: 5px 0 5px 0;
+}

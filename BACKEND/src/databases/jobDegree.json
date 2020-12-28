@@ -1,0 +1,117 @@
+[
+  {
+    "degreeId": "0",
+    "degreeNane": "Khoa học máy tính",
+    "degreeIdentification": "Kỹ sư",
+    "degreeSpeciality ": "Công nghệ phần mềm",
+    "degreeConfirm": [
+      {
+        "degreeConfirmId": "0",
+        "degreeYear": "2021",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "1",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "2",
+        "degreeYear": "2022",
+        "degreeFile": ""
+      }
+    ]
+  },
+  {
+    "degreeId": "1",
+    "degreeNane": "Khoa học máy tính",
+    "degreeIdentification": "Kỹ sư",
+    "degreeSpeciality ": "Hệ thống thông tin",
+    "degreeConfirm": [
+      {
+        "degreeConfirmId": "0",
+        "degreeYear": "2021",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "1",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "2",
+        "degreeYear": "2022",
+        "degreeFile": ""
+      }
+    ]
+  },
+  {
+    "degreeId": "2",
+    "degreeNane": "Kỹ thuật máy tính",
+    "degreeIdentification": "Kỹ sư",
+    "degreeSpeciality ": "Trí tuệ nhân tạo",
+    "degreeConfirm": [
+      {
+        "degreeConfirmId": "0",
+        "degreeYear": "2021",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "1",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "2",
+        "degreeYear": "2022",
+        "degreeFile": ""
+      }
+    ]
+  },
+  {
+    "degreeId": "3",
+    "degreeNane": "Kỹ thuật máy tính",
+    "degreeIdentification": "Kỹ sư",
+    "degreeSpeciality ": "IOT và Hệ thống nhúng",
+    "degreeConfirm": [
+      {
+        "degreeConfirmId": "0",
+        "degreeYear": "2021",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "1",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "2",
+        "degreeYear": "2022",
+        "degreeFile": ""
+      }
+    ]
+  },
+  {
+    "degreeId": "4",
+    "degreeNane": "Công nghệ thông tin",
+    "degreeIdentification": "Cử nhân",
+    "degreeSpeciality ": "Công nghệ thông tin",
+    "degreeConfirm": [
+      {
+        "degreeConfirmId": "0",
+        "degreeYear": "2021",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "1",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "2",
+        "degreeYear": "2022",
+        "degreeFile": ""
+      }
+    ]
+  }
+]

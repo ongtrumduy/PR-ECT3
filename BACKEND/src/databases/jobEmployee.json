@@ -1,0 +1,39 @@
+[
+  {
+    "employeeId": "0",
+    "employeeProfileId": "0",
+    "employeeContractId": [
+      {
+        "contractId": "0"
+      },
+      {
+        "contractId": "1"
+      },
+      {
+        "contractId": "2"
+      }
+    ],
+    "employeeCertificateId": [
+      {
+        "certificateId": "0"
+      },
+      {
+        "certificateId": "2"
+      },
+      {
+        "certificateId": "4"
+      }
+    ],
+    "employeeDegreeId": [
+      {
+        "degreeId": "1"
+      },
+      {
+        "degreeId": "2"
+      },
+      {
+        "degreeId": "3"
+      }
+    ]
+  }
+]

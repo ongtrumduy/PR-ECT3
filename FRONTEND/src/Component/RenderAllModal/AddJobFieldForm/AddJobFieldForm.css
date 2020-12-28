@@ -1,0 +1,38 @@
+.Add-Job-Field .Add-Job-Field-Form {
+    border-style: groove;
+    position: absolute;
+    bottom: 240px;
+    z-index: 100;
+    border-radius: 10px;
+    height: 250px;
+    width: 500px;
+    left: 30%;
+    font-weight: bold;
+    text-align: left;
+    background-color: white;
+    display: none;
+}
+
+.Add-Job-Field .Add-Job-Field-Form p {
+    margin: 5px 0 5px 20px;
+}
+
+.Add-Job-Field .Add-Job-Field-Form .exit-button {
+    position: absolute;
+    left: 485px;
+    bottom: 230px;
+}
+
+.Add-Job-Field .Add-Job-Field-Form input {
+    width: 88%;
+    margin: 5px 0 5px 20px;
+}
+
+.Add-Job-Field .Add-Job-Field-Form .select-add-job-field {
+    margin: 5px 0 5px 20px;
+}
+
+.Add-Job-Field .Add-Job-Field-Form .select-add-job-field select {
+    width: 93.5%;
+    height: 21px;
+}

@@ -1,0 +1,197 @@
+[
+  {
+    "certificateId": "0",
+    "certificateName": "Certified Data Professional",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+        "profileId": "0",
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+        "profileId": "0",
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "1",
+    "certificateName": "Cisco Certified Internetwork Expert",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "2",
+    "certificateName": "Cisco Certified Network Associate",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "3",
+    "certificateName": "Cisco Certified Network Professional",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "4",
+    "certificateName": "CompTIA A+",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "5",
+    "certificateName": "Certified Information Systems Auditor",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "6",
+    "certificateName": "Microsoft Certified Solution Associate",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "7",
+    "certificateName": "Microsoft Technology Associate",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "8",
+    "certificateName": "Project Management Professional",
+    "certificateType": "PMP",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  },
+  {
+    "certificateId": "9",
+    "certificateName": "Oracle Database Certifications",
+    "certificatePeriod": [
+      {
+        "certificatePeriodId": "0",
+
+        "certificateStartDate": "22-12-2020",
+        "certificateEndDate": "22-12-2024",
+        "certificateFile": ""
+      },
+      {
+        "certificatePeriodId": "1",
+
+        "certificateStartDate": "22-12-2018",
+        "certificateEndDate": "22-12-2021",
+        "certificateFile": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+.Job-List {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 400px;
+    flex-direction: row;
+}
+
+.Job-List label {
+    cursor: pointer;
+}
+
+.Job-List label:hover {
+    color: rgb(255, 0, 0);
+}
+
+.Job-List .Job-Branch-List {
+    width: 70%;
+    font-weight: bold;
+    text-align: left;
+    overflow: auto;
+}
+
+.Job-List .Job-Field-List {
+    flex: 1;
+}
+
+.Job-List .Create-Edit-Pane {
+    width: 30%;
+}
+
+.Job-List .Create-Edit-Pane {
+    text-align: left;
+}
+
+.Job-List .Create-Edit-Pane p {
+    font-weight: bold;
+}
+
+.Job-List .Job-Field-List {
+    margin: 4px 0 4px 20px;
+    width: 85%;
+}
+
+.Job-List .Job-Field-List input {
+    cursor: pointer;
+}
+
+.Job-List .Job-Field-List .Position-Child-List {
+    margin: 4px 0 4px 32px;
+}
