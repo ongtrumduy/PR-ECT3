@@ -58,6 +58,46 @@
             ]
           }
         ]
+      },
+      {
+        "profileId": "5",
+        "profileContract": [
+          {
+            "jobPositionChildId": "0-1",
+            "contractPositionChildList": [
+              {
+                "contractPositionId": "0",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              },
+              {
+                "contractPositionId": "1",
+                "contractStartDate": "17-05-2021",
+                "contractEndDate": "17-06-2024"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "profileId": "8",
+        "profileContract": [
+          {
+            "jobPositionChildId": "0-1",
+            "contractPositionChildList": [
+              {
+                "contractPositionId": "0",
+                "contractStartDate": "17-05-2017",
+                "contractEndDate": "17-06-2021"
+              },
+              {
+                "contractPositionId": "1",
+                "contractStartDate": "17-05-2021",
+                "contractEndDate": "17-06-2024"
+              }
+            ]
+          }
+        ]
       }
     ]
   },

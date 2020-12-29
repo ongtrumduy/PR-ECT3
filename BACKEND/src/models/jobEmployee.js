@@ -33,10 +33,10 @@ class JobEmployee {
     let profilecertificatelist = jobCertificate.returnProfileIdList(data);
     let profiledegreelist = jobDegree.returnProfileIdList(data);
     let profileidlist = jobProfile.returnProfileIdList();
-    // console.log(profilecontractlist);
-    // console.log(profilecertificatelist);
-    // console.log(profiledegreelist);
-    // console.log(profileidlist);
+    console.log(profilecontractlist);
+    console.log(profilecertificatelist);
+    console.log(profiledegreelist);
+    console.log(profileidlist);
     let sumcheck;
     let checkerror;
     let returnTrueProfileIdList = [];
