@@ -23,7 +23,11 @@ class JobDegree {
   }
 
   returnProfileIdList(data) {
+    // console.log(data.degreeSpeciality.toUpperCase());
+
     let index = this.JobDegree.findIndex(item => {
+      // console.log(item.degreeIdentification.toUpperCase());
+      // console.log(item.degreeSpeciality.toUpperCase());
       return (
         item.degreeIdentification.toUpperCase() ===
           data.degreeIdentification.toUpperCase() &&
@@ -31,9 +35,20 @@ class JobDegree {
           data.degreeSpeciality.toUpperCase()
       );
     });
+    // console.log(index);
     let profileidlist = [];
+    if (index === -1) {
+      profileidlist = [
+        {
+          profileId: "-9999"
+        }
+      ];
+    }
     this.JobDegree[index].degreeConfirm.forEach(item => {
-      profileidlist.push(item.profileId);
+      let profileid = {
+        profileId: item.profileId
+      };
+      profileidlist.push(profileid);
     });
     return profileidlist;
   }

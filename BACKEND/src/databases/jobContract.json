@@ -52,8 +52,8 @@
               },
               {
                 "contractPositionId": "1",
-                "contractStartDate": "17-05-2017",
-                "contractEndDate": "17-06-2021"
+                "contractStartDate": "17-05-2021",
+                "contractEndDate": "17-06-2024"
               }
             ]
           }
@@ -62,7 +62,7 @@
     ]
   },
   {
-    "contractId": "0",
+    "contractId": "1",
     "contractType": "Chính thức",
     "jobPositionFieldId": "1",
     "contractPositionList": [

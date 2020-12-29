@@ -1,4 +1,5 @@
 import fs from "fs";
+import moment from "moment";
 import uuid from "uuid";
 
 class JobContract {
@@ -30,31 +31,58 @@ class JobContract {
       return item.jobPositionFieldId === data.jobPositionFieldId;
     });
     let sumexperienceyear;
-    console.log(index);
+    // console.log(index);
+    if (index === -1) {
+      experienceyearlist = [
+        {
+          profileId: "-9999",
+          experienceYear: "-9999"
+        }
+      ];
+    }
     this.JobContract[index].contractPositionList.forEach(item => {
       sumexperienceyear = 0;
-      item.contractPositionChildList.forEach(item => {
-        sumexperienceyear +=
-          moment(item.contractEndDate, "DD/MM/YYYY").year() -
-          moment(item.contractEndDate, "DD/MM/YYYY").year();
+      item.profileContract.forEach(item2 => {
+        item2.contractPositionChildList.forEach(item3 => {
+          // console.log(moment(item3.contractEndDate, "DD/MM/YYYY").year());
+          // console.log(moment(item3.contractStartDate, "DD/MM/YYYY").year());
+          sumexperienceyear +=
+            moment(item3.contractEndDate, "DD/MM/YYYY").year() -
+            moment(item3.contractStartDate, "DD/MM/YYYY").year();
+        });
       });
+      // console.log(sumexperienceyear);
       let experienceyear = {
         profileId: item.profileId,
-        experienceyear: sumexperienceyear
+        experienceYear: "" + sumexperienceyear
       };
       experienceyearlist.push(experienceyear);
     });
+    // console.log(experienceyearlist);
     return experienceyearlist;
   }
 
   returnProfileIdList(data) {
     let experienceyearlist = this.returnExperienceYear(data);
+    // console.log(experienceyearlist);
     let profileidlist = [];
     experienceyearlist.forEach(item => {
-      if (data.experienceyear === item.experienceyear) {
-        profileidlist.push(item.profileId);
+      // console.log(item.experienceYear);
+      // console.log(data.experienceYear);
+      if ("-9999" === item.experienceYear) {
+        profileidlist = [
+          {
+            profileId: "-9999"
+          }
+        ];
+      } else if (data.experienceYear === item.experienceYear) {
+        let profileid = {
+          profileId: item.profileId
+        };
+        profileidlist.push(profileid);
       }
     });
+    // console.log(profileidlist);
     return profileidlist;
   }
 }

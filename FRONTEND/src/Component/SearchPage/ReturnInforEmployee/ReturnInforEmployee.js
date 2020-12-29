@@ -63,7 +63,7 @@ export default class ReturnInforEployee extends React.Component {
       checkvalidate: true
     });
     this.returnInforEmployee(
-      this.inforemployeelist,
+      this.receiveInforEmployeeList,
       this.props.jobPositionFieldId,
       this.props.experienceYear,
       this.props.certificateName,
@@ -95,7 +95,7 @@ export default class ReturnInforEployee extends React.Component {
     return (
       <div>
         <table style={{ borderStyle: "groove", width: "100%" }}>
-          <tr>
+          <thead>
             <th>Mã nhân viên</th>
             <th>Họ và tên</th>
             <th>Giới tính</th>
@@ -104,43 +104,24 @@ export default class ReturnInforEployee extends React.Component {
             <th>Loại hợp đồng</th>
             <th>Trạng thái</th>
             <th>Hành động</th>
-          </tr>
-          <tr>
-            <td>MS2015123</td>
-            <td>Nguyễn Văn An</td>
-            <td>Nam</td>
-            <td>20-05-1988</td>
-            <td>25-10-2020</td>
-            <td>Phụ thuộc</td>
-            <td style={{ color: "green" }}>Đang làm việc</td>
-            <td>
-              <img alt="detail-infor" src={DetailInfor} />
-            </td>
-          </tr>
-          <tr>
-            <td>MS2015124</td>
-            <td>Trần Văn Bình</td>
-            <td>Nam</td>
-            <td>17-02-1988</td>
-            <td>25-10-2020</td>
-            <td>Phụ thuộc</td>
-            <td style={{ color: "green" }}>Đang làm việc</td>
-            <td>
-              <img alt="detail-infor" src={DetailInfor} />
-            </td>
-          </tr>
-          <tr>
-            <td>MS2015122</td>
-            <td>Vũ Thị Cúc</td>
-            <td>Nữ</td>
-            <td>17-02-1988</td>
-            <td>25-10-2020</td>
-            <td>Phụ thuộc</td>
-            <td style={{ color: "green" }}>Đang làm việc</td>
-            <td>
-              <img alt="detail-infor" src={DetailInfor} />
-            </td>
-          </tr>
+          </thead>
+          <tbody>
+            {this.state.inforEmployeeList.map((item, index) => (
+              <tr key={index}>
+                <td>{item.employeeId}</td>
+                <td>{item.fullname}</td>
+                <td>{item.gender}</td>
+                <td>{item.birhday}</td>
+                <td>{item.certificateEndDate}</td>
+                <td style={{ color: "green" }}>Đang làm việc</td>
+
+                <td>Đang làm việc</td>
+                <td>
+                  <img alt="detail-infor" src={DetailInfor} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     );

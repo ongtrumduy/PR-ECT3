@@ -148,7 +148,7 @@ export default class Search extends React.Component {
             <label>Chuyên ngành </label>
             <input
               type="text"
-              placeholder="Khoa học máy tính"
+              placeholder="Công nghệ phần mềm"
               onChange={this.handleDegreeSpeciality}
             />
           </div>

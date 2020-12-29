@@ -32,31 +32,65 @@ class JobEmployee {
     let profilecontractlist = jobContract.returnProfileIdList(data);
     let profilecertificatelist = jobCertificate.returnProfileIdList(data);
     let profiledegreelist = jobDegree.returnProfileIdList(data);
-    let profileidlist = jobProfile.returnProfileList();
+    let profileidlist = jobProfile.returnProfileIdList();
+    // console.log(profilecontractlist);
+    // console.log(profilecertificatelist);
+    // console.log(profiledegreelist);
+    // console.log(profileidlist);
     let sumcheck;
+    let checkerror;
     let returnTrueProfileIdList = [];
     profileidlist.forEach(item => {
       sumcheck = 0;
       profilecontractlist.forEach(itemcontract => {
-        if (item.profileId === itemcontract.profileId) {
+        if (itemcontract.profileId == "-9999") {
+          sumcheck = -999999999999999999;
+        } else if (item.profileId === itemcontract.profileId) {
           sumcheck++;
         }
       });
       profilecertificatelist.forEach(itemcertififcate => {
-        if (item.profileId === itemcertififcate.profileId) {
+        if (itemcertififcate.profileId == "-9999") {
+          sumcheck = -999999999999999999;
+        } else if (item.profileId === itemcertififcate.profileId) {
           sumcheck++;
         }
       });
       profiledegreelist.forEach(itemdegree => {
-        if (item.profileId === itemdegree.profileId) {
+        if (itemdegree.profileId == "-9999") {
+          sumcheck = -999999999999999999;
+        } else if (item.profileId === itemdegree.profileId) {
           sumcheck++;
         }
       });
+      if (sumcheck < 0) {
+        checkerror = 1;
+      }
       if (sumcheck >= 3) {
-        returnTrueProfileIdList.push(item.profileId);
+        let profileid = {
+          profileId: item.profileId
+        };
+        returnTrueProfileIdList.push(profileid);
       }
     });
+    if (checkerror === 1) {
+      let profileid = {
+        profileId: "-9999"
+      };
+      returnTrueProfileIdList.push(profileid);
+    }
     return returnTrueProfileIdList;
+  }
+
+  returnTrueProfileInforList(data) {
+    let trueprofileidlist = this.returnTrueProfileIdList(data);
+    console.log(trueprofileidlist);
+    let trueprofileinforlist = [];
+    trueprofileidlist.forEach(item => {
+      trueprofileinforlist.push(jobProfile.returnProfileInfor(item));
+    });
+    console.log(trueprofileinforlist);
+    return trueprofileinforlist;
   }
 }
 

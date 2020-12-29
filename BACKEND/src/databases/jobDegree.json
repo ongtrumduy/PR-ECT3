@@ -3,7 +3,7 @@
     "degreeId": "0",
     "degreeName": "Khoa học máy tính",
     "degreeIdentification": "Kỹ sư",
-    "degreeSpeciality ": "Công nghệ phần mềm",
+    "degreeSpeciality": "Công nghệ phần mềm",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
@@ -20,7 +20,13 @@
       {
         "degreeConfirmId": "2",
         "profileId": "5",
-        "degreeYear": "2022",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "2",
+        "profileId": "3",
+        "degreeYear": "2020",
         "degreeFile": ""
       }
     ]
@@ -29,7 +35,7 @@
     "degreeId": "1",
     "degreeName": "Khoa học máy tính",
     "degreeIdentification": "Kỹ sư",
-    "degreeSpeciality ": "Hệ thống thông tin",
+    "degreeSpeciality": "Hệ thống thông tin",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
@@ -55,7 +61,7 @@
     "degreeId": "2",
     "degreeName": "Kỹ thuật máy tính",
     "degreeIdentification": "Kỹ sư",
-    "degreeSpeciality ": "Trí tuệ nhân tạo",
+    "degreeSpeciality": "Trí tuệ nhân tạo",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
@@ -81,7 +87,7 @@
     "degreeId": "3",
     "degreeName": "Kỹ thuật máy tính",
     "degreeIdentification": "Kỹ sư",
-    "degreeSpeciality ": "IOT và Hệ thống nhúng",
+    "degreeSpeciality": "IOT và Hệ thống nhúng",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",
@@ -107,7 +113,7 @@
     "degreeId": "4",
     "degreeName": "Công nghệ thông tin",
     "degreeIdentification": "Cử nhân",
-    "degreeSpeciality ": "Công nghệ thông tin",
+    "degreeSpeciality": "Công nghệ thông tin",
     "degreeConfirm": [
       {
         "degreeConfirmId": "0",

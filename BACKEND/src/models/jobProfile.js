@@ -28,15 +28,16 @@ class JobProfile {
     let index = this.JobProfile.findIndex(item => {
       return data.profileId === item.profileId;
     });
-    let profileinfor = [];
-    profileinfor.push(this.JobProfile[index]);
-    return profileinfor;
+    return this.JobProfile[index];
   }
 
-  returnProfileList() {
+  returnProfileIdList() {
     let profileidlist = [];
     this.JobProfile.forEach(item => {
-      profileidlist.push(item.profileId);
+      let profileid = {
+        profileId: item.profileId
+      };
+      profileidlist.push(profileid);
     });
     return profileidlist;
   }
