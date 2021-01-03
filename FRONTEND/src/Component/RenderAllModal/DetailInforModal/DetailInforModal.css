@@ -1,18 +1,23 @@
-.Detail-Infor {
+/* .Detail-Infor {
     height: 100%;
     width: 99.8%;
     background-color: rgba(0, 0, 0, 0.8);
     border-style: groove;
-    position: relative;
-    bottom: 570px;
+    position: absolute;
+    bottom: 240px;
+    z-index: 100;
+    border-radius: 10px;
+    height: 250px;
+    width: 500px;
+    left: 30%;
     opacity: 1;
     display: none;
-}
+} */
 
 .Detail-Infor .Detail-Infor-Modal {
     border-style: groove;
     position: absolute;
-    bottom: 280px;
+    bottom: 120px;
     z-index: 1;
     border-radius: 10px;
     height: 420px;

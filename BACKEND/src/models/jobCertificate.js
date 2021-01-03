@@ -42,52 +42,51 @@ class JobCertificate {
           profileId: "-9999"
         }
       ];
-    }
-    // console.log(index);
-
-    this.JobCertificate[index].certificatePeriod.forEach(item => {
-      checktime = 0;
-      item.profileCertificate.forEach(item2 => {
-        // console.log(moment(item2.certificateEndDate, "DD/MM/YYYY").year());
-        // console.log(moment(data.certificateDate, "YYYY/MM/DD").year());
-        if (
-          moment(item2.certificateEndDate, "DD/MM/YYYY").year() >
-          moment(data.certificateDate, "YYYY/MM/DD").year()
-        ) {
-          // console.log("A");
-          checktime = 1;
-        } else if (
-          moment(item2.certificateEndDate, "DD/MM/YYYY").year() ===
-          moment(data.certificateDate, "YYYY/MM/DD").year()
-        ) {
+    } else {
+      this.JobCertificate[index].certificatePeriod.forEach(item => {
+        checktime = 0;
+        item.profileCertificate.forEach(item2 => {
+          // console.log(moment(item2.certificateEndDate, "DD/MM/YYYY").year());
+          // console.log(moment(data.certificateDate, "YYYY/MM/DD").year());
           if (
-            moment(item2.certificateEndDate, "DD/MM/YYYY").month() >
-            moment(data.certificateDate, "YYYY/MM/DD").month()
+            moment(item2.certificateEndDate, "DD/MM/YYYY").year() >
+            moment(data.certificateDate, "YYYY/MM/DD").year()
           ) {
-            // console.log("B");
+            // console.log("A");
             checktime = 1;
           } else if (
-            moment(item2.certificateEndDate, "DD/MM/YYYY").month() ===
-            moment(data.certificateDate, "YYYY/MM/DD").month()
+            moment(item2.certificateEndDate, "DD/MM/YYYY").year() ===
+            moment(data.certificateDate, "YYYY/MM/DD").year()
           ) {
             if (
-              moment(item2.certificateEndDate, "DD/MM/YYYY").date() >=
-              moment(data.certificateDate, "YYYY/MM/DD").date()
+              moment(item2.certificateEndDate, "DD/MM/YYYY").month() >
+              moment(data.certificateDate, "YYYY/MM/DD").month()
             ) {
-              // console.log("C");
+              // console.log("B");
               checktime = 1;
+            } else if (
+              moment(item2.certificateEndDate, "DD/MM/YYYY").month() ===
+              moment(data.certificateDate, "YYYY/MM/DD").month()
+            ) {
+              if (
+                moment(item2.certificateEndDate, "DD/MM/YYYY").date() >=
+                moment(data.certificateDate, "YYYY/MM/DD").date()
+              ) {
+                // console.log("C");
+                checktime = 1;
+              }
             }
           }
+        });
+        if (checktime === 1) {
+          let profileid = {
+            profileId: item.profileId
+          };
+          profileidlist.push(profileid);
         }
       });
-      if (checktime === 1) {
-        let profileid = {
-          profileId: item.profileId
-        };
-        profileidlist.push(profileid);
-      }
-    });
-
+    }
+    // console.log(index);
     return profileidlist;
   }
 }

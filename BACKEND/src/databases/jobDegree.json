@@ -24,8 +24,14 @@
         "degreeFile": ""
       },
       {
-        "degreeConfirmId": "2",
+        "degreeConfirmId": "3",
         "profileId": "3",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "3",
+        "profileId": "8",
         "degreeYear": "2020",
         "degreeFile": ""
       }

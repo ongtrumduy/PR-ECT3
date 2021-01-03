@@ -43,13 +43,14 @@ class JobDegree {
           profileId: "-9999"
         }
       ];
+    } else {
+      this.JobDegree[index].degreeConfirm.forEach(item => {
+        let profileid = {
+          profileId: item.profileId
+        };
+        profileidlist.push(profileid);
+      });
     }
-    this.JobDegree[index].degreeConfirm.forEach(item => {
-      let profileid = {
-        profileId: item.profileId
-      };
-      profileidlist.push(profileid);
-    });
     return profileidlist;
   }
 }

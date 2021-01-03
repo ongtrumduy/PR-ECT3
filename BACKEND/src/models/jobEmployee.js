@@ -33,10 +33,11 @@ class JobEmployee {
     let profilecertificatelist = jobCertificate.returnProfileIdList(data);
     let profiledegreelist = jobDegree.returnProfileIdList(data);
     let profileidlist = jobProfile.returnProfileIdList();
-    console.log(profilecontractlist);
-    console.log(profilecertificatelist);
-    console.log(profiledegreelist);
-    console.log(profileidlist);
+    // console.log(profilecontractlist);
+    // console.log(profilecertificatelist);
+    // console.log(profiledegreelist);
+    // console.log(profileidlist);
+    // console.log("===============================================");
     let sumcheck;
     let checkerror;
     let returnTrueProfileIdList = [];
@@ -63,6 +64,7 @@ class JobEmployee {
           sumcheck++;
         }
       });
+      // console.log(`Check errorr ${sumcheck}`);
       if (sumcheck < 0) {
         checkerror = 1;
       }
@@ -73,6 +75,7 @@ class JobEmployee {
         returnTrueProfileIdList.push(profileid);
       }
     });
+    // console.log(`Check errorr ${checkerror}`);
     if (checkerror === 1) {
       let profileid = {
         profileId: "-9999"
@@ -84,13 +87,24 @@ class JobEmployee {
 
   returnTrueProfileInforList(data) {
     let trueprofileidlist = this.returnTrueProfileIdList(data);
-    console.log(trueprofileidlist);
-    let trueprofileinforlist = [];
+    let checkerror;
+    // console.log(trueprofileidlist);
     trueprofileidlist.forEach(item => {
-      trueprofileinforlist.push(jobProfile.returnProfileInfor(item));
+      if (item.profileId == "-9999") {
+        checkerror = 1;
+      }
     });
-    console.log(trueprofileinforlist);
-    return trueprofileinforlist;
+    // console.log(`Checkerrorr ${checkerror}`);
+    if (checkerror === 1) {
+      return "-999999";
+    } else {
+      let trueprofileinforlist = [];
+      trueprofileidlist.forEach(item => {
+        trueprofileinforlist.push(jobProfile.returnProfileInfor(item));
+      });
+      // console.log(trueprofileinforlist);
+      return trueprofileinforlist;
+    }
   }
 }
 

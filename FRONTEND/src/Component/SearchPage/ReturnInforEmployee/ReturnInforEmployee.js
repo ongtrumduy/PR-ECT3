@@ -9,7 +9,8 @@ export default class ReturnInforEployee extends React.Component {
     super(props);
     this.state = {
       inforEmployeeList: [],
-      checkvalidate: false
+      checkvalidate: false,
+      checkerror: "0"
     };
   }
 
@@ -46,15 +47,31 @@ export default class ReturnInforEployee extends React.Component {
     };
     request(options, (error, response, body) => {
       if (error) throw new Error(error);
-      console.log(body);
-      let returnInforEmployee = JSON.parse(body);
-      callbackInforEmployee(returnInforEmployee);
+      // console.log(body);
+      if (body === "-999999") {
+        this.setState({
+          checkerror: "1"
+        });
+      } else {
+        let returnInforEmployee = JSON.parse(body);
+        callbackInforEmployee(returnInforEmployee);
+      }
     });
+  };
+
+  setStatusRenderModalForm = (add_modal, _profileId) => {
+    this.props.setStatusRenderModalForm(add_modal);
+    this.props.setModalOptionJob(this.props.setOptionJob);
+    let getProfileInfor = {
+      profileId: _profileId
+    };
+    this.props.socket.emit("get-profile-infor", getProfileInfor);
   };
 
   receiveInforEmployeeList = _inforEmployeeList => {
     this.setState({
-      inforEmployeeList: _inforEmployeeList
+      inforEmployeeList: _inforEmployeeList,
+      checkerror: "0"
     });
   };
 
@@ -92,39 +109,58 @@ export default class ReturnInforEployee extends React.Component {
   };
 
   renderInforEmployeeTable = () => {
-    return (
-      <div>
-        <table style={{ borderStyle: "groove", width: "100%" }}>
-          <thead>
-            <th>Mã nhân viên</th>
-            <th>Họ và tên</th>
-            <th>Giới tính</th>
-            <th>Ngày sinh</th>
-            <th>Ngày hết hạn hợp đồng</th>
-            <th>Loại hợp đồng</th>
-            <th>Trạng thái</th>
-            <th>Hành động</th>
-          </thead>
-          <tbody>
-            {this.state.inforEmployeeList.map((item, index) => (
-              <tr key={index}>
-                <td>{item.employeeId}</td>
-                <td>{item.fullname}</td>
-                <td>{item.gender}</td>
-                <td>{item.birhday}</td>
-                <td>{item.certificateEndDate}</td>
-                <td style={{ color: "green" }}>Đang làm việc</td>
-
-                <td>Đang làm việc</td>
-                <td>
-                  <img alt="detail-infor" src={DetailInfor} />
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    );
+    if (this.state.checkerror === "1") {
+      return (
+        <div>
+          <p style={{ fontWeight: "bold" }}>
+            Không tìm được thông tin như yêu cầu !!!!!!!!!!!!
+          </p>
+        </div>
+      );
+    } else if (this.state.checkerror === "0") {
+      return (
+        <div>
+          <table style={{ borderStyle: "groove", width: "100%" }}>
+            <thead>
+              <th>Mã nhân viên</th>
+              <th>Họ và tên</th>
+              <th>Giới tính</th>
+              <th>Ngày sinh</th>
+              <th>Ngày hết hạn hợp đồng</th>
+              <th>Loại hợp đồng</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </thead>
+            <tbody>
+              {this.state.inforEmployeeList.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.employeeId}</td>
+                  <td>{item.fullname}</td>
+                  <td>{item.gender}</td>
+                  <td>{item.birthday}</td>
+                  <td>{item.certificateEndDate}</td>
+                  <td>Chính thức</td>
+                  <td style={{ color: "green" }}>{item.employeeStatus}</td>
+                  <td>
+                    <img
+                      alt="detail-infor"
+                      style={{ cursor: "pointer" }}
+                      src={DetailInfor}
+                      onClick={() =>
+                        this.setStatusRenderModalForm(
+                          "showprofileinformodal",
+                          item.profileId
+                        )
+                      }
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
   };
 
   validateCheck = () => {

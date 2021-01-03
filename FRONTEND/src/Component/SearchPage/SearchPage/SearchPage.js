@@ -39,7 +39,7 @@ export default class Search extends React.Component {
     };
     request(options, (error, response, body) => {
       if (error) throw new Error(error);
-      console.log(body);
+      // console.log(body);
       let receiveJobPosition = JSON.parse(body);
       callbackJobPosition(receiveJobPosition);
     });
@@ -177,6 +177,9 @@ export default class Search extends React.Component {
           degreeIdentification={this.state.degreeIdentification}
           degreeSpeciality={this.state.degreeSpeciality}
           certificateDate={this.state.certificateDate}
+          setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+          setModalOptionJob={this.props.setModalOptionJob}
+          socket={this.props.socket}
         />
       </div>
     );

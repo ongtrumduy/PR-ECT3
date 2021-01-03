@@ -1,14 +1,14 @@
 [
   {
     "companyId": "0",
-    "companyName": "Đại Duy Company",
-    "companyEmail": "DaiDuyCo@gmail.com",
+    "companyName": "Đại Tiến Company",
+    "companyEmail": "DaiTienCo@gmail.com",
     "companyAddress": ""
   },
   {
     "companyId": "1",
-    "companyName": "Tân Duy Company",
-    "companyEmail": "TanDuyCo@gmail.com",
+    "companyName": "Tân Hoa Company",
+    "companyEmail": "TanHoaCo@gmail.com",
     "companyAddress": ""
   },
   {

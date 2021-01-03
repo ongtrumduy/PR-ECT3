@@ -5,6 +5,7 @@ import "./RenderAllModal.css";
 import AddJobFieldForm from "../AddJobFieldForm/AddJobFieldForm";
 import AddJobChildForm from "../AddJobChildForm/AddJobChildForm";
 import RemoveItemJobForm from "../RemoveItemJobForm/RemoveItemJobForm";
+import DetailInforModal from "../DetailInforModal/DetailInforModal";
 
 export default class RenderAllModal extends React.Component {
   constructor(props) {
@@ -34,6 +35,15 @@ export default class RenderAllModal extends React.Component {
       case "removeitemjobform":
         return (
           <RemoveItemJobForm
+            statusRenderModalForm={this.props.statusRenderModalForm}
+            setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+            setOptionJob={option_job_name}
+            socket={this.props.socket}
+          />
+        );
+      case "showprofileinformodal":
+        return (
+          <DetailInforModal
             statusRenderModalForm={this.props.statusRenderModalForm}
             setStatusRenderModalForm={this.props.setStatusRenderModalForm}
             setOptionJob={option_job_name}

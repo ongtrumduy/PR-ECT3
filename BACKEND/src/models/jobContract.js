@@ -33,31 +33,30 @@ class JobContract {
     let sumexperienceyear;
     // console.log(index);
     if (index === -1) {
-      experienceyearlist = [
-        {
-          profileId: "-9999",
-          experienceYear: "-9999"
-        }
-      ];
-    }
-    this.JobContract[index].contractPositionList.forEach(item => {
-      sumexperienceyear = 0;
-      item.profileContract.forEach(item2 => {
-        item2.contractPositionChildList.forEach(item3 => {
-          // console.log(moment(item3.contractEndDate, "DD/MM/YYYY").year());
-          // console.log(moment(item3.contractStartDate, "DD/MM/YYYY").year());
-          sumexperienceyear +=
-            moment(item3.contractEndDate, "DD/MM/YYYY").year() -
-            moment(item3.contractStartDate, "DD/MM/YYYY").year();
+      experienceyearlist = [{
+        profileId: "-9999",
+        experienceYear: "-9999"
+      }];
+    } else {
+      this.JobContract[index].contractPositionList.forEach(item => {
+        sumexperienceyear = 0;
+        item.profileContract.forEach(item2 => {
+          item2.contractPositionChildList.forEach(item3 => {
+            // console.log(moment(item3.contractEndDate, "DD/MM/YYYY").year());
+            // console.log(moment(item3.contractStartDate, "DD/MM/YYYY").year());
+            sumexperienceyear +=
+              moment(item3.contractEndDate, "DD/MM/YYYY").year() -
+              moment(item3.contractStartDate, "DD/MM/YYYY").year();
+          });
         });
+        // console.log(sumexperienceyear);
+        let experienceyear = {
+          profileId: item.profileId,
+          experienceYear: "" + sumexperienceyear
+        };
+        experienceyearlist.push(experienceyear);
       });
-      // console.log(sumexperienceyear);
-      let experienceyear = {
-        profileId: item.profileId,
-        experienceYear: "" + sumexperienceyear
-      };
-      experienceyearlist.push(experienceyear);
-    });
+    }
     // console.log(experienceyearlist);
     return experienceyearlist;
   }
@@ -66,22 +65,23 @@ class JobContract {
     let experienceyearlist = this.returnExperienceYear(data);
     // console.log(experienceyearlist);
     let profileidlist = [];
+    let checkempty = 0;
     experienceyearlist.forEach(item => {
-      // console.log(item.experienceYear);
-      // console.log(data.experienceYear);
-      if ("-9999" === item.experienceYear) {
-        profileidlist = [
-          {
-            profileId: "-9999"
-          }
-        ];
-      } else if (data.experienceYear === item.experienceYear) {
+      if (data.experienceYear === item.experienceYear) {
+        checkempty = 1;
         let profileid = {
           profileId: item.profileId
         };
         profileidlist.push(profileid);
       }
     });
+    if (checkempty === 0) {
+      profileidlist = [
+        {
+          profileId: "-9999"
+        }
+      ];
+    }
     // console.log(profileidlist);
     return profileidlist;
   }

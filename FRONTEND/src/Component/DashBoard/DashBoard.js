@@ -15,7 +15,15 @@ export default class DashBoard extends React.Component {
 
   selectInterfaceRender = () => {
     if (this.state.chooseInterface === "none") {
-      return <SearchPage />;
+      return (
+        <SearchPage
+          statusRenderModalForm={this.props.statusRenderModalForm}
+          setStatusRenderModalForm={this.props.setStatusRenderModalForm}
+          setModalOptionJob={this.props.setModalOptionJob}
+          setOptionJob={this.state.chooseInterface}
+          socket={this.props.socket}
+        />
+      );
     } else {
       return (
         <Job
