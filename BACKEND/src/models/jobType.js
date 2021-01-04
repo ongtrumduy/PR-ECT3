@@ -89,6 +89,21 @@ class JobType {
     return jobChildList;
   }
 
+  readJobChildToUpdate(data) {
+    let jobChildList = [];
+    let indexChild = this.JobType.findIndex(item => {
+      return data.jobGrandId === item.jobTypeFieldId;
+    });
+    this.JobType[indexChild].jobTypeChild.forEach(item => {
+      let jobChild = {
+        jobChildId: item.jobTypeChildId,
+        jobChildName: item.jobTypeChildName
+      };
+      jobChildList.push(jobChild);
+    });
+    return jobChildList;
+  }
+
   readJobTypeChild(data) {
     let index = data.jobTypeChildId;
     return this.JobType[index].jobTypeChild;
@@ -124,7 +139,7 @@ class JobType {
   readGrandJobTypeChildForEditPage(data) {
     let grandTypeList = [];
     let jobGrandList = [];
-    this.JobPosition.forEach(item => {
+    this.JobType.forEach(item => {
       let jobField = {
         jobGrandId: item.jobTypeFieldId,
         jobGrandName: item.jobTypeFieldName
@@ -138,8 +153,8 @@ class JobType {
       jobGrandId: this.JobType[indexField].jobTypeFieldId,
       jobGrandName: this.JobType[indexField].jobTypeFieldName
     };
-    grandTypeList = jobGrandList;
-    grandTypeList.splice(indexField, 1);
+    // grandTypeList = jobGrandList;
+    // grandTypeList.splice(indexField, 1);
     // console.log(grandTypeList);
     grandTypeList.unshift(grandType);
     // console.log(grandTypeList);
@@ -150,10 +165,11 @@ class JobType {
     let indexField = this.JobType.findIndex(item => {
       return data.jobFieldId === item.jobTypeFieldId;
     });
+    // console.log(indexField);
     let indexChild = this.JobType[indexField].jobTypeChild.findIndex(item => {
       return data.jobChildId === item.jobTypeChildId;
     });
-    let jobGrandId = this.JobType[indexChild].jobTypeFieldId;
+    let jobGrandId = this.JobType[indexField].jobTypeFieldId;
 
     let jobGrandList = this.readGrandJobTypeChildForEditPage(jobGrandId);
     let returnJobChild = {
@@ -180,13 +196,14 @@ class JobType {
 
   updateJobTypeChild(data) {
     let indexField = this.JobType.findIndex(item => {
-      return data.jobTypeFieldId === item.jobTypeFieldId;
+      return data.jobGrandId === item.jobTypeFieldId;
     });
     this.JobType[indexField].jobTypeChild.forEach(item => {
-      if ((data.jobTypeChildId = item.jobTypeChildId)) {
-        item.jobTypeChildName = data.jobTypeChildName;
+      if (data.jobId === item.jobTypeChildId) {
+        item.jobTypeChildName = data.jobName;
       }
     });
+    this.saveJobTypeDataJson();
   }
 
   deleteJobTypeField() {

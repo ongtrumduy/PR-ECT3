@@ -1,6 +1,8 @@
 import createNewJobFieldSockets from "./createNewJobField";
 import createNewJobChildSockets from "./createNewJobChild";
-import updateJobSockets from "./updateJob";
+import updateFieldJobSockets from "./updateFieldJob";
+import updateChildJobSockets from "./updateChildJob";
+import returnUpdateJobSockets from "./returnUpdateJob";
 import returnAllProfileInforSockets from "./returnAllProfileInfor";
 
 let AllSockets = io => {
@@ -10,7 +12,11 @@ let AllSockets = io => {
 
   createNewJobChildSockets(io);
 
-  updateJobSockets(io);
+  updateFieldJobSockets(io);
+
+  updateChildJobSockets(io);
+
+  returnUpdateJobSockets(io);
 
   returnAllProfileInforSockets(io);
   //   // --------------------------AddFriend--------------------------------------

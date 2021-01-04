@@ -42,7 +42,7 @@ export default class PositionChild extends React.Component {
     };
     request(options, (error, response, body) => {
       if (error) throw new Error(error);
-      // console.log(body);
+      console.log(body);
       let receiveJobChild = JSON.parse(body);
       callbackJobChild(receiveJobChild);
     });
@@ -54,7 +54,7 @@ export default class PositionChild extends React.Component {
       this.props.jobFieldId,
       this.receiveJobChildList
     );
-    this.props.socket.on("return-create-new-job-child", data => {
+    this.props.socket.on("return-list-job-child", data => {
       this.setState({
         jobChildList: data
       });
@@ -74,7 +74,7 @@ export default class PositionChild extends React.Component {
         this.receiveJobChildList
       );
     }
-    this.props.socket.on("return-create-new-job-child", data => {
+    this.props.socket.on("return-list-job-child", data => {
       this.setState({
         jobChildList: data
       });
@@ -88,12 +88,12 @@ export default class PositionChild extends React.Component {
   };
 
   sentToUpdateChild = (_jobChildId, _jobFieldId) => {
-    let dataSentToUpdateField = {
-      jobChildId: _jobChildId,
+    let dataSentToUpdateChild = {
       jobFieldId: _jobFieldId,
+      jobChildId: _jobChildId,
       jobFieldOptionName: this.props.setOptionJob
     };
-    this.props.socket.emit("sent-to-edit-child", dataSentToUpdateField);
+    this.props.socket.emit("sent-to-edit-child", dataSentToUpdateChild);
     this.checkChangeIconChild(_jobChildId);
   };
 
@@ -143,7 +143,7 @@ export default class PositionChild extends React.Component {
               <img alt="" src={JobChildIcon} />
               <label
                 onClick={() =>
-                  this.sentToUpdateChild(item.jobChildId, item.jobFieldId)
+                  this.sentToUpdateChild(item.jobChildId, this.props.jobFieldId)
                 }
               >
                 {item.jobChildName}

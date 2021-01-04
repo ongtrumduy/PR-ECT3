@@ -90,6 +90,21 @@ class JobPosition {
     return jobChildList;
   }
 
+  readJobChildToUpdate(data) {
+    let jobChildList = [];
+    let indexChild = this.JobPosition.findIndex(item => {
+      return data.jobGrandId === item.jobPositionFieldId;
+    });
+    this.JobPosition[indexChild].jobPositionChild.forEach(item => {
+      let jobChild = {
+        jobChildId: item.jobPositionChildId,
+        jobChildName: item.jobPositionChildName
+      };
+      jobChildList.push(jobChild);
+    });
+    return jobChildList;
+  }
+
   readJobPositionChild(data) {
     let index = data.jobPositionChildId;
     return this.JobPosition[index].jobPositionChild;
@@ -175,8 +190,8 @@ class JobPosition {
       jobGrandId: this.JobPosition[indexField].jobPositionFieldId,
       jobGrandName: this.JobPosition[indexField].jobPositionFieldName
     };
-    grandPositionList = jobGrandList;
-    grandPositionList.splice(indexField, 1);
+    // grandPositionList = jobGrandList;
+    // grandPositionList.splice(indexField, 1);
     // console.log(grandTypeList);
     grandPositionList.unshift(grandPosition);
     // console.log(grandTypeList);
@@ -192,7 +207,7 @@ class JobPosition {
         return data.jobChildId === item.jobPositionChildId;
       }
     );
-    let jobGrandId = this.JobPosition[indexChild].jobPositionFieldId;
+    let jobGrandId = this.JobPosition[indexField].jobPositionFieldId;
 
     let jobGrandList = this.readGrandJobPositionChildForEditPage(jobGrandId);
     let returnJobChild = {
@@ -220,13 +235,14 @@ class JobPosition {
 
   updateJobPositionChild(data) {
     let indexField = this.JobPosition.findIndex(item => {
-      return data.jobPositionFieldId === item.jobPositionFieldId;
+      return data.jobGrandId === item.jobPositionFieldId;
     });
     this.JobPosition[indexField].jobPositionChild.forEach(item => {
-      if ((data.jobPositionChildId = item.jobPositionChildId)) {
-        item.jobPositionChildName = data.jobPositionChildName;
+      if ((data.jobId === item.jobPositionChildId)) {
+        item.jobPositionChildName = data.jobName;
       }
     });
+    this.saveJobPositionDataJson();
   }
 
   deleteJobPositionField() {

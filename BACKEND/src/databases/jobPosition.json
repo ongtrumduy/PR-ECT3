@@ -1,1 +1,276 @@
-[{"jobPositionFieldId":"0","jobPositionFieldName":"Giảng viên","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"0-0","jobPositionChildName":"Giảng dạy"},{"jobPositionChildId":"0-1","jobPositionChildName":"Quản lý, soạn giáo án, chấm bài"}]},{"jobPositionFieldId":"1","jobPositionFieldName":"Trợ Thời giảng","jobTypeFieldId":"0","jobPositionChild":[{"jobPositionChildId":"1-0","jobPositionChildName":"Giảng dạy"},{"jobPositionChildId":"1-1","jobPositionChildName":"Quản lý, soạn giáo án, chấm bài"}]},{"jobPositionFieldId":"2","jobPositionFieldName":"IT Giáo viên","jobTypeFieldId":"4","jobPositionChild":[{"jobPositionChildId":"2-0","jobPositionChildName":"Giảng dạy"},{"jobPositionChildId":"2-1","jobPositionChildName":"Quản lý, soạn giáo án, chấm bài"}]},{"jobPositionFieldId":"3","jobPositionFieldName":"Chuyên viên IT Mạng","jobTypeFieldId":"1","jobPositionChild":[{"jobPositionChildId":"3-0","jobPositionChildName":"Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"},{"jobPositionChildId":"3-1","jobPositionChildName":"Quản trị, bảo hành, bảo trì hoạt động của phần mềm và hệ thống thông tin"}]},{"jobPositionFieldId":"4","jobPositionFieldName":"Chuyên viên Bảo Mật Ứng dụng","jobTypeFieldId":"1","jobPositionChild":[{"jobPositionChildId":"4-0","jobPositionChildName":"Vận hành các hệ thống giám sát an ninh mạng"},{"jobPositionChildId":"4-1","jobPositionChildName":"Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"}]},{"jobPositionFieldId":"5","jobPositionFieldName":"Chuyên viên Phân Tích Sự Kiện Bảo Mật","jobTypeFieldId":"1","jobPositionChild":[{"jobPositionChildId":"5-0","jobPositionChildName":"Vận hành các hệ thống giám sát an ninh mạng"},{"jobPositionChildId":"5-1","jobPositionChildName":"Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"}]},{"jobPositionFieldId":"6","jobPositionFieldName":"Kỹ Sư Bảo Mật","jobTypeFieldId":"1","jobPositionChild":[{"jobPositionChildId":"6-0","jobPositionChildName":"Tư vấn, đánh giá, thẩm định chất lượng phần mềm"},{"jobPositionChildId":"6-1","jobPositionChildName":"Tham gia triển khai các dự án của công ty"},{"jobPositionChildId":"6-2","jobPositionChildName":"Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"}]},{"jobPositionFieldId":"7","jobPositionFieldName":"Vị trí test","jobTypeFieldId":"2","jobPositionChild":[{"jobPositionChildId":"7-0","jobPositionChildName":"Kiểm thử phần mềm"},{"jobPositionChildId":"7-1","jobPositionChildName":"Test hộp Đen"}]},{"jobPositionFieldId":"8","jobPositionFieldName":"Chuyên viên hỗ trợ khách hàng","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"8-0","jobPositionChildName":"Phối hợp, giám sát, đôn đốc các đơn vị chức năng trong xử lý các yêu cầu hỗ trợ CNTT đảm bảo các SLA đã cam kết"},{"jobPositionChildId":"8-1","jobPositionChildName":"Thực hiện xử lý các yêu cầu hỗ trợ CNTT theo quy trình, hướng dẫn"}]},{"jobPositionFieldId":"9","jobPositionFieldName":"Chuyên viên Quản trị và Bảo Trì Ứng Dụng","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"9-0","jobPositionChildName":"Quản trị, bảo hành, bảo trì hoạt động của phần mềm và hệ thống thông tin"}]},{"jobPositionFieldId":"10","jobPositionFieldName":"Kỹ thuật viên","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"10-0","jobPositionChildName":"Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"},{"jobPositionChildId":"10-1","jobPositionChildName":"Giảng dạy học tập"}]},{"jobPositionFieldId":"11","jobPositionFieldName":"Data Analyst","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"11-0","jobPositionChildName":"Thu thập dữ liệu sử dụng thiết kế ứng dụng phần mềm"},{"jobPositionChildId":"11-1","jobPositionChildName":"Lập trình phát triển phần mềm"},{"jobPositionChildId":"11-2","jobPositionChildName":"Tư vấn, xây dựng dự án phần mềm"}]},{"jobPositionFieldId":"12","jobPositionFieldName":"UX Designer","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"12-0","jobPositionChildName":"Thu thập dữ liệu sử dụng thiết kế ứng dụng phần mềm"},{"jobPositionChildId":"12-1","jobPositionChildName":"Lập trình phát triển phần mềm"}]},{"jobPositionFieldId":"13","jobPositionFieldName":"Business Analyst","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"13-0","jobPositionChildName":"Kiểm thử, kiểm định phần mềm"},{"jobPositionChildId":"13-1","jobPositionChildName":"Tư vấn, đánh giá, thẩm định chất lượng phần mềm"}]},{"jobPositionFieldId":"14","jobPositionFieldName":"Android Engineer","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"14-0","jobPositionChildName":"Nghiên cứu, áp dụng các công nghệ mới"},{"jobPositionChildId":"14-1","jobPositionChildName":"Phân tích, thiết kế phần mềm"}]},{"jobPositionFieldId":"15","jobPositionFieldName":"iOS Engineer","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"15-0","jobPositionChildName":"Nghiên cứu, áp dụng các công nghệ mới"},{"jobPositionChildId":"15-1","jobPositionChildName":"Phân tích, thiết kế phần mềm"}]},{"jobPositionFieldId":"16","jobPositionFieldName":"Front-End Engineer","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"16-0","jobPositionChildName":"Phân tích, thiết kế phần mềm"},{"jobPositionChildId":"16-1","jobPositionChildName":"Nghiên cứu, áp dụng các công nghệ mới"}]},{"jobPositionFieldId":"17","jobPositionFieldName":"Back-End Engineer","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"17-0","jobPositionChildName":"Phân tích, thiết kế phần mềm"}]},{"jobPositionFieldId":"18","jobPositionFieldName":"Software Engineer","jobTypeFieldId":"3","jobPositionChild":[{"jobPositionChildId":"18-0","jobPositionChildName":"Lập trình phát triển phần mềm"}]}]
+[
+  {
+    "jobPositionFieldId": "0",
+    "jobPositionFieldName": "Giảng văn viên",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      { "jobPositionChildId": "0-0", "jobPositionChildName": "Giảng dạy" },
+      {
+        "jobPositionChildId": "0-1",
+        "jobPositionChildName": "Quản lý, soạn giáo án, chấm bài"
+      },
+      {
+        "jobPositionChildId": "0-2",
+        "jobPositionChildName": "Gia sư, dạy thêm"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "1",
+    "jobPositionFieldName": "Trợ Thời giảng",
+    "jobTypeFieldId": "0",
+    "jobPositionChild": [
+      { "jobPositionChildId": "1-0", "jobPositionChildName": "Giảng dạy" },
+      {
+        "jobPositionChildId": "1-1",
+        "jobPositionChildName": "Quản lý, soạn giáo án, chấm bài"
+      },
+      { "jobPositionChildId": "1-2", "jobPositionChildName": "Trợ văn giảng" }
+    ]
+  },
+  {
+    "jobPositionFieldId": "2",
+    "jobPositionFieldName": "IT Giáo viên",
+    "jobTypeFieldId": "4",
+    "jobPositionChild": [
+      { "jobPositionChildId": "2-0", "jobPositionChildName": "Giảng dạy" },
+      {
+        "jobPositionChildId": "2-1",
+        "jobPositionChildName": "Quản lý, soạn giáo án, chấm bài"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "3",
+    "jobPositionFieldName": "Chuyên viên IT Mạng",
+    "jobTypeFieldId": "1",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "3-0",
+        "jobPositionChildName": "Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"
+      },
+      {
+        "jobPositionChildId": "3-1",
+        "jobPositionChildName": "Quản trị, bảo hành, bảo trì hoạt động của phần mềm và hệ thống thông tin"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "4",
+    "jobPositionFieldName": "Chuyên viên Bảo Mật Ứng dụng",
+    "jobTypeFieldId": "1",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "4-0",
+        "jobPositionChildName": "Vận hành các hệ thống giám sát an ninh mạng"
+      },
+      {
+        "jobPositionChildId": "4-1",
+        "jobPositionChildName": "Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "5",
+    "jobPositionFieldName": "Chuyên viên Phân Tích Sự Kiện Bảo Mật",
+    "jobTypeFieldId": "1",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "5-0",
+        "jobPositionChildName": "Vận hành các hệ thống giám sát an ninh mạng"
+      },
+      {
+        "jobPositionChildId": "5-1",
+        "jobPositionChildName": "Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "6",
+    "jobPositionFieldName": "Kỹ Sư Bảo Mật",
+    "jobTypeFieldId": "1",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "6-0",
+        "jobPositionChildName": "Tư vấn, đánh giá, thẩm định chất lượng phần mềm"
+      },
+      {
+        "jobPositionChildId": "6-1",
+        "jobPositionChildName": "Tham gia triển khai các dự án của công ty"
+      },
+      {
+        "jobPositionChildId": "6-2",
+        "jobPositionChildName": "Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "7",
+    "jobPositionFieldName": "Vị trí test",
+    "jobTypeFieldId": "2",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "7-0",
+        "jobPositionChildName": "Kiểm thử phần mềm"
+      },
+      { "jobPositionChildId": "7-1", "jobPositionChildName": "Test hộp Đen" }
+    ]
+  },
+  {
+    "jobPositionFieldId": "8",
+    "jobPositionFieldName": "Chuyên viên hỗ trợ khách hàng",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "8-0",
+        "jobPositionChildName": "Phối hợp, giám sát, đôn đốc các đơn vị chức năng trong xử lý các yêu cầu hỗ trợ CNTT đảm bảo các SLA đã cam kết"
+      },
+      {
+        "jobPositionChildId": "8-1",
+        "jobPositionChildName": "Thực hiện xử lý các yêu cầu hỗ trợ CNTT theo quy trình, hướng dẫn"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "9",
+    "jobPositionFieldName": "Chuyên viên Quản trị và Bảo Trì Ứng Dụng",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "9-0",
+        "jobPositionChildName": "Quản trị, bảo hành, bảo trì hoạt động của phần mềm và hệ thống thông tin"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "10",
+    "jobPositionFieldName": "Kỹ thuật viên",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "10-0",
+        "jobPositionChildName": "Kiểm tra, đánh giá, giám sát an toàn thông tin mạng"
+      },
+      {
+        "jobPositionChildId": "10-1",
+        "jobPositionChildName": "Giảng dạy học tập"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "11",
+    "jobPositionFieldName": "Data Analyst",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "11-0",
+        "jobPositionChildName": "Thu thập dữ liệu sử dụng thiết kế ứng dụng phần mềm"
+      },
+      {
+        "jobPositionChildId": "11-1",
+        "jobPositionChildName": "Lập trình phát triển phần mềm"
+      },
+      {
+        "jobPositionChildId": "11-2",
+        "jobPositionChildName": "Tư vấn, xây dựng dự án phần mềm"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "12",
+    "jobPositionFieldName": "UX Designer",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "12-0",
+        "jobPositionChildName": "Thu thập dữ liệu sử dụng thiết kế ứng dụng phần mềm"
+      },
+      {
+        "jobPositionChildId": "12-1",
+        "jobPositionChildName": "Lập trình phát triển phần mềm"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "13",
+    "jobPositionFieldName": "Business Analyst",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "13-0",
+        "jobPositionChildName": "Kiểm thử, kiểm định phần mềm"
+      },
+      {
+        "jobPositionChildId": "13-1",
+        "jobPositionChildName": "Tư vấn, đánh giá, thẩm định chất lượng phần mềm"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "14",
+    "jobPositionFieldName": "Android Engineer",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "14-0",
+        "jobPositionChildName": "Nghiên cứu, áp dụng các công nghệ mới"
+      },
+      {
+        "jobPositionChildId": "14-1",
+        "jobPositionChildName": "Phân tích, thiết kế phần mềm"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "15",
+    "jobPositionFieldName": "iOS Engineer",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "15-0",
+        "jobPositionChildName": "Nghiên cứu, áp dụng các công nghệ mới"
+      },
+      {
+        "jobPositionChildId": "15-1",
+        "jobPositionChildName": "Phân tích, thiết kế phần mềm"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "16",
+    "jobPositionFieldName": "Front-End Engineer",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "16-0",
+        "jobPositionChildName": "Phân tích, thiết kế phần mềm"
+      },
+      {
+        "jobPositionChildId": "16-1",
+        "jobPositionChildName": "Nghiên cứu, áp dụng các công nghệ mới"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "17",
+    "jobPositionFieldName": "Back-End Engineer",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "17-0",
+        "jobPositionChildName": "Phân tích, thiết kế phần mềm"
+      }
+    ]
+  },
+  {
+    "jobPositionFieldId": "18",
+    "jobPositionFieldName": "Software Engineer",
+    "jobTypeFieldId": "3",
+    "jobPositionChild": [
+      {
+        "jobPositionChildId": "18-0",
+        "jobPositionChildName": "Lập trình phát triển phần mềm"
+      }
+    ]
+  }
+]

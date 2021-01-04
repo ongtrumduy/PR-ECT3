@@ -91,6 +91,21 @@ class JobActivity {
     return jobChildList;
   }
 
+  readJobChildToUpdate(data) {
+    let jobChildList = [];
+    let indexChild = this.JobActivity.findIndex(item => {
+      return data.jobGrandId === item.jobActivityFieldId;
+    });
+    this.JobActivity[indexChild].jobActivityChild.forEach(item => {
+      let jobChild = {
+        jobChildId: item.jobActivityChildId,
+        jobChildName: item.jobActivityChildName
+      };
+      jobChildList.push(jobChild);
+    });
+    return jobChildList;
+  }
+
   readJobActivityChild(data) {
     let index = data.jobActivityChildId;
     return this.JobActivity[index].jobActivityChild;
@@ -167,8 +182,8 @@ class JobActivity {
       jobGrandId: this.JobActivity[indexField].jobActivityFieldId,
       jobGrandName: this.JobActivity[indexField].jobActivityFieldName
     };
-    grandActivityList = jobGrandList;
-    grandActivityList.splice(indexField, 1);
+    // grandActivityList = jobGrandList;
+    // grandActivityList.splice(indexField, 1);
     // console.log(grandTypeList);
     grandActivityList.unshift(grandActivity);
     // console.log(grandTypeList);
@@ -176,15 +191,16 @@ class JobActivity {
   }
 
   readJobActivityChildToEditPage(data) {
+    // console.log(data);
     let indexField = this.JobActivity.findIndex(item => {
       return data.jobFieldId === item.jobActivityFieldId;
     });
     let indexChild = this.JobActivity[indexField].jobActivityChild.findIndex(
       item => {
-        return data.jobChildId === item.jobTypeChildId;
+        return data.jobChildId === item.jobActivityChildId;
       }
     );
-    let jobGrandId = this.JobActivity[indexChild].jobActivityFieldId;
+    let jobGrandId = this.JobActivity[indexField].jobActivityFieldId;
 
     let jobGrandList = this.readGrandJobActivityChildForEditPage(jobGrandId);
     let returnJobChild = {
@@ -212,13 +228,14 @@ class JobActivity {
 
   updateJobActivityChild(data) {
     let indexField = this.JobActivity.findIndex(item => {
-      return data.jobActivityFieldId === item.jobActivityFieldId;
+      return data.jobGrandId === item.jobActivityFieldId;
     });
     this.JobActivity[indexField].jobActivityChild.forEach(item => {
-      if ((data.jobActivityChildId = item.jobActivityChildId)) {
-        item.jobActivityChildName = data.jobActivityChildName;
+      if ((data.jobId === item.jobActivityChildId)) {
+        item.jobActivityChildName = data.jobName;
       }
     });
+    this.saveJobActivityDataJson();
   }
 
   deleteJobActivityField() {

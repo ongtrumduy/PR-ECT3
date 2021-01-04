@@ -14,7 +14,7 @@ export default class CreateEditPage extends React.Component {
   }
 
   componentWillMount = () => {
-    this.props.socket.on("return-field-to-edit-page", data => {
+    this.props.socket.on("return-field-edit-page", data => {
       this.setState({
         jobId: data.jobFieldId,
         jobName: data.jobFieldName,
@@ -25,10 +25,10 @@ export default class CreateEditPage extends React.Component {
       });
     });
 
-    this.props.socket.on("return-child-to-edit-page", data => {
+    this.props.socket.on("return-child-edit-page", data => {
       this.setState({
-        jobId: data.jobFieldId,
-        jobName: data.jobFieldName,
+        jobId: data.jobChildId,
+        jobName: data.jobChildName,
         jobGrandId: data.jobGrandId,
         jobGrandName: data.jobGrandName,
         jobKind: data.jobKind,
