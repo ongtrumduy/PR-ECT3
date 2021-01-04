@@ -110,8 +110,15 @@ class JobPosition {
 
   readGrandJobPositionFieldForEditPage(data) {
     let grandTypeList = [];
-    let jobTypeGrandList = this.readGrandJobPositionField();
+    let jobTypeGrandList = [];
     let jobTypeList = jobType.readJobTypeField();
+    this.JobPosition.forEach(item => {
+      let jobField = {
+        jobGrandId: item.jobPositionFieldId,
+        jobGrandName: item.jobPositionFieldName
+      };
+      jobTypeGrandList.push(jobField);
+    });
     let indexField = jobTypeList.findIndex(item => {
       return data === item.jobTypeFieldId;
     });
@@ -151,12 +158,64 @@ class JobPosition {
     return returnJobField;
   }
 
+  readGrandJobPositionChildForEditPage(data) {
+    let grandPositionList = [];
+    let jobGrandList = [];
+    this.JobPosition.forEach(item => {
+      let jobField = {
+        jobGrandId: item.jobPositionFieldId,
+        jobGrandName: item.jobPositionFieldName
+      };
+      jobGrandList.push(jobField);
+    });
+    let indexField = this.JobPosition.findIndex(item => {
+      return data === item.jobPositionFieldId;
+    });
+    let grandPosition = {
+      jobGrandId: this.JobPosition[indexField].jobPositionFieldId,
+      jobGrandName: this.JobPosition[indexField].jobPositionFieldName
+    };
+    grandPositionList = jobGrandList;
+    grandPositionList.splice(indexField, 1);
+    // console.log(grandTypeList);
+    grandPositionList.unshift(grandPosition);
+    // console.log(grandTypeList);
+    return grandPositionList;
+  }
+
+  readJobPositionChildToEditPage(data) {
+    let indexField = this.JobPosition.findIndex(item => {
+      return data.jobFieldId === item.jobPositionFieldId;
+    });
+    let indexChild = this.JobPosition[indexField].jobPositionChild.findIndex(
+      item => {
+        return data.jobChildId === item.jobPositionChildId;
+      }
+    );
+    let jobGrandId = this.JobPosition[indexChild].jobPositionFieldId;
+
+    let jobGrandList = this.readGrandJobPositionChildForEditPage(jobGrandId);
+    let returnJobChild = {
+      jobChildId: this.JobPosition[indexField].jobPositionChild[indexChild]
+        .jobPositionChildId,
+      jobChildName: this.JobPosition[indexField].jobPositionChild[indexChild]
+        .jobPositionChildName,
+      jobGrandId: this.JobPosition[indexField].jobPositionFieldId,
+      jobGrandName: this.JobPosition[indexField].jobPositionFieldName,
+      jobGrandList: jobGrandList,
+      jobKind: "child"
+    };
+    return returnJobChild;
+  }
+
   updateJobPositionField(data) {
     this.JobPosition.forEach(item => {
-      if ((data.jobPositionFieldId = item.jobPositionFieldId)) {
-        item.jobPositionFieldName = data.jobPositionFieldName;
+      if (data.jobId === item.jobPositionFieldId) {
+        item.jobPositionFieldName = data.jobName;
+        item.jobTypeFieldId = data.jobGrandId;
       }
     });
+    this.saveJobPositionDataJson();
   }
 
   updateJobPositionChild(data) {

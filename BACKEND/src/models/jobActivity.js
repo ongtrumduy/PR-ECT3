@@ -150,12 +150,64 @@ class JobActivity {
     return returnJobField;
   }
 
+  readGrandJobActivityChildForEditPage(data) {
+    let grandActivityList = [];
+    let jobGrandList = [];
+    this.JobActivity.forEach(item => {
+      let jobField = {
+        jobGrandId: item.jobActivityFieldId,
+        jobGrandName: item.jobActivityFieldName
+      };
+      jobGrandList.push(jobField);
+    });
+    let indexField = this.JobActivity.findIndex(item => {
+      return data === item.jobActivityFieldId;
+    });
+    let grandActivity = {
+      jobGrandId: this.JobActivity[indexField].jobActivityFieldId,
+      jobGrandName: this.JobActivity[indexField].jobActivityFieldName
+    };
+    grandActivityList = jobGrandList;
+    grandActivityList.splice(indexField, 1);
+    // console.log(grandTypeList);
+    grandActivityList.unshift(grandActivity);
+    // console.log(grandTypeList);
+    return grandActivityList;
+  }
+
+  readJobActivityChildToEditPage(data) {
+    let indexField = this.JobActivity.findIndex(item => {
+      return data.jobFieldId === item.jobActivityFieldId;
+    });
+    let indexChild = this.JobActivity[indexField].jobActivityChild.findIndex(
+      item => {
+        return data.jobChildId === item.jobTypeChildId;
+      }
+    );
+    let jobGrandId = this.JobActivity[indexChild].jobActivityFieldId;
+
+    let jobGrandList = this.readGrandJobActivityChildForEditPage(jobGrandId);
+    let returnJobChild = {
+      jobChildId: this.JobActivity[indexField].jobActivityChild[indexChild]
+        .jobActivityChildId,
+      jobChildName: this.JobActivity[indexField].jobActivityChild[indexChild]
+        .jobActivityChildName,
+      jobGrandId: this.JobActivity[indexField].jobActivityFieldId,
+      jobGrandName: this.JobActivity[indexField].jobActivityFieldName,
+      jobGrandList: jobGrandList,
+      jobKind: "child"
+    };
+    return returnJobChild;
+  }
+
   updateJobActivityField(data) {
     this.JobActivity.forEach(item => {
-      if ((data.jobActivityFieldId = item.jobActivityFieldId)) {
-        item.jobActivityFieldName = data.jobActivityFieldName;
+      if (data.jobId === item.jobActivityFieldId) {
+        item.jobActivityFieldName = data.jobName;
+        item.jobPositionFieldId = data.jobGrandId;
       }
     });
+    this.saveJobActivityDataJson();
   }
 
   updateJobActivityChild(data) {

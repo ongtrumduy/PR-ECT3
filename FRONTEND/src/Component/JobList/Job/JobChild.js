@@ -54,11 +54,11 @@ export default class PositionChild extends React.Component {
       this.props.jobFieldId,
       this.receiveJobChildList
     );
-     this.props.socket.on("return-create-new-job-child", data => {
-       this.setState({
-         jobChildList: data
-       });
-     });
+    this.props.socket.on("return-create-new-job-child", data => {
+      this.setState({
+        jobChildList: data
+      });
+    });
   };
 
   componentWillReceiveProps = nextProps => {
@@ -74,17 +74,27 @@ export default class PositionChild extends React.Component {
         this.receiveJobChildList
       );
     }
-     this.props.socket.on("return-create-new-job-child", data => {
-       this.setState({
-         jobChildList: data
-       });
-     });
+    this.props.socket.on("return-create-new-job-child", data => {
+      this.setState({
+        jobChildList: data
+      });
+    });
   };
 
   receiveJobChildList = _jobChildList => {
     this.setState({
       jobChildList: _jobChildList
     });
+  };
+
+  sentToUpdateChild = (_jobChildId, _jobFieldId) => {
+    let dataSentToUpdateField = {
+      jobChildId: _jobChildId,
+      jobFieldId: _jobFieldId,
+      jobFieldOptionName: this.props.setOptionJob
+    };
+    this.props.socket.emit("sent-to-edit-child", dataSentToUpdateField);
+    this.checkChangeIconChild(_jobChildId);
   };
 
   checkChangeIconChild = _jobChildId => {
@@ -131,7 +141,11 @@ export default class PositionChild extends React.Component {
                 onClick={() => this.checkCheckRemoveChild()}
               />
               <img alt="" src={JobChildIcon} />
-              <label onClick={() => this.checkChangeIconChild(item.jobFieldId)}>
+              <label
+                onClick={() =>
+                  this.sentToUpdateChild(item.jobChildId, item.jobFieldId)
+                }
+              >
                 {item.jobChildName}
               </label>
             </div>

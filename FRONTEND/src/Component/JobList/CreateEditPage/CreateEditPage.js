@@ -24,6 +24,17 @@ export default class CreateEditPage extends React.Component {
         jobGrandList: data.jobGrandList
       });
     });
+
+    this.props.socket.on("return-child-to-edit-page", data => {
+      this.setState({
+        jobId: data.jobFieldId,
+        jobName: data.jobFieldName,
+        jobGrandId: data.jobGrandId,
+        jobGrandName: data.jobGrandName,
+        jobKind: data.jobKind,
+        jobGrandList: data.jobGrandList
+      });
+    });
   };
 
   setStatusRenderModalForm = add_modal => {

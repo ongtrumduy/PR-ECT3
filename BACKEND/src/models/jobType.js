@@ -121,12 +121,61 @@ class JobType {
     return returnJobField;
   }
 
+  readGrandJobTypeChildForEditPage(data) {
+    let grandTypeList = [];
+    let jobGrandList = [];
+    this.JobPosition.forEach(item => {
+      let jobField = {
+        jobGrandId: item.jobTypeFieldId,
+        jobGrandName: item.jobTypeFieldName
+      };
+      jobGrandList.push(jobField);
+    });
+    let indexField = this.JobType.findIndex(item => {
+      return data === item.jobTypeFieldId;
+    });
+    let grandType = {
+      jobGrandId: this.JobType[indexField].jobTypeFieldId,
+      jobGrandName: this.JobType[indexField].jobTypeFieldName
+    };
+    grandTypeList = jobGrandList;
+    grandTypeList.splice(indexField, 1);
+    // console.log(grandTypeList);
+    grandTypeList.unshift(grandType);
+    // console.log(grandTypeList);
+    return grandTypeList;
+  }
+
+  readJobTypeChildToEditPage(data) {
+    let indexField = this.JobType.findIndex(item => {
+      return data.jobFieldId === item.jobTypeFieldId;
+    });
+    let indexChild = this.JobType[indexField].jobTypeChild.findIndex(item => {
+      return data.jobChildId === item.jobTypeChildId;
+    });
+    let jobGrandId = this.JobType[indexChild].jobTypeFieldId;
+
+    let jobGrandList = this.readGrandJobTypeChildForEditPage(jobGrandId);
+    let returnJobChild = {
+      jobChildId: this.JobType[indexField].jobTypeChild[indexChild]
+        .jobTypeChildId,
+      jobChildName: this.JobType[indexField].jobTypeChild[indexChild]
+        .jobTypeChildName,
+      jobGrandId: this.JobType[indexField].jobTypeFieldId,
+      jobGrandName: this.JobType[indexField].jobTypeFieldName,
+      jobGrandList: jobGrandList,
+      jobKind: "child"
+    };
+    return returnJobChild;
+  }
+
   updateJobTypeField(data) {
     this.JobType.forEach(item => {
-      if ((data.jobTypeFieldId = item.jobTypeFieldId)) {
-        item.jobTypeFieldName = data.jobTypeFieldName;
+      if (data.jobId === item.jobTypeFieldId) {
+        item.jobTypeFieldName = data.jobName;
       }
     });
+    this.saveJobTypeDataJson();
   }
 
   updateJobTypeChild(data) {
