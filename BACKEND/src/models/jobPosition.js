@@ -245,9 +245,9 @@ class JobPosition {
     this.saveJobPositionDataJson();
   }
 
-  deleteJobPositionField() {
+  deleteJobPositionField(data) {
     let indexField = this.JobPosition.findIndex(item => {
-      return data.jobPositionFieldId === item.jobPositionFieldId;
+      return data.jobFieldId === item.jobPositionFieldId;
     });
     this.JobPosition.splice(indexField, 1);
     this.saveJobPositionDataJson();

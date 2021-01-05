@@ -23,9 +23,9 @@ class JobType {
   }
 
   createNewJobTypeField(data) {
-    let countJobTypeField = this.JobType.length;
+    // let countJobTypeField = this.JobType.length;
     let newJobTypeField = {
-      jobTypeFieldId: "" + countJobTypeField,
+      jobTypeFieldId: uuidv4(),
       jobTypeFieldName: data.jobFieldName,
       jobTypeChild: []
     };
@@ -41,9 +41,10 @@ class JobType {
       return data.jobFieldId === item.jobTypeFieldId;
     });
     // console.log(index);
-    let countJobTypeChild = this.JobType[index].jobTypeChild.length;
+    // let countJobTypeChild = this.JobType[index].jobTypeChild.length;
     let newJobTypeChild = {
-      jobTypeChildId: index + "-" + countJobTypeChild,
+      // jobTypeChildId: index + "-" + countJobTypeChild,
+      jobTypeChildId: uuidv6(),
       jobTypeChildName: data.jobChildName
     };
     this.JobType[index].jobTypeChild.push(newJobTypeChild);
@@ -206,9 +207,9 @@ class JobType {
     this.saveJobTypeDataJson();
   }
 
-  deleteJobTypeField() {
+  deleteJobTypeField(data) {
     let indexField = this.JobType.findIndex(item => {
-      return data.jobTypeFieldId === item.jobTypeFieldId;
+      return data.jobFieldId === item.jobTypeFieldId;
     });
     this.JobType.splice(indexField, 1);
     this.saveJobTypeDataJson();

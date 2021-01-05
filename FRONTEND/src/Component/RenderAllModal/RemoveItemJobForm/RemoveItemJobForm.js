@@ -6,7 +6,10 @@ export default class RemoveItemJobForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      statusRenderModalForm: "removeitemjobform"
+      statusRenderModalForm: "removeitemjobform",
+      jobId: "",
+      jobGrandId: "",
+      jobOptionName: ""
     };
   }
 
@@ -14,6 +17,30 @@ export default class RemoveItemJobForm extends React.Component {
     this.setState({
       statusRenderModalForm: nextProps.statusRenderModalForm
     });
+    this.props.socket.on("receive-to-remove-job-field", data => {
+      this.setState({
+        jobId: data.jobFieldId,
+        jobGrandId: "",
+        jobOptionName: data.jobFieldOptionName
+      });
+    });
+    // this.props.socket.on("receive-to-remove-job-child", data => {
+    //   this.setState({
+    //     jobId: data.jobFieldId,
+    //     jobGrandId: "",
+    //     jobOptionName: data.jobOptionName
+    //   });
+    // });
+  };
+
+  removeItemJobForm = () => {
+    let data = {
+      jobId: this.state.jobId,
+      jobGrandId: "",
+      jobOptionName: this.state.jobOptionName
+    };
+    this.props.socket.emit("confirm-to-remove-job", data);
+    this.cancelRemoveItemJobForm();
   };
 
   cancelRemoveItemJobForm = () => {
@@ -59,6 +86,7 @@ export default class RemoveItemJobForm extends React.Component {
                 }}
                 type="button"
                 value="Có"
+                onClick={() => this.removeItemJobForm()}
               />
             </div>
             <div>

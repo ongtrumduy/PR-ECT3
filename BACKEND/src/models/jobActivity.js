@@ -238,9 +238,9 @@ class JobActivity {
     this.saveJobActivityDataJson();
   }
 
-  deleteJobActivityField() {
+  deleteJobActivityField(data) {
     let indexField = this.JobActivity.findIndex(item => {
-      return data.jobActivityFieldId === item.jobActivityFieldId;
+      return data.jobFieldId === item.jobActivityFieldId;
     });
     this.JobActivity.splice(indexField, 1);
     this.saveJobActivityDataJson();

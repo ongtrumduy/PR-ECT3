@@ -120,6 +120,11 @@ export default class JobField extends React.Component {
     }
     this.props.setStatusRenderModalForm("removeitemjobform");
     this.props.setModalOptionJob(this.props.setOptionJob);
+    let dataSentToRemoveField = {
+      jobFieldId: _jobFieldId,
+      jobFieldOptionName: this.props.setOptionJob
+    };
+    this.props.socket.emit("sent-to-remove-field", dataSentToRemoveField);
   };
 
   renderJobChild = jobFieldId => {

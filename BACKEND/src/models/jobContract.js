@@ -67,7 +67,7 @@ class JobContract {
     let profileidlist = [];
     let checkempty = 0;
     experienceyearlist.forEach(item => {
-      if (data.experienceYear === item.experienceYear) {
+      if (data.experienceYear <= item.experienceYear) {
         checkempty = 1;
         let profileid = {
           profileId: item.profileId
