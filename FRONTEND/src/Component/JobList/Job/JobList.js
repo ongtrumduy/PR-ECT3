@@ -4,9 +4,9 @@ import JobField from "./JobField";
 import CreateEditPage from "../CreateEditPage/CreateEditPage";
 
 export default class JobList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (

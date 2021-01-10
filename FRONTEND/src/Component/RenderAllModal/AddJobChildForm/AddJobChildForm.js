@@ -122,7 +122,7 @@ export default class AddJobChildForm extends React.Component {
           </p>
           <div className="select-add-job-child">
             <select
-              jobFieldId={this.state.jobFieldId}
+              // jobFieldId={this.state.jobFieldId}
               onChange={this.handleChangeJobFieldId}
             >
               {this.state.jobChildFormList.map((item, index) => {

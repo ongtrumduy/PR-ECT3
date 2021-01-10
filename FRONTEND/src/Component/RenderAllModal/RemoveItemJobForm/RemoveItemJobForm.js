@@ -13,17 +13,31 @@ export default class RemoveItemJobForm extends React.Component {
     };
   }
 
-  componentWillReceiveProps = nextProps => {
-    this.setState({
-      statusRenderModalForm: nextProps.statusRenderModalForm
-    });
+  componentWillMount = () => {
     this.props.socket.on("receive-to-remove-job-field", data => {
+      console.log("Trả lại");
+      console.log(data);
       this.setState({
         jobId: data.jobFieldId,
         jobGrandId: "",
         jobOptionName: data.jobFieldOptionName
       });
     });
+  };
+
+  componentWillReceiveProps = nextProps => {
+    this.setState({
+      statusRenderModalForm: nextProps.statusRenderModalForm
+    });
+    // this.props.socket.on("receive-to-remove-job-field", data => {
+    //   console.log("Trả lại phát nữa ");
+    //   console.log(data);
+    //   this.setState({
+    //     jobId: data.jobFieldId,
+    //     jobGrandId: "",
+    //     jobOptionName: data.jobFieldOptionName
+    //   });
+    // });
     // this.props.socket.on("receive-to-remove-job-child", data => {
     //   this.setState({
     //     jobId: data.jobFieldId,
@@ -34,11 +48,13 @@ export default class RemoveItemJobForm extends React.Component {
   };
 
   removeItemJobForm = () => {
+    console.log("Có vào");
     let data = {
       jobId: this.state.jobId,
       jobGrandId: "",
       jobOptionName: this.state.jobOptionName
     };
+    console.log("agjagoajgaoo");
     this.props.socket.emit("confirm-to-remove-job", data);
     this.cancelRemoveItemJobForm();
   };

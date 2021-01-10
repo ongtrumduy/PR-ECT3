@@ -5,9 +5,11 @@ import jobType from "../models/jobType";
 let returnUpdateJob = io => {
   io.on("connection", socket => {
     socket.on("confirm-to-remove-job", data => {
+      console.log("bắt socket");
+      console.log(socket.id);
       console.log(data);
       //   if (data.jobKind === "field") {
-      switch (data.jobFieldOptionName) {
+      switch (data.jobOptionName) {
         case "lĩnh vực":
           console.log("có vào");
           jobType.deleteJobTypeField(data);

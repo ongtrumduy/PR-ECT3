@@ -1,5 +1,6 @@
 import fs from "fs";
-import uuid from "uuid";
+import { v4 as uuidv4 } from "uuid";
+import { v1 as uuidv1 } from "uuid";
 import jobType from "./jobType";
 
 class JobPosition {
@@ -26,9 +27,10 @@ class JobPosition {
   }
 
   createNewJobPositionField(data) {
-    let countJobPositionField = this.JobPosition.length;
+    // let countJobPositionField = this.JobPosition.length;
     let newJobPositionField = {
-      jobPositionFieldId: "" + countJobPositionField,
+      // jobPositionFieldId: "" + countJobPositionField,
+      jobPositionFieldId: uuidv4(),
       jobPositionFieldName: data.jobFieldName,
       jobTypeFieldId: data.jobGrandId,
       jobPositionChild: []
@@ -41,10 +43,11 @@ class JobPosition {
     let index = this.JobPosition.findIndex(item => {
       return data.jobFieldId === item.jobPositionFieldId;
     });
-    let countJobPositionChild = this.JobPosition[index].jobPositionChild.length;
+    // let countJobPositionChild = this.JobPosition[index].jobPositionChild.length;
 
     let newJobPositionChild = {
-      jobPositionChildId: index + "-" + countJobPositionChild,
+      // jobPositionChildId: index + "-" + countJobPositionChild,
+      jobPositionChildId: uuidv1(),
       jobPositionChildName: data.jobChildName
     };
     this.JobPosition[index].jobPositionChild.push(newJobPositionChild);
@@ -238,7 +241,7 @@ class JobPosition {
       return data.jobGrandId === item.jobPositionFieldId;
     });
     this.JobPosition[indexField].jobPositionChild.forEach(item => {
-      if ((data.jobId === item.jobPositionChildId)) {
+      if (data.jobId === item.jobPositionChildId) {
         item.jobPositionChildName = data.jobName;
       }
     });
@@ -247,7 +250,7 @@ class JobPosition {
 
   deleteJobPositionField(data) {
     let indexField = this.JobPosition.findIndex(item => {
-      return data.jobFieldId === item.jobPositionFieldId;
+      return data.jobId === item.jobPositionFieldId;
     });
     this.JobPosition.splice(indexField, 1);
     this.saveJobPositionDataJson();
@@ -255,7 +258,7 @@ class JobPosition {
 
   deleteJobPositionChild(data) {
     let indexField = this.JobPosition.findIndex(item => {
-      return data.jobPositionFieldId === item.jobPositionFieldId;
+      return data.jobId === item.jobPositionFieldId;
     });
     let indexChild = this.JobPosition[indexField].jobPositionChild.findIndex(
       item => {

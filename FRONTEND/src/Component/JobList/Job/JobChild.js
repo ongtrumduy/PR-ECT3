@@ -6,7 +6,7 @@ import ArrowRight from "../../../Icons/Arrow Right.png";
 import JobChildIcon from "../../../Icons/Star On.png";
 import CheckEmpty from "../../../Icons/Checkbox Empty.png";
 import CheckFull from "../../../Icons/Checkbox Full.png";
-export default class PositionChild extends React.Component {
+export default class JobChild extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,9 +55,9 @@ export default class PositionChild extends React.Component {
       this.receiveJobChildList
     );
     this.props.socket.on("return-list-job-child", data => {
-      this.setState({
-        jobChildList: data
-      });
+      // console.log("Trả về");
+      // console.log(data);
+      this.receiveJobChildList(data);
     });
   };
 
@@ -75,9 +75,9 @@ export default class PositionChild extends React.Component {
       );
     }
     this.props.socket.on("return-list-job-child", data => {
-      this.setState({
-        jobChildList: data
-      });
+      // console.log("Trả về");
+      // console.log(data);
+      this.receiveJobChildList(data);
     });
   };
 

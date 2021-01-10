@@ -109,19 +109,20 @@ export default class ReturnInforEployee extends React.Component {
   };
 
   renderInforEmployeeTable = () => {
-    if (this.state.checkerror === "1") {
-      return (
-        <div>
-          <p style={{ fontWeight: "bold" }}>
-            Không tìm được thông tin như yêu cầu !!!!!!!!!!!!
-          </p>
-        </div>
-      );
-    } else if (this.state.checkerror === "0") {
-      return (
-        <div>
-          <table style={{ borderStyle: "groove", width: "100%" }}>
-            <thead>
+    // if (this.state.checkerror === "1") {
+    //   return (
+    //     <div>
+    //       <p style={{ fontWeight: "bold" }}>
+    //         Không tìm được thông tin như yêu cầu !!!!!!!!!!!!
+    //       </p>
+    //     </div>
+    //   );
+    // } else if (this.state.checkerror === "0") {
+    return (
+      <div>
+        <table style={{ borderStyle: "groove", width: "100%" }}>
+          <thead>
+            <tr>
               <th>Mã nhân viên</th>
               <th>Họ và tên</th>
               <th>Giới tính</th>
@@ -130,64 +131,65 @@ export default class ReturnInforEployee extends React.Component {
               <th>Loại hợp đồng</th>
               <th>Trạng thái</th>
               <th>Hành động</th>
-            </thead>
-            <tbody>
-              {this.state.inforEmployeeList.map((item, index) => (
-                <tr key={index}>
-                  <td>{item.employeeId}</td>
-                  <td>{item.fullname}</td>
-                  <td>{item.gender}</td>
-                  <td>{item.birthday}</td>
-                  <td>{item.certificateEndDate}</td>
-                  <td>Chính thức</td>
-                  <td style={{ color: "green" }}>{item.employeeStatus}</td>
-                  <td>
-                    <img
-                      alt="detail-infor"
-                      style={{ cursor: "pointer" }}
-                      src={DetailInfor}
-                      onClick={() =>
-                        this.setStatusRenderModalForm(
-                          "showprofileinformodal",
-                          item.profileId
-                        )
-                      }
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      );
-    }
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.inforEmployeeList.map((item, index) => (
+              <tr key={index}>
+                <td>{item.employeeId}</td>
+                <td>{item.fullname}</td>
+                <td>{item.gender}</td>
+                <td>{item.birthday}</td>
+                <td>{item.certificateEndDate}</td>
+                <td>Chính thức</td>
+                <td style={{ color: "green" }}>{item.employeeStatus}</td>
+                <td>
+                  <img
+                    alt="detail-infor"
+                    style={{ cursor: "pointer" }}
+                    src={DetailInfor}
+                    onClick={() =>
+                      this.setStatusRenderModalForm(
+                        "showprofileinformodal",
+                        item.profileId
+                      )
+                    }
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+    // }
   };
 
-  validateCheck = () => {
-    if (
-      this.state.checkvalidate &&
-      (this.props.jobPositionFieldId === "" ||
-        this.props.experienceYear === "" ||
-        this.props.experienceYearEqual === "" ||
-        this.props.certificateName === "" ||
-        this.props.degreeIdentification === "" ||
-        this.props.degreeSpeciality === "" ||
-        this.props.certificateDate === "")
-    ) {
-      return (
-        <div>
-          <small style={{ color: "red", fontWeight: "bold" }}>
-            Bạn không được để trống các ô !!!!
-          </small>
-        </div>
-      );
-    }
-  };
+  // validateCheck = () => {
+  //   if (
+  //     this.state.checkvalidate &&
+  //     (this.props.jobPositionFieldId === "" ||
+  //       this.props.experienceYear === "" ||
+  //       this.props.experienceYearEqual === "" ||
+  //       this.props.certificateName === "" ||
+  //       this.props.degreeIdentification === "" ||
+  //       this.props.degreeSpeciality === "" ||
+  //       this.props.certificateDate === "")
+  //   ) {
+  //     return (
+  //       <div>
+  //         <small style={{ color: "red", fontWeight: "bold" }}>
+  //           Bạn không được để trống các ô !!!!
+  //         </small>
+  //       </div>
+  //     );
+  //   }
+  // };
 
   render() {
     return (
       <div>
-        {this.validateCheck()}
+        {/* {this.validateCheck()} */}
         {this.searchButtonPane()}
         {this.renderInforEmployeeTable()}
       </div>

@@ -15,6 +15,7 @@ export default class CreateEditPage extends React.Component {
 
   componentWillMount = () => {
     this.props.socket.on("return-field-edit-page", data => {
+      // console.log(data);
       this.setState({
         jobId: data.jobFieldId,
         jobName: data.jobFieldName,
@@ -26,6 +27,7 @@ export default class CreateEditPage extends React.Component {
     });
 
     this.props.socket.on("return-child-edit-page", data => {
+      // console.log(data);
       this.setState({
         jobId: data.jobChildId,
         jobName: data.jobChildName,
@@ -112,7 +114,7 @@ export default class CreateEditPage extends React.Component {
         <div>
           <select
             style={{ width: "95%", height: "21px" }}
-            jobGrandId={this.state.jobGrandId}
+            // jobGrandId={this.state.jobGrandId}
             onChange={this.handleChangeJobGrandId}
           >
             {this.state.jobGrandList.map((item, index) => {

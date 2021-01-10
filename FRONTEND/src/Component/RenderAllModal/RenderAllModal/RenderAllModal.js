@@ -8,9 +8,9 @@ import RemoveItemJobForm from "../RemoveItemJobForm/RemoveItemJobForm";
 import DetailInforModal from "../DetailInforModal/DetailInforModal";
 
 export default class RenderAllModal extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   chooseModalToRender = (modal_name, option_job_name) => {
     switch (modal_name) {
@@ -50,6 +50,7 @@ export default class RenderAllModal extends React.Component {
             socket={this.props.socket}
           />
         );
+      default:
     }
   };
 

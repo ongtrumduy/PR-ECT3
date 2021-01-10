@@ -35,7 +35,7 @@ export default class AddJobFieldForm extends React.Component {
     };
     request(options, (error, response, body) => {
       if (error) throw new Error(error);
-      console.log(body);
+      // console.log(body);
       let receiveJobFormForm = JSON.parse(body);
       callbackJobFieldForm(receiveJobFormForm);
     });
@@ -122,7 +122,7 @@ export default class AddJobFieldForm extends React.Component {
           </p>
           <div className="select-add-job-field">
             <select
-              jobGrandId={this.state.jobGrandId}
+              // jobGrandId={this.state.jobGrandId}
               onChange={this.handleChangeJobGrandId}
             >
               {this.state.jobFieldFormList.map((item, index) => {

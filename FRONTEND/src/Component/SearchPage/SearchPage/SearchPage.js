@@ -7,7 +7,7 @@ export default class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      jobPossitionList: [],
+      jobPositionList: [],
       jobPositionFieldId: "",
       experienceYear: "",
       certificateName: "",
@@ -50,9 +50,9 @@ export default class Search extends React.Component {
     this.receivejobPositionDataList(this.receiveJobPositionList);
   };
 
-  receiveJobPositionList = _jobPossitionList => {
+  receiveJobPositionList = _jobPositionList => {
     this.setState({
-      jobPossitionList: _jobPossitionList
+      jobPositionList: _jobPositionList
     });
   };
 
@@ -100,13 +100,13 @@ export default class Search extends React.Component {
             <label>Vị trí công việc </label>
             <select
               style={{ height: "21px", width: "177px" }}
-              jobPositionId={this.state.jobPositionFieldId}
+              // jobPositionFieldId={this.state.jobPositionFieldId}
               onChange={this.handleChangeJobPositionFieldId}
             >
               <option key="-1" value="">
                 Chọn vị trí công việc
               </option>
-              {this.state.jobPossitionList.map((item, index) => {
+              {this.state.jobPositionList.map((item, index) => {
                 return (
                   <option key={index} value={item.jobFieldId}>
                     {item.jobFieldName}

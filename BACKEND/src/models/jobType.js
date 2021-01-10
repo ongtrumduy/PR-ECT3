@@ -1,5 +1,6 @@
 import fs from "fs";
-import uuid from "uuid";
+import { v4 as uuidv4 } from "uuid";
+import { v1 as uuidv1 } from "uuid";
 
 class JobType {
   constructor() {
@@ -26,10 +27,13 @@ class JobType {
     // let countJobTypeField = this.JobType.length;
     let newJobTypeField = {
       jobTypeFieldId: uuidv4(),
+      // jobTypeFieldId: countJobTypeField,
       jobTypeFieldName: data.jobFieldName,
       jobTypeChild: []
     };
     this.JobType.push(newJobTypeField);
+    // console.log(uuidv4());
+    // console.log(typeof uuidv4());
     this.saveJobTypeDataJson();
   }
 
@@ -44,10 +48,11 @@ class JobType {
     // let countJobTypeChild = this.JobType[index].jobTypeChild.length;
     let newJobTypeChild = {
       // jobTypeChildId: index + "-" + countJobTypeChild,
-      jobTypeChildId: uuidv6(),
+      jobTypeChildId: uuidv1(),
       jobTypeChildName: data.jobChildName
     };
     this.JobType[index].jobTypeChild.push(newJobTypeChild);
+    // console.log(uuidv1());
     this.saveJobTypeDataJson();
   }
 
@@ -187,6 +192,7 @@ class JobType {
   }
 
   updateJobTypeField(data) {
+    // console.log(data);
     this.JobType.forEach(item => {
       if (data.jobId === item.jobTypeFieldId) {
         item.jobTypeFieldName = data.jobName;
@@ -208,16 +214,18 @@ class JobType {
   }
 
   deleteJobTypeField(data) {
+    console.log(data);
     let indexField = this.JobType.findIndex(item => {
-      return data.jobFieldId === item.jobTypeFieldId;
+      return data.jobId === item.jobTypeFieldId;
     });
+    console.log(indexField);
     this.JobType.splice(indexField, 1);
     this.saveJobTypeDataJson();
   }
 
   deleteJobTypeChild(data) {
     let indexField = this.JobType.findIndex(item => {
-      return data.jobTypeFieldId === item.jobTypeFieldId;
+      return data.jobId === item.jobTypeFieldId;
     });
     let indexChild = this.JobType[indexField].jobTypeChild.findIndex(item => {
       return data.jobTypeChildId === item.jobTypeChildId;
