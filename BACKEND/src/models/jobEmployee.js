@@ -102,7 +102,7 @@ class JobEmployee {
       trueprofileidlist.forEach(item => {
         trueprofileinforlist.push(jobProfile.returnProfileInfor(item));
       });
-      // console.log(trueprofileinforlist);
+      console.log(trueprofileinforlist);
       return trueprofileinforlist;
     }
   }

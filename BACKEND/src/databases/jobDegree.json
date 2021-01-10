@@ -140,5 +140,31 @@
         "degreeFile": ""
       }
     ]
+  },
+  {
+    "degreeId": "0",
+    "degreeName": "Khoa học máy tính",
+    "degreeIdentification": "Cử nhân",
+    "degreeSpeciality": "Công nghệ phần mềm",
+    "degreeConfirm": [
+      {
+        "degreeConfirmId": "0",
+        "profileId": "4",
+        "degreeYear": "2021",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "1",
+        "profileId": "7",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      },
+      {
+        "degreeConfirmId": "2",
+        "profileId": "9",
+        "degreeYear": "2020",
+        "degreeFile": ""
+      }
+    ]
   }
 ]

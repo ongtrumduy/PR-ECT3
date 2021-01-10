@@ -28,8 +28,12 @@ class JobContract {
 
   returnExperienceYear() {
     let positionexperienceyearlist = [];
-    let experienceyearlist = [];
     this.JobContract.forEach(item => {
+      let positionexperienceyear = {
+        contractId: item.contractId,
+        jobPositionFieldId: item.jobPositionFieldId,
+        experienceYearList: []
+      };
       item.contractPositionList.forEach(item2 => {
         let sumexperienceyear = 0;
         item2.profileContract.forEach(item3 => {
@@ -43,40 +47,44 @@ class JobContract {
           profileId: item2.profileId,
           experienceYear: "" + sumexperienceyear
         };
-        experienceyearlist.push(experienceyear);
+        positionexperienceyear.experienceYearList.push(experienceyear);
       });
-      let positionexperienceyear = {
-        contractId: item.contractId,
-        jobPositionFieldId: item.jobPositionFieldId,
-        experienceYearList: experienceyearlist
-      };
       positionexperienceyearlist.push(positionexperienceyear);
     });
-    console.log(positionexperienceyearlist);
+    // console.log(positionexperienceyearlist);
+    // positionexperienceyearlist.forEach(item => {
+    //   console.log(item.experienceYearList);
+    // });
     return positionexperienceyearlist;
   }
 
   returnSumExperienceYear() {
     let jobProfileIdList = jobProfile.returnProfileIdList();
     let positionexperienceyearlist = this.returnExperienceYear();
+    // console.log("Xem thử");
+    // console.log(positionexperienceyearlist);
     let sumexperienceyearlist = [];
     jobProfileIdList.forEach(item => {
       let sumexperienceyear = 0;
       positionexperienceyearlist.forEach(item1 => {
         item1.experienceYearList.forEach(item2 => {
+          // console.log("xem item2");
+          // console.log(item2.profileId);
           if (item2.profileId === item.profileId) {
-            sumexperienceyear += item2.experienceyear;
+            sumexperienceyear += parseInt(item2.experienceYear);
           }
         });
       });
       if (sumexperienceyear !== 0) {
-        let sumexperienceyear = {
+        let experienceyear = {
           profileId: item.profileId,
-          sumexperienceyear: sumexperienceyear
+          sumexperienceYear: "" + sumexperienceyear
         };
+        sumexperienceyearlist.push(experienceyear);
       }
-      sumexperienceyearlist.push(sumexperienceyear);
     });
+    // console.log("Xuất ra");
+    // console.log(sumexperienceyearlist);
     return sumexperienceyearlist;
   }
 
@@ -120,10 +128,14 @@ class JobContract {
 
   returnExperienceYearPositionProfileIdList(data) {
     let sumexperienceyearlist = this.returnSumExperienceYear();
+    // console.log("Check xem sao");
+    // console.log(sumexperienceyearlist);
     let profileidlist = [];
+    let checksum = 0;
     sumexperienceyearlist.forEach(item => {
-      let checksum = 0;
-      if (item.sumexperienceyear === data.experienceYear) {
+      // console.log(item.sumexperienceYear);
+      // console.log(data.experienceYear);
+      if (parseInt(item.sumexperienceYear) >= parseInt(data.experienceYear)) {
         checksum = 1;
         let experienceyear = {
           profileId: item.profileId
@@ -161,7 +173,7 @@ class JobContract {
     let profileidlist = [];
     let checkempty = 0;
     experienceyearlist.forEach(item => {
-      if (data.experienceYear <= item.experienceYear) {
+      if (parseInt(data.experienceYear) <= parseInt(item.experienceYear)) {
         checkempty = 1;
         let profileid = {
           profileId: item.profileId
@@ -192,11 +204,11 @@ class JobContract {
         }
       ];
     } else if (index < 0 && data.experienceYear !== "") {
-      profileidlist = returnExperienceYearPositionProfileIdList(data);
+      profileidlist = this.returnExperienceYearPositionProfileIdList(data);
     } else if (index >= 0 && data.experienceYear === "") {
-      profileidlist = returnContractPositionProfileIdList(data);
+      profileidlist = this.returnContractPositionProfileIdList(data);
     } else if (index >= 0 && data.experienceYear !== "") {
-      profileidlist = returnContractProfileIdList(data);
+      profileidlist = this.returnContractProfileIdList(data);
     }
     return profileidlist;
   }

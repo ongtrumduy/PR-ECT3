@@ -79,7 +79,7 @@ class JobCertificate {
     this.JobCertificate.forEach(item => {
       item.certificatePeriod.forEach(item2 => {
         item2.profileCertificate.forEach(item3 => {
-          checktime = checkCertificateDate(item3, data);
+          checktime = this.checkCertificateDate(item3, data);
         });
         if (checktime === 1) {
           let checkprofileid = 0;
@@ -121,7 +121,7 @@ class JobCertificate {
         item.profileCertificate.forEach(item2 => {
           // console.log(moment(item2.certificateEndDate, "DD/MM/YYYY").year());
           // console.log(moment(data.certificateDate, "YYYY/MM/DD").year());
-          checktime = checkCertificateDate(item2, data);
+          checktime = this.checkCertificateDate(item2, data);
         });
         if (checktime === 1) {
           let profileid = {
@@ -149,11 +149,11 @@ class JobCertificate {
         }
       ];
     } else if (index < 0 && data.certificateDate !== "") {
-      profileidlist = returnCertificateDateProfileIdList(data);
+      profileidlist = this.returnCertificateDateProfileIdList(data);
     } else if (index >= 0 && data.certificateDate === "") {
-      profileidlist = returnCertificateNameProfileIdList(data);
+      profileidlist = this.returnCertificateNameProfileIdList(data);
     } else if (index >= 0 && data.certificateDate !== "") {
-      profileidlist = returnCertificateProfileIdList(data);
+      profileidlist = this.returnCertificateProfileIdList(data);
     }
     return profileidlist;
   }

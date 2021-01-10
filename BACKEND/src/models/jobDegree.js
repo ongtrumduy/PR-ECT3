@@ -23,6 +23,7 @@ class JobDegree {
   }
 
   returnDegreeIdentificationProfileIdList(data) {
+    // console.log(`Bắt ${data}`);
     let profileidlist = [];
     this.JobDegree.forEach(item => {
       if (
@@ -32,13 +33,15 @@ class JobDegree {
         item.degreeConfirm.forEach(item2 => {
           let checkprofileid = 0;
           profileidlist.forEach(item3 => {
+            // console.log("bắt");
+            // console.log(item3.profileId);
             if (item2.profileId === item3.profileId) {
               checkprofileid = 1;
             }
           });
           if (checkprofileid === 0) {
             let profileid = {
-              profileId: item.profileId
+              profileId: item2.profileId
             };
             profileidlist.push(profileid);
           }
@@ -49,20 +52,27 @@ class JobDegree {
   }
 
   returnDegreeSpecialityProfileIdList(data) {
-    this.JobDegree.forEach((item, index) => {
+    let profileidlist = [];
+    this.JobDegree.forEach(item => {
       if (
         item.degreeSpeciality.toUpperCase() ===
         data.degreeSpeciality.toUpperCase()
       ) {
-        this.JobDegree[index].degreeConfirm.forEach(item2 => {
+        item.degreeConfirm.forEach(item2 => {
+          let checkprofileid = 0;
           profileidlist.forEach(item3 => {
-            if (item2.profileId !== item3.profileId) {
-              let profileid = {
-                profileId: item.profileId
-              };
-              profileidlist.push(profileid);
+            // console.log("bắt");
+            // console.log(item3.profileId);
+            if (item2.profileId === item3.profileId) {
+              checkprofileid = 1;
             }
           });
+          if (checkprofileid === 0) {
+            let profileid = {
+              profileId: item2.profileId
+            };
+            profileidlist.push(profileid);
+          }
         });
       }
     });
@@ -70,6 +80,7 @@ class JobDegree {
   }
 
   returnDegreeProfileIdList(data) {
+    let profileidlist = [];
     let index = this.JobDegree.findIndex(item => {
       return (
         item.degreeIdentification.toUpperCase() ===
@@ -88,6 +99,8 @@ class JobDegree {
   }
 
   returnProfileIdList(data) {
+    // console.log("Bắt");
+    // console.log(data);
     let profileidlist = [];
     let index1 = this.JobDegree.findIndex(item => {
       return (
@@ -101,6 +114,7 @@ class JobDegree {
         data.degreeSpeciality.toUpperCase()
       );
     });
+    // console.log(`Bắt index2 ${index2}`);
     if (index1 < 0 && index2 < 0) {
       profileidlist = [
         {
@@ -108,11 +122,11 @@ class JobDegree {
         }
       ];
     } else if (index1 >= 0 && index2 < 0) {
-      profileidlist = this.returndegreeSpecialityProfileIdList(data);
+      profileidlist = this.returnDegreeIdentificationProfileIdList(data);
     } else if (index1 < 0 && index2 >= 0) {
-      profileidlist = this.returndegreeIdentificationProfileIdList(data);
+      profileidlist = this.returnDegreeSpecialityProfileIdList(data);
     } else if (index1 >= 0 && index2 >= 0) {
-      profileidlist = this.returndegreeProfileIdList(data);
+      profileidlist = this.returnDegreeProfileIdList(data);
     }
     return profileidlist;
   }
