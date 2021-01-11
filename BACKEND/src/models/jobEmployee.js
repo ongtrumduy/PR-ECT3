@@ -153,6 +153,31 @@ class JobEmployee {
     return returnTrueProfileIdList;
   }
 
+  returnNewTrueProfileInforList(data) {
+    let trueprofileinforlist = [];
+    let trueprofileidlist = this.returnTrueProfileIdList(data);
+
+    let trueprofileInfor
+    let checkerror;
+    // console.log(trueprofileidlist);
+    trueprofileidlist.forEach(item => {
+      if (item.profileId === "-9999") {
+        checkerror = 1;
+      }
+    });
+    // console.log(`Checkerrorr ${checkerror}`);
+    if (checkerror === 1) {
+      // console.log("trúng");
+      trueprofileinforlist = [];
+    } else {
+      trueprofileidlist.forEach(item => {
+        trueprofileinforlist.push(jobProfile.returnProfileInfor(item));
+      });
+      // console.log(trueprofileinforlist);
+    }
+    return trueprofileinforlist;
+  }
+
   // returnTrueProfileIdList(data) {
   //   let profilecontractlist = jobContract.returnProfileIdList(data);
   //   let profilecertificatelist = jobCertificate.returnProfileIdList(data);

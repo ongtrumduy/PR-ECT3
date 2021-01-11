@@ -165,19 +165,19 @@ class JobCertificate {
       item.certificatePeriod.forEach(item1 => {
         if (data.profileId === item1.profileId) {
           checkcertificate = 1;
-     item1.profileCertificate.forEach(item=>{
+          item1.profileCertificate.forEach(item => {
             let certificateDate;
-          })
-
+          });
 
           let certificate = {
             profileId: item1.profileId,
             certificateName: item.certificateName,
             certificateDate: certificateDate
-          }
+          };
         }
       });
-  })
+    });
+  }
 }
 
 let jobCertificate = new JobCertificate();
