@@ -1,4 +1,7 @@
 import fs from "fs";
+import jobContract from "./jobContract";
+import jobCertificate from "./jobCertificate";
+import jobDegree from "./jobDegree";
 import uuid from "uuid";
 
 class JobProfile {

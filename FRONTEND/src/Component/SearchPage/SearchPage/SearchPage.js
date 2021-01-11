@@ -168,7 +168,7 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <div style={{ height: "494px" }}>
+      <div style={{ height: "494px", overflow: "auto" }}>
         {this.searchPagePane()}
         <ReturnInfor
           jobPositionFieldId={this.state.jobPositionFieldId}

@@ -157,6 +157,27 @@ class JobCertificate {
     }
     return profileidlist;
   }
+
+  returnCertificateName(data) {
+    let certificateList = [];
+    this.JobCertificate.forEach(item => {
+      let checkcertificate = 0;
+      item.certificatePeriod.forEach(item1 => {
+        if (data.profileId === item1.profileId) {
+          checkcertificate = 1;
+     item1.profileCertificate.forEach(item=>{
+            let certificateDate;
+          })
+
+
+          let certificate = {
+            profileId: item1.profileId,
+            certificateName: item.certificateName,
+            certificateDate: certificateDate
+          }
+        }
+      });
+  })
 }
 
 let jobCertificate = new JobCertificate();
