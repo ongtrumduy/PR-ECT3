@@ -115,12 +115,19 @@ export default class Search extends React.Component {
               })}
             </select>
           </div>
-
           <div>
             <label>Số năm Kinh nghiệm </label>
             <input
               type="text"
               placeholder="0, 1, 2, 3,..."
+              onChange={this.handleExperienceYear}
+            />
+          </div>
+          <div>
+            <label>Lĩnh vực công việc </label>
+            <input
+              type="text"
+              // placeholder="0, 1, 2, 3,..."
               onChange={this.handleExperienceYear}
             />
           </div>
@@ -142,6 +149,14 @@ export default class Search extends React.Component {
               onChange={this.handleCertificateName}
             />
           </div>
+          <div>
+            <label>Tên gói thầu </label>
+            <input
+              type="text"
+              // placeholder="0, 1, 2, 3,..."
+              onChange={this.handleExperienceYear}
+            />
+          </div>
         </div>
         <div className="search-div-2">
           <div>
@@ -159,6 +174,14 @@ export default class Search extends React.Component {
               type="date"
               placeholder="26/12/2020"
               onChange={this.handleCertificateDate}
+            />
+          </div>
+          <div>
+            <label>Hoạt động công việc </label>
+            <input
+              type="text"
+              // placeholder="0, 1, 2, 3,..."
+              onChange={this.handleExperienceYear}
             />
           </div>
         </div>
