@@ -158,25 +158,47 @@ class JobCertificate {
     return profileidlist;
   }
 
-  returnCertificateName(data) {
+  returnCertificateNameDate(data) {
+    console.log(data);
     let certificateList = [];
+    let checkcertificate = 0;
     this.JobCertificate.forEach(item => {
-      let checkcertificate = 0;
       item.certificatePeriod.forEach(item1 => {
         if (data.profileId === item1.profileId) {
           checkcertificate = 1;
-          item1.profileCertificate.forEach(item => {
-            let certificateDate;
+          let certificateDate;
+          item1.profileCertificate.forEach(item2 => {
+            let certificateDateCheck = 0;
+            if (
+              moment(item2.certificateEndDate, "DD/MM/YYYY").year() >
+              certificateDateCheck
+            ) {
+              certificateDateCheck = moment(
+                item2.certificateEndDate,
+                "DD/MM/YYYY"
+              ).year();
+              certificateDate = item2.certificateEndDate;
+            }
           });
-
           let certificate = {
             profileId: item1.profileId,
             certificateName: item.certificateName,
             certificateDate: certificateDate
           };
+          certificateList.push(certificate);
         }
       });
     });
+    if (checkcertificate === 0) {
+      certificateList = [
+        {
+          profileId: "-9999",
+          certificateName: "Chưa có dữ liệu",
+          certificateDate: ""
+        }
+      ];
+    }
+    return certificateList;
   }
 }
 

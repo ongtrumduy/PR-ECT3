@@ -156,25 +156,21 @@ class JobEmployee {
   returnNewTrueProfileInforList(data) {
     let trueprofileinforlist = [];
     let trueprofileidlist = this.returnTrueProfileIdList(data);
-
-    let trueprofileInfor
     let checkerror;
-    // console.log(trueprofileidlist);
     trueprofileidlist.forEach(item => {
       if (item.profileId === "-9999") {
         checkerror = 1;
       }
     });
-    // console.log(`Checkerrorr ${checkerror}`);
     if (checkerror === 1) {
-      // console.log("trúng");
       trueprofileinforlist = [];
     } else {
       trueprofileidlist.forEach(item => {
-        trueprofileinforlist.push(jobProfile.returnProfileInfor(item));
+        trueprofileinforlist.push(jobProfile.returnTrueProfileInfor(item));
       });
-      // console.log(trueprofileinforlist);
     }
+    // console.log("Xuất ra");
+    // console.log(trueprofileinforlist);
     return trueprofileinforlist;
   }
 
@@ -235,28 +231,28 @@ class JobEmployee {
   //   return returnTrueProfileIdList;
   // }
 
-  returnTrueProfileInforList(data) {
-    let trueprofileinforlist = [];
-    let trueprofileidlist = this.returnTrueProfileIdList(data);
-    let checkerror;
-    // console.log(trueprofileidlist);
-    trueprofileidlist.forEach(item => {
-      if (item.profileId === "-9999") {
-        checkerror = 1;
-      }
-    });
-    // console.log(`Checkerrorr ${checkerror}`);
-    if (checkerror === 1) {
-      // console.log("trúng");
-      trueprofileinforlist = [];
-    } else {
-      trueprofileidlist.forEach(item => {
-        trueprofileinforlist.push(jobProfile.returnProfileInfor(item));
-      });
-      // console.log(trueprofileinforlist);
-    }
-    return trueprofileinforlist;
-  }
+  // returnTrueProfileInforList(data) {
+  //   let trueprofileinforlist = [];
+  //   let trueprofileidlist = this.returnTrueProfileIdList(data);
+  //   let checkerror;
+  //   // console.log(trueprofileidlist);
+  //   trueprofileidlist.forEach(item => {
+  //     if (item.profileId === "-9999") {
+  //       checkerror = 1;
+  //     }
+  //   });
+  //   // console.log(`Checkerrorr ${checkerror}`);
+  //   if (checkerror === 1) {
+  //     // console.log("trúng");
+  //     trueprofileinforlist = [];
+  //   } else {
+  //     trueprofileidlist.forEach(item => {
+  //       trueprofileinforlist.push(jobProfile.returnProfileInfor(item));
+  //     });
+  //     // console.log(trueprofileinforlist);
+  //   }
+  //   return trueprofileinforlist;
+  // }
 }
 
 let jobEmployee = new JobEmployee();

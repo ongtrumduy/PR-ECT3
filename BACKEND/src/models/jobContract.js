@@ -1,5 +1,5 @@
 import fs from "fs";
-import jobProfile from "./jobProfile";
+import jobPosition from "./jobPosition";
 import moment from "moment";
 import uuid from "uuid";
 
@@ -58,8 +58,30 @@ class JobContract {
     return positionexperienceyearlist;
   }
 
+  returnSumProfileIdList() {
+    let profileidlist = [];
+    let positionexperienceyearlist = this.returnExperienceYear();
+    positionexperienceyearlist.forEach(item => {
+      item.experienceYearList.forEach(item1 => {
+        let checkprofileid = 0;
+        profileidlist.forEach(item2 => {
+          if (item1.profileId === item2.profileId) {
+            checkprofileid = 1;
+          }
+        });
+        if (checkprofileid === 0) {
+          let profileid = {
+            profileId: item1.profileId
+          };
+          profileidlist.push(profileid);
+        }
+      });
+    });
+    return profileidlist;
+  }
+
   returnSumExperienceYear() {
-    let jobProfileIdList = jobProfile.returnProfileIdList();
+    let jobProfileIdList = this.returnSumProfileIdList();
     let positionexperienceyearlist = this.returnExperienceYear();
     // console.log("Xem thử");
     // console.log(positionexperienceyearlist);
@@ -211,6 +233,35 @@ class JobContract {
       profileidlist = this.returnContractProfileIdList(data);
     }
     return profileidlist;
+  }
+
+  returnPositionName(data) {
+    let positionNameList = [];
+    let checkpositionname = 0;
+    this.JobContract.forEach(item => {
+      let jobpositionname;
+      item.contractPositionList.forEach(item1 => {
+        if (data.profileId === item1.profileId) {
+          checkpositionname = 1;
+          jobpositionname = jobPosition.readJobPositionName(item);
+
+          let jobposition = {
+            profileId: item1.profileId,
+            jobPositionName: jobpositionname
+          };
+          positionNameList.push(jobposition);
+        }
+      });
+    });
+    if (checkpositionname === 0) {
+      positionNameList = [
+        {
+          profileId: "-9999",
+          jobPositionName: "Chưa có dữ liệu"
+        }
+      ];
+    }
+    return positionNameList;
   }
 }
 

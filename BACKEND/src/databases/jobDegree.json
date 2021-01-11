@@ -8,30 +8,40 @@
       {
         "degreeConfirmId": "0",
         "profileId": "0",
+        "degreeClassfication": "Giỏi",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
         "profileId": "1",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
         "profileId": "5",
+        "degreeClassfication": "Giỏi",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "3",
         "profileId": "3",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "3",
         "profileId": "8",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       }
@@ -46,18 +56,24 @@
       {
         "degreeConfirmId": "0",
         "profileId": "9",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
         "profileId": "8",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
         "profileId": "7",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2022",
         "degreeFile": ""
       }
@@ -72,18 +88,24 @@
       {
         "degreeConfirmId": "0",
         "profileId": "2",
+        "degreeClassfication": "Giỏi",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
         "profileId": "11",
+        "degreeClassfication": "Giỏi",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
         "profileId": "14",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2022",
         "degreeFile": ""
       }
@@ -98,18 +120,24 @@
       {
         "degreeConfirmId": "0",
         "profileId": "15",
+        "degreeClassfication": "Giỏi",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
         "profileId": "16",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
         "profileId": "17",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2022",
         "degreeFile": ""
       }
@@ -124,18 +152,24 @@
       {
         "degreeConfirmId": "0",
         "profileId": "18",
+        "degreeClassfication": "Giỏi",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
         "profileId": "19",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
         "profileId": "20",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2022",
         "degreeFile": ""
       }
@@ -150,18 +184,24 @@
       {
         "degreeConfirmId": "0",
         "profileId": "4",
+        "degreeClassfication": "Khá",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2021",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "1",
         "profileId": "7",
+        "degreeClassfication": "Giỏi",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       },
       {
         "degreeConfirmId": "2",
         "profileId": "9",
+        "degreeClassfication": "Giỏi",
+        "degreeType": "Bằng tốt nghiệp",
         "degreeYear": "2020",
         "degreeFile": ""
       }

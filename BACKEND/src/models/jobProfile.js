@@ -34,6 +34,13 @@ class JobProfile {
     return this.JobProfile[index];
   }
 
+  returnProfileFullName(data) {
+    let index = this.JobProfile.findIndex(item => {
+      return data.profileId === item.profileId;
+    });
+    return this.JobProfile[index].fullname;
+  }
+
   returnProfileIdList() {
     let profileidlist = [];
     this.JobProfile.forEach(item => {
@@ -43,6 +50,19 @@ class JobProfile {
       profileidlist.push(profileid);
     });
     return profileidlist;
+  }
+
+  returnTrueProfileInfor(data) {
+    let trueprofileinfor = {
+      profileId: data.profileId,
+      fullname: this.returnProfileFullName(data),
+      jobPositionName: jobContract.returnPositionName(data),
+      degreeIdentification: jobDegree.returnDegreeIndentificateName(data),
+      degreeSpeciality: jobDegree.returnDegreeSpecialityName(data),
+      certificateName: jobCertificate.returnCertificateNameDate(data),
+      degreeType: jobDegree.returnDegreeType(data)
+    };
+    return trueprofileinfor;
   }
 }
 

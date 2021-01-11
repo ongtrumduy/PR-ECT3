@@ -130,6 +130,89 @@ class JobDegree {
     }
     return profileidlist;
   }
+
+  returnDegreeIndentificateName(data) {
+    let degreeIdentificationList = [];
+    let checkdegree = 0;
+    this.JobDegree.forEach(item => {
+      item.degreeConfirm.forEach(item1 => {
+        if (data.profileId === item1.profileId) {
+          checkdegree = 1;
+          let degreeidentification = {
+            profileId: item1.profileId,
+            degreeIdentification: item.degreeIdentification
+          };
+          degreeIdentificationList.push(degreeidentification);
+        }
+      });
+    });
+    if (checkdegree === 0) {
+      degreeIdentificationList = [
+        {
+          profileId: "-9999",
+          degreeIdentification: "Chưa có dữ liệu"
+        }
+      ];
+    }
+    return degreeIdentificationList;
+  }
+
+  returnDegreeSpecialityName(data) {
+    let degreeSpecialityList = [];
+    let checkdegree = 0;
+    this.JobDegree.forEach(item => {
+      item.degreeConfirm.forEach(item1 => {
+        if (data.profileId === item1.profileId) {
+          checkdegree = 1;
+          let degreespeciality = {
+            profileId: item1.profileId,
+            degreeSpeciality: item.degreeSpeciality,
+            degreeName: item.degreeName
+          };
+          degreeSpecialityList.push(degreespeciality);
+        }
+      });
+    });
+    if (checkdegree === 0) {
+      degreeSpecialityList = [
+        {
+          profileId: "-9999",
+          degreeSpeciality: "Chưa có dữ liệu"
+        }
+      ];
+    }
+    return degreeSpecialityList;
+  }
+
+  returnDegreeType(data) {
+    let degreeTypeList = [];
+    let checkdegree = 0;
+    this.JobDegree.forEach(item => {
+      item.degreeConfirm.forEach(item1 => {
+        if (data.profileId === item1.profileId) {
+          checkdegree = 1;
+          let degreetype = {
+            profileId: item1.profileId,
+            degreeYear: item1.degreeYear,
+            degreeType: item1.degreeType,
+            degreeClassfication: item1.degreeClassfication
+          };
+          degreeTypeList.push(degreetype);
+        }
+      });
+    });
+    if (checkdegree === 0) {
+      degreeTypeList = [
+        {
+          profileId: "-9999",
+          degreeYear: "",
+          degreeType: "Chưa có dữ liệu",
+          degreeClassfication: ""
+        }
+      ];
+    }
+    return degreeTypeList;
+  }
 }
 
 let jobDegree = new JobDegree();

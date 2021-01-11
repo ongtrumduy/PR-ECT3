@@ -226,6 +226,16 @@ class JobPosition {
     return returnJobChild;
   }
 
+  readJobPositionName(data) {
+    let jobpositionname;
+    this.JobPosition.findIndex(item => {
+      if (item.jobPositionFieldId === data.jobPositionFieldId) {
+        jobpositionname = item.jobPositionFieldName;
+      }
+    });
+    return jobpositionname;
+  }
+
   updateJobPositionField(data) {
     this.JobPosition.forEach(item => {
       if (data.jobId === item.jobPositionFieldId) {

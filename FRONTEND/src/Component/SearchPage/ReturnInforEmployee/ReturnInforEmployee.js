@@ -9,8 +9,7 @@ export default class ReturnInforEployee extends React.Component {
     super(props);
     this.state = {
       inforEmployeeList: [],
-      checkvalidate: false,
-      checkerror: "0"
+      checkvalidate: false
     };
   }
 
@@ -48,14 +47,8 @@ export default class ReturnInforEployee extends React.Component {
     request(options, (error, response, body) => {
       if (error) throw new Error(error);
       // console.log(body);
-      if (body === "-999999") {
-        this.setState({
-          checkerror: "1"
-        });
-      } else {
-        let returnInforEmployee = JSON.parse(body);
-        callbackInforEmployee(returnInforEmployee);
-      }
+      let returnInforEmployee = JSON.parse(body);
+      callbackInforEmployee(returnInforEmployee);
     });
   };
 
@@ -70,8 +63,7 @@ export default class ReturnInforEployee extends React.Component {
 
   receiveInforEmployeeList = _inforEmployeeList => {
     this.setState({
-      inforEmployeeList: _inforEmployeeList,
-      checkerror: "0"
+      inforEmployeeList: _inforEmployeeList
     });
   };
 
@@ -108,64 +100,8 @@ export default class ReturnInforEployee extends React.Component {
     );
   };
 
-  // renderInforEmployeeTable = () => {
-  // if (this.state.checkerror === "1") {
-  //   return (
-  //     <div>
-  //       <p style={{ fontWeight: "bold" }}>
-  //         Không tìm được thông tin như yêu cầu !!!!!!!!!!!!
-  //       </p>
-  //     </div>
-  //   );
-  // } else if (this.state.checkerror === "0") {
-  //   return (
-  //     <div>
-  //       <table style={{ borderStyle: "groove", width: "100%" }}>
-  //         <thead>
-  //           <tr>
-  //             <th>Mã nhân viên</th>
-  //             <th>Họ và tên</th>
-  //             <th>Giới tính</th>
-  //             <th>Ngày sinh</th>
-  //             <th>Ngày hết hạn hợp đồng</th>
-  //             <th>Loại hợp đồng</th>
-  //             <th>Trạng thái</th>
-  //             <th>Hành động</th>
-  //           </tr>
-  //         </thead>
-  //         <tbody>
-  //           {this.state.inforEmployeeList.map((item, index) => (
-  //             <tr key={index}>
-  //               <td>{item.employeeId}</td>
-  //               <td>{item.fullname}</td>
-  //               <td>{item.gender}</td>
-  //               <td>{item.birthday}</td>
-  //               <td>{item.certificateEndDate}</td>
-  //               <td>Chính thức</td>
-  //               <td style={{ color: "green" }}>{item.employeeStatus}</td>
-  //               <td>
-  //                 <img
-  //                   alt="detail-infor"
-  //                   style={{ cursor: "pointer" }}
-  //                   src={DetailInfor}
-  //                   onClick={() =>
-  //                     this.setStatusRenderModalForm(
-  //                       "showprofileinformodal",
-  //                       item.profileId
-  //                     )
-  //                   }
-  //                 />
-  //               </td>
-  //             </tr>
-  //           ))}
-  //         </tbody>
-  //       </table>
-  //     </div>
-  //   );
-  //   // }
-  // };
-
   renderNewInforEmployeeTable = () => {
+    // alert(this.state.inforEmployeeList);
     return (
       <div>
         <table style={{ borderStyle: "groove", width: "100%" }}>
@@ -184,11 +120,57 @@ export default class ReturnInforEployee extends React.Component {
             {this.state.inforEmployeeList.map((item, index) => (
               <tr key={index}>
                 <td>{item.fullname}</td>
-                <td>{item.jobPosition}</td>
-                <td>{item.degreeIdentification}</td>
-                <td>{item.degreeSpeciality}</td>
-                <td>{item.certificateName}</td>
-                <td>{item.degreeType}</td>
+                <td>
+                  <ul>
+                    {item.jobPositionName.map((item1, index) => {
+                      return <li key={index}>{item1.jobPositionName}</li>;
+                    })}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    {item.degreeIdentification.map((item1, index) => {
+                      return <li key={index}>{item1.degreeIdentification}</li>;
+                    })}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    {item.degreeSpeciality.map((item1, index) => {
+                      return (
+                        <li key={index}>
+                          {item1.degreeSpeciality + "-"}
+                          {item1.degreeName}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    {item.certificateName.map((item1, index) => {
+                      return (
+                        <li key={index}>
+                          {item1.certificateName + "-hiệu lực "}
+                          {item1.certificateDate}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    {item.degreeType.map((item1, index) => {
+                      return (
+                        <li key={index}>
+                          {item1.degreeYear + "-"}
+                          {item1.degreeType + "-Loại: "}
+                          {item1.degreeClassfication}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </td>
                 <td>
                   <img
                     alt="detail-infor"
